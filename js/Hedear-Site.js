@@ -108,7 +108,7 @@ const IconHeader = () => {
     index++;
   });
 };
-function body(IsSubmit, href) {
+function body(IsSubmit, href, dot) {
   document.querySelector(".body").insertAdjacentHTML(
     "afterbegin",
     `
@@ -124,7 +124,7 @@ function body(IsSubmit, href) {
           <div class="flex">
           <div class="flex w-max text-white gap-2 my-auto text-lg Ertebat"></div>
           <div class="m-auto">
-          <img src="../img/facebook.png" class="w-7 h-max" alt="" />
+          <img src="${dot}./img/facebook.png" class="w-7 h-max" alt="" />
           </div>
           </div>
           <div class="flex text-white text-xs ms-3">
@@ -154,7 +154,7 @@ function body(IsSubmit, href) {
                 <div class="max-w-[1200px] container w-full flex justify-between">
                 <div class="w-[245px] h-[35px]">
                 <a href="../index.html">
-                   <img src="../img/wood-logo-white-reserve.svg" alt="" />
+                   <img src="${dot}./img/wood-logo-white-reserve.svg" alt="" />
                    </a>
                    </div>
                 
@@ -174,7 +174,7 @@ function body(IsSubmit, href) {
                   </div>
                   </div>
                   <div class="ms-3 bg-warning h-full p-3 px-4 rounded-l-full cursor-pointer btnSearchProduct">
-                  <img src="../img/search3.png" class="w-7" alt="" />
+                  <img src="${dot}./img/search3.png" class="w-7" alt="" />
                   </div>
                   </div>
                   <div class="flex my-auto text-white alage">
@@ -200,19 +200,19 @@ function body(IsSubmit, href) {
                   <div class="flex justify-between bg-darkBlue p-3 lg:hidden">
                   <div class="my-auto flex text-white cursor-pointer btn-ShowMenu">
                   <div>
-                  <img src="../img/menu-svgrepo-com (1).svg" class="w-6" alt="" />
+                  <img src="${dot}./img/menu-svgrepo-com (1).svg" class="w-6" alt="" />
                   </div>
                   <span class="ms-2">منو</span>
                   </div>
                   <div>
-                  <img src="../img/wood-logo-white-reserve.svg" alt="" class="w-[200px]" />
+                  <img src="${dot}./img/wood-logo-white-reserve.svg" alt="" class="w-[200px]" />
                   </div>
                   <div class="btnShowBasket cursor-pointer relative">
                   <span
                   class="absolute top-[-3px] bg-warning text-white h-[14px] left-[-6px] text-center leading-[6px] pt-[5px] p-1 w-[15px] rounded-full text-xs"
                   >0</span
                   >
-                  <img src="../img/shopping-bag-svgrepo-com.svg" class="w-6" alt="" />
+                  <img src="${dot}./img/shopping-bag-svgrepo-com.svg" class="w-6" alt="" />
                   </div>
                   </div>
                   
@@ -237,7 +237,7 @@ function body(IsSubmit, href) {
           <div class="mt-1">
           <span class="me-2">بستن</span>
           </div>
-          <img src="../img/close4.png" class="w-8" alt="" />
+          <img src="${dot}./img/close4.png" class="w-8" alt="" />
           </div>
           </div>
       <div class="border-b-2 border-warning w-[90%] mx-auto"></div>
@@ -254,7 +254,7 @@ function body(IsSubmit, href) {
         <div class="mt-1 text-white">
           <span class="me-2">بستن</span>
         </div>
-        <img src="../img/close3.png" class="w-8" alt="" />
+        <img src="${dot}./img/close3.png" class="w-8" alt="" />
       </div>
     </div>
     <div class="border-b-2 border-silver w-[90%] mx-auto"></div>
@@ -288,7 +288,7 @@ function body(IsSubmit, href) {
         <div class="mt-1">
         <span class="me-2">بستن</span>
         </div>
-        <img src="../img/close4.png" class="w-8" alt="" />
+        <img src="${dot}./img/close4.png" class="w-8" alt="" />
         </div>
         </div>
         <div class="border-b-2 border-warning w-[90%] mx-auto"></div>
@@ -302,7 +302,7 @@ function body(IsSubmit, href) {
       >
       <div class="relative">
       <div class="w-max absolute left-5 top-5 cursor-pointer btnCloseKhabarName">
-      <img src="../img/close-svgrepo-com.png" class="w-8" alt="" />
+      <img src="${dot}./img/close-svgrepo-com.png" class="w-8" alt="" />
       </div>
       <div class="border-2 border-white w-full p-7 py-20 text-center rounded-md">
       <div class="mx-auto w-3/4 text-4xl mb-5">
@@ -378,10 +378,10 @@ function listNextSearch() {
     `;
   });
 }
-function AbutMe() {
+function AbutMe(dot) {
   let arr = [
-    ["../img/github.png", "https://github.com/sajjad1-moei/project"],
-    ["../img/instagram.png", "#"],
+    [`${dot}./img/github.png`, "https://github.com/sajjad1-moei/project"],
+    [`${dot}./img/instagram.png`, "#"],
     ["../img/telegram.png", "https://t.me/Assistedd"],
   ];
   arr.forEach((img) => {
@@ -407,7 +407,7 @@ function ShoeMenuMobile() {
   });
 }
 
-function CreateMahsolBasket(arr, div) {
+function CreateMahsolBasket(arr, dot) {
   document.querySelector(".ProductUser").innerHTML = "";
   if (JSON.parse(localStorage.getItem("mahsol"))) {
     arr.forEach((item) => {
@@ -415,7 +415,7 @@ function CreateMahsolBasket(arr, div) {
       <div class="w-full flex justify-between border-b-[1px] border-zinc-500 py-2">
       <div class="flex w-full">
       <div>
-      <img src="${item.img}" class="w-20" alt="" />
+      <img src=".${item.img}" class="w-20" alt="" />
       </div>
       <div class="my-auto ms-4">
       <p>${item.title}</p>

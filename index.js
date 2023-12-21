@@ -25,9 +25,9 @@ customElements.define("product-item", Proudct);
 let cokieSubmit = document.cookie;
 
 if (cokieSubmit) {
-  body("وبلاگ", "#");
+  body("وبلاگ", "#", "");
 } else {
-  body("ورود / ثبت نام", "../html/vrood.html");
+  body("ورود / ثبت نام", "../html/vrood.html", "");
 }
 console.log(cokieSubmit);
 Header();
@@ -154,7 +154,7 @@ function hoverLeft(arr, div) {
                         <img src="./img/shopping-cart-svgrepo-com (1).svg" alt="" class="w-6 my-3 ms-[7px]" />
                         </div>
                         <div class="cursor-pointer ">
-                        <img src="/img/search-svgrepo-com (2).svg" class="w-6 ms-1.5" alt="" />
+                        <img src="./img/search-svgrepo-com (2).svg" class="w-6 ms-1.5" alt="" />
                         </div>
                       </div>
                       <div class="border-b-2 border-b-zinc-200">
@@ -213,7 +213,7 @@ function hoverBottom(i) {
            <img src="./img/shopping-cart-svgrepo-com (1).svg" alt="" class=" px-1 w-[35px] m-auto" />
          </div>
          <div class="cursor-pointer" >
-           <img src="/img/search-svgrepo-com (2).svg" class="w-[25px] m-auto " alt="" />
+           <img src="./img/search-svgrepo-com (2).svg" class="w-[25px] m-auto " alt="" />
          </div>
       </div>
   </div>`;

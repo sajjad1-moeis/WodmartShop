@@ -42,7 +42,7 @@ function CreateMahsol(arr, current) {
       ${divVizhehAndPercon(element.label[0], element.label[1], "bg-warning")}
       ${HoverBottom(element.id)}
       <div class=" ">
-      <img src="${element.img}" alt="" class="mx-auto w-full" />
+      <img src=".${element.img}" alt="" class="mx-auto w-full" />
       </div>
       <div class="text-center mt-3">
       <p>${element.title}</p>
@@ -54,7 +54,7 @@ function CreateMahsol(arr, current) {
       <div class="relative rounded bg-secondary pt-5 pb-12 h-max opacity-50 overflow-hidden imgHover">
       ${divVizhehAndPercon(element.label[0], element.label[1], "bg-primary")}
       <div class=" ">
-      <img src="${element.img}" alt="" class="mx-auto w-full" />
+      <img src=".${element.img}" alt="" class="mx-auto w-full" />
       </div>
       <div class="text-center mt-3">
       <p>${element.title}</p>
@@ -126,7 +126,7 @@ let arrUserMahsol = [];
 
 let local = JSON.parse(localStorage.getItem("mahsol"));
 arrUserMahsol = local;
-CreateMahsolBasket(local, DivBasket);
+CreateMahsolBasket(local, ".");
 RemoveItem(arrUserMahsol);
 SetLocal(arrUserMahsol);
 $.querySelector(".resultSerch").innerHTML = ` نتیجه جستجو : ${SearchLocation}`;
