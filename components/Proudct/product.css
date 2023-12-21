@@ -1,0 +1,12 @@
+ .swiper-slide .list-menu{
+    transition: 0.5s;
+}
+ .swiper-slide:hover .list-menu{
+    left: 0;
+}
+img:hover{
+    transform: scale(1.1);
+}
+img{
+    transition: 0.5s;
+}

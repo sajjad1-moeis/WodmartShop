@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  body{
+    height: 100vh;
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  p{
+    color: rgb(0, 34, 255);
+    font-size: 45px;
+
+  }
+  button{
+    padding: 10px 12px;
+    border-radius: 10px;
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    box-shadow: 0 0 4px -3px white;
+    color: rgb(0, 34, 255);
+    transition: all 0.5s;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  }
+  button:hover{
+    box-shadow: 0 0 4px -3px white;
+    transition: all 0.5s;
+    transform: scale(1.1);
+  }
+  .hamid{
+    border-radius: 10px;
+    box-shadow: 0 0 4px -3px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(4px);
+    
+
+  }
+  .container{
+    position: relative;
+  }
+  .circal{
+    width: 50px;
+    height: 50px;
+    background: linear-gradient( red , blue );
+    border-radius: 50%;
+    position: 
+    absolute;
+    top: 45%;
+    left: 90%;
+    filter: blur(1px);
+  }
+  .circal1{
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(blue , rgb(157, 255, 0));
+    border-radius: 50%;
+    position: absolute;
+    top: -15%;
+    left: -10%;
+    filter: blur(1px);
+  }
+

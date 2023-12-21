@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../tailwind/tailwind.css" />
+
+    <link rel="stylesheet" href="../css/css.css" />
+    <link rel="stylesheet" href="../css/bundle-swiper.css" />
+    <style>
+      body {
+        background-image: linear-gradient(#081a35, rgb(23, 52, 97)), url("../img/pexels-pixabay-290595.jpg");
+      }
+    </style>
+  </head>
+  <body dir="rtl">
+    <!-- DivSubmit -->
+    <div
+      class="body rounded-2xl overflow-hidden max-w-[400px] absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] pt-8 w-full bg-zinc-100 h-max shadow-xl"
+    >
+      <div class="flex text-xl gap-4 text-black w-max px-10">
+        <div class="p-2 cursor-pointer loginText active Login">ورود</div>
+        <div class="p-2 cursor-pointer loginText Submit">ثبت نام</div>
+      </div>
+      <div class="">
+        <div class="p-8 bg-transparent w-full DivSubmit text-black hidden">
+          <div>
+            <p class="ms-2 text-base">نام</p>
+            <input type="text" class="inputSubmit a rounded-full text-black mt-2.5 py-1.5 px-5 mb-2 w-full outline-none" />
+          </div>
+          <div>
+            <p class="ms-2 text-base">نام خانوادگی</p>
+            <input type="text" class="inputSubmit a rounded-full mt-2.5 text-black py-1.5 px-5 mb-2 w-full outline-none" />
+          </div>
+          <div>
+            <p class="ms-2 text-base">پسوورد</p>
+            <div class="flex justify-between py-1.5 mt-2.5 mb-2 w-full rounded-full a ps-5 pe-3">
+              <input type="password" class="text-black outline-none inputSubmit" />
+              <img src="../img/eye.png" class="w-5 cursor-pointer ShowPass" alt="" />
+            </div>
+          </div>
+          <div>
+            <p class="ms-2 text-base">تکرار پسوورد</p>
+            <div class="flex justify-between py-1.5 mt-2.5 mb-2 w-full rounded-full a ps-5 pe-3">
+              <input type="password" class="text-black outline-none inputSubmit" />
+              <img src="../img/eye.png" class="w-5 cursor-pointer ShowPass" alt="" />
+            </div>
+          </div>
+
+          <p class="my-2 mb-3 text-danger ms-2 ElmNotSubmit"></p>
+
+          <div class="m-2">ثبت نام در سایت به منزله قبول قوانین است</div>
+          <div class="text-left my-auto">
+            <button class="text-white rounded-full mt-4 bg-primary py-1.5 px-5 mb-6 w-full text-lg outline-none btnSubmit">
+              ثبت نام
+            </button>
+          </div>
+        </div>
+
+        <!-- DivLogin -->
+
+        <div class="p-8 w-full DivLogin">
+          <div class="m-auto text-black mt-10">
+            <div>
+              <p class="ms-2 text-base">نام کاربری</p>
+              <input type="text" class="inputLogin a rounded-full text-black mt-2.5 py-1.5 px-5 mb-2 w-full outline-none" />
+            </div>
+            <div>
+              <p class="ms-2 text-base">پسوورد</p>
+              <div class="flex justify-between py-1.5 mt-2.5 mb-2 w-full rounded-full a ps-5 pe-3">
+                <input type="password" class="text-black outline-none inputLogin" />
+                <img src="../img/eye.png" class="w-5 cursor-pointer ShowPass" alt="" />
+              </div>
+            </div>
+            <p class="my-2 mb-3 text-danger ms-2 ElmNotLogin"></p>
+          </div>
+          <div class="flex text-black my-2">
+            <span>مرا بخاطر بسپار</span>
+            <div class="bg-black text-black p-1 w-10 rounded-full cursor-pointer SaveUser h-max ms-2 mt-0.5">
+              <img src="../img/دایره سفید.png" class="w-3 imgSave" alt="" />
+            </div>
+          </div>
+          <div class="text-left my-auto">
+            <button class="text-white rounded-full mt-4 bg-primary py-1.5 px-5 mb-6 w-max outline-none btnLogin">ورود</button>
+          </div>
+          <div class="border-t-[1px] border-black w-full text-center px-5 pt-4 text-zinc-500">
+            <a href="">رمز خود را فراموش کردید ؟ ...</a>
+          </div>
+          <a href="../index.html" class="text-center">
+            <img src="../img/home.png" class="w-6 mx-auto mt-4" alt="" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- <div
+      class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] md:p-10 w-full max-w-[400px] bg-zinc-300 rounded-xl"
+    ></div> -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#081a35"
+        fill-opacity="1"
+        d="M0,192L40,213.3C80,235,160,277,240,293.3C320,309,400,299,480,266.7C560,235,640,181,720,165.3C800,149,880,171,960,149.3C1040,128,1120,64,1200,74.7C1280,85,1360,171,1400,213.3L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
+      ></path>
+    </svg>
+  </body>
+
+  <script src="../js/vrood.js" type="module"></script>
+  <script src="../js/bundle-swiper.js"></script>
+</html>
