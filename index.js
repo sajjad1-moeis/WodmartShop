@@ -30,7 +30,7 @@ if (cokieSubmit) {
   body("ورود / ثبت نام", "./html/vrood.html", "");
 }
 console.log(cokieSubmit);
-Header();
+Header("");
 ShowDivKhabarName();
 SearchProduct("./html/SearchMahsol.html?id=");
 listNextSearch();

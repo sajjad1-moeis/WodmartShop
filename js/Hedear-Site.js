@@ -1,20 +1,20 @@
 let $ = document;
-function Header(img) {
+function Header(dot) {
   let arr = [
-    { name: "خانه", img: ["", "../index.html"], current: false },
-    { name: "مبلمان", img: ["../img/arrow.png", "#"], current: true },
-    { name: "لوازم آشپزخانه", img: ["../img/arrow.png", "#"], current: true },
-    { name: "لوازم جانبی", img: ["../img/arrow.png", "#"], current: true },
-    { name: "مد روز", img: ["../img/arrow.png", "#"], current: true },
+    { name: "خانه", img: ["", `${dot}./index.html`], current: false },
+    { name: "مبلمان", img: [`${dot}./img/arrow.png`, "#"], current: true },
+    { name: "لوازم آشپزخانه", img: [`${dot}./img/arrow.png`, "#"], current: true },
+    { name: "لوازم جانبی", img: [`${dot}./img/arrow.png`, "#"], current: true },
+    { name: "مد روز", img: [`${dot}./img/arrow.png`, "#"], current: true },
     { name: " ساعت", img: ["", ""], current: false },
-    { name: "لوازم روشنایی", img: ["../img/arrow.png", "#"], current: true },
+    { name: "لوازم روشنایی", img: [`${dot}./img/arrow.png`, "#"], current: true },
     { name: "صنایع دستی", img: ["", "#"], current: false },
-    { name: "نوشت افزار", img: ["../img/arrow.png", "#"], current: true },
+    { name: "نوشت افزار", img: [`${dot}./img/arrow.png`, "#"], current: true },
   ];
   arr.forEach((item) => {
     if (item.current) {
       document.querySelector(".list-none").innerHTML += `
-      <a href="${item.img[1]}">
+      <a href="${dot}${item.img[1]}">
     <li class="text-sm  flex cursor-pointer">
     ${item.name}
     <div class="mt-0.5 ms-0.5">

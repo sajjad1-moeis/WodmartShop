@@ -17,7 +17,7 @@ if (cokieSubmit) {
 } else {
   body("ورود / ثبت نام", "../html/vrood.html", ".");
 }
-Header("../img/arrow.png");
+Header(".");
 IconHeader();
 ShowDivKhabarName();
 SearchProduct("./SearchMahsol.html?id=");
