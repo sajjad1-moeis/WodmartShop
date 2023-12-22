@@ -1,73 +1,42 @@
-// let input1 = document.querySelector(".se");
-// let input2 = document.querySelector(".mi");
-// let input3 = document.querySelector(".ho");
-
-// let getHor = document.querySelector(".hor");
-// let getMin = document.querySelector(".min");
-// let getSecand = document.querySelector(".secand");
-
-// let Start = document.querySelector(".btn-start");
-// let Stop = document.querySelector(".btn-stop");
-// let Reset = document.querySelector(".btn-reset");
-// let Interval;
-// let second = 0;
-// let minute = 0;
-// let hour = 0;
-// Start.addEventListener("click", function () {
-//   second = input1.value;
-//   minute = input2.value;
-//   hour = input3.value;
-//   Interval = setInterval(() => {
-//     if (second < 1) {
-//       if (minute < 1) {
-//         if (hour < 1) {
-//           clearInterval(Interval);
-//         } else {
-//           hour--;
-//           minute = 59;
-//           second = 59;
-//         }
-//       } else {
-//         second = 59;
-//         minute--;
-//       }
-//     } else {
-//       second--;
+// function Len(str) {
+//   let arr = [];
+//   let split = str.split("");
+//   let y = split.forEach((char) => {
+//     arr[char] ? arr[char].push(char) : (arr[char] = [char]);
+//   });
+//   let reduce = [];
+//   for (let i in arr) {
+//     if (arr[i].length > 1) {
+//       reduce.push(i);
 //     }
-//     getSecand.innerHTML = second;
-//     getMin.innerHTML = minute;
-//     getHor.innerHTML = hour;
+//   }
+//   return reduce;
+// }
 
-//     console.log(second);
-//   }, 1000);
-
-//   Start.style.display = "none";
-// });
-// Stop.addEventListener("click", function () {
-//   input1.value = second;
-//   input2.value = minute;
-//   input3.value = hour;
-//   clearInterval(Interval);
-//   Start.style.display = "inline-block";
-// });
-// Reset.addEventListener("click", function () {
-//   hor = "00";
-//   min = "00";
-//   secand = "00";
-
-//   getHor.innerHTML = hor;
-//   getMin.innerHTML = min;
-//   getSecand.innerHTML = secand;
-// });
-let w = 100;
-document.querySelector("button").onclick = () => {
-  let inter = setInterval(() => {
-    w = 100;
-    if (w < 1) {
-      clearInterval(inter);
-    } else {
-      w--;
-      document.querySelector(".bg-black").style.width = `${w}%`;
+// console.log(Len(str));
+let str = "aaaaabccdffxxxaavvbtgerilooasdfq";
+// let r = str.split("").sort();
+// console.log(r);
+// let arr = [];
+// for (let i = 0; i < r.length; i++) {
+//   if (r[i] === r[i + 1]) {
+//     arr.push(r[i]);
+//   }
+// }
+// console.log(new Set(arr));
+function repeatChar(text) {
+  const counts = {};
+  let resultValue = "";
+  for (let i = 0; i < text.length; i++) {
+    counts[text.charAt(i)] = (counts[text.charAt(i)] || 0) + 1;
+  }
+  for (let item in counts) {
+    if (counts[item] > 1) {
+      for (let i = 0; i < counts[item]; i++) {
+        resultValue += item;
+      }
     }
-  }, 15);
-};
+  }
+  return resultValue;
+}
+console.log(repeatChar(str));

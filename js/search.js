@@ -11,7 +11,7 @@ let filter = await mahsol.filter((item) => {
 import { CreateMahsolBasket, RemoveItem, SetLocal } from "./Hedear-Site.js";
 function HoverBottom(id) {
   return `
-  <div class="w-full bg-white absolute h-max bottom-1.5 md:bottom-[-45px] p-2 shadow list-menu2  gap-y-5" data-id=${id}>
+  <div class="w-full bg-white absolute h-max bottom-0 lg:bottom-[-45px] p-2 shadow list-menu2  gap-y-5" data-id=${id}>
   <div style="z-index: 1000" class="flex mx-auto w-max">
   <div class="cursor-pointer w-[25px] love">
   <img src="../img/heart-svgrepo-com (7).svg" alt="" class="w-full m-auto" />
@@ -38,32 +38,33 @@ function CreateMahsol(arr, current) {
   arr.forEach((element) => {
     if (element.current) {
       document.querySelector(".SearchUser").innerHTML += `
-      <div class="relative rounded bg-secondary pt-5 pb-12 h-max overflow-hidden imgHover">
+      <div class="relative rounded bg-secondary md:pt-3   h-max overflow-hidden imgHover">
       ${divVizhehAndPercon(element.label[0], element.label[1], "bg-warning")}
       ${HoverBottom(element.id)}
-      <div class=" ">
-      <img src=".${element.img}" alt="" class="mx-auto w-full" style="height: 248px;" />
+      <div class=" h-[200px]">
+      <img src=".${element.img}" alt="" class="mx-auto w-full h-full object-cover"   />
       </div>
       <div class="text-center mt-3">
-      <p>${element.title}</p>
-      <p class="my-2 text-warning">${element.price}</p>
+      <p class="h-7 my-auto">${element.title}</p>
+      <p class="my-2 text-warning">${element.price.toLocaleString()} هزار تومان</p>
       </div>
       </div>`;
     } else {
       document.querySelector(".SearchUser").innerHTML += `
-      <div class="relative rounded bg-secondary pt-5 pb-12 h-max opacity-50 overflow-hidden imgHover">
+      <div class="relative rounded bg-secondary pt-5  h-max opacity-50 overflow-hidden imgHover1">
       ${divVizhehAndPercon(element.label[0], element.label[1], "bg-primary")}
-      <div class="">
-      <img src=".${element.img}" alt="" class="mx-auto w-full" style="height: 248px;" />
+      <div class="h-[200px] md:h-max">
+      <img src=".${element.img}" alt="" class="object-cover mx-auto w-full h-full" />
       </div>
       <div class="text-center mt-3">
-      <p>${element.title}</p>
-      <p class="my-2 text-warning">${element.price}</p>
+      <p class="h-7">${element.title}</p>
+      <p class="my-2 text-warning">${element.price.toLocaleString()} هزار تومان</p>
       </div>
       </div>`;
     }
   });
 }
+
 function ShowNot() {
   $.querySelector(".notSearch").classList.remove("hidden");
 }
@@ -125,7 +126,7 @@ let arrUserMahsol = [];
 ///Load Create Basket
 let time = new Date();
 console.log(time);
-document.querySelector(".timeNow").innerHTML = time;
+document.querySelector(".timeNow").innerHTML = ` تاریخ : ${time.getFullYear()} ,${time.getMonth()} ,${time.getDate()} `;
 let local = JSON.parse(localStorage.getItem("mahsol"));
 arrUserMahsol = local;
 CreateMahsolBasket(local, ".");
@@ -134,3 +135,17 @@ SetLocal(arrUserMahsol);
 $.querySelectorAll(".resultSerch").forEach((span) => (span.innerHTML = ` نتیجه جستجو : ${SearchLocation}`));
 success();
 notSuccess();
+let ColorFilter = await fetch("https://657eea449d10ccb465d58032.mockapi.io/AbutMore");
+let jsonColor = await ColorFilter.json();
+console.log(jsonColor);
+let Color = [];
+jsonColor.slice(4).forEach((item) => {
+  document.querySelector(".filterColorProduct").innerHTML += `
+  <div class="flex justify-between px-2 my-3">
+  <div class="flex">
+    <div class="w-7 h-7 ${item.more} rounded-full me-2"></div>
+    <div class="mt-1">${item.diration}</div>
+  </div>
+  <div class="border-[1px] border-zinc-300 px-3 md:text-xs py-0.5 rounded-full  my-auto ">${item.count}</div>
+</div>`;
+});

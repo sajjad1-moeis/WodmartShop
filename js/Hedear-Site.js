@@ -419,7 +419,7 @@ function CreateMahsolBasket(arr, dott) {
       <div class="w-full flex justify-between border-b-[1px] border-zinc-500 py-2">
       <div class="flex w-full">
       <div>
-      <img src="${dott}${item.img}" class="w-20" alt="" />
+      <img src="${dott}${item.img}" class="w-20 h-[72px] object-cover" alt="" />
       </div>
       <div class="my-auto ms-4">
       <p>${item.title}</p>
@@ -431,7 +431,7 @@ function CreateMahsolBasket(arr, dott) {
       </div>
       <div class="my-auto cursor-pointer removeItemBasket"  data-remove="${
         item.id
-      }"><img src="${dott}./img/close4.png" class="w-5" alt="" /></div>
+      }"><img src="${dott}./img/close4.png" class="md:w-5 w-7" alt="" /></div>
       </div>`;
     });
   } else {

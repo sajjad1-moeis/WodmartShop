@@ -364,9 +364,14 @@ body .mySwiper9 {
     padding: 0 0 100px;
 }
 .imgHover{
-    border-radius: 8px;
-    border: 1px solid rgb(97, 97, 97);
-    padding-bottom: 30px;
+    border-radius: 25px;
+    border: 2px solid rgb(253, 217, 14);
+    padding-bottom: 50px;
+}
+.imgHover1{
+    border-radius: 25px;
+    border: 2px solid rgb(253, 217, 14);
+    padding-bottom: 25px;
 }
 @media (min-width:768px) {
     .imgHover:hover .list-menu2{

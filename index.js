@@ -306,7 +306,7 @@ async function moreAbut() {
   let api = await fetch("https://657eea449d10ccb465d58032.mockapi.io/AbutMore");
   let arr = await api.json();
   let fragment = $.createDocumentFragment();
-  arr.forEach((item) => {
+  arr.slice(0, 4).forEach((item) => {
     let div = $.createElement("div");
     div.className = "flex";
     div.innerHTML = `
