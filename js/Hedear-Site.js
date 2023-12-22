@@ -138,7 +138,7 @@ function body(IsSubmit, href, dot) {
                     خبر نامه
                     </div>
                     </a>
-                    <a href="../html/Ertebat.html">
+                    <a href="${dot}./html/Ertebat.html">
                     <div class="p-2.5 border-y-[1px] border-b-0 border-silver h-full">تماس با ما</div>
                     </a>
                 <a href="../html/Soal.html">
@@ -153,7 +153,7 @@ function body(IsSubmit, href, dot) {
                 <div class="h-max py-7 w-full bg-darkBlue lg:block hidden">
                 <div class="max-w-[1200px] container w-full flex justify-between">
                 <div class="w-[245px] h-[35px]">
-                <a href="../index.html">
+                <a href="${dot}./index.html">
                    <img src="${dot}./img/wood-logo-white-reserve.svg" alt="" />
                    </a>
                    </div>
@@ -184,7 +184,7 @@ function body(IsSubmit, href, dot) {
                   </a>
                   </div>
                   <div class="flex gap-5 ms-4">
-                  <a href="../html/love.html">
+                  <a href="${dot}./html/love.html">
                   <div class="relative iconHeader cursor-pointer"></div>
                   </a>
                   <div class="relative iconHeader  cursor-pointer"></div>
@@ -262,11 +262,11 @@ function body(IsSubmit, href, dot) {
       <input type="text" class="inputSearchProduct form-control text-black bg-white placeholder:text-dark" placeholder="جستجو برای محصولات..." />
     </div>
     <div class="px-4 mt-1 text-white">
-      <a href="../index.html">
+      <a href="${dot}./index.html">
         <div class="ProductUser p-4 border-b-[1px] border-silver">خانه</div>
       </a>
       <div class="ProductUser p-4 border-b-[1px] border-silver">وبلاگ</div>
-      <a href="../html/love.html">
+      <a href="${dot}./html/love.html">
         <div class="ProductUser p-4 border-b-[1px] border-silver">علاقه مندی</div>
       </a>
       <a href="${href}">
@@ -415,7 +415,7 @@ function CreateMahsolBasket(arr, dot) {
       <div class="w-full flex justify-between border-b-[1px] border-zinc-500 py-2">
       <div class="flex w-full">
       <div>
-      <img src=".${item.img}" class="w-20" alt="" />
+      <img src="${dot}${item.img}" class="w-20" alt="" />
       </div>
       <div class="my-auto ms-4">
       <p>${item.title}</p>
@@ -488,7 +488,7 @@ function success() {
     `<div class="fixed w-60 h-max p-3 py-5 rounded-lg right-[-288px] bg-success text-white z-50 top-10 shadow-md text-center IsProduct">
   <span>با موفقیت اضافه شد</span>
   <div class="h-[2px] bg-green-300 mx-auto mt-2 rounded heightDivIsKhard"></div>
-</div>;`
+</div>`
   );
 }
 function notSuccess() {

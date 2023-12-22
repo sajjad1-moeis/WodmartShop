@@ -27,7 +27,7 @@ let cokieSubmit = document.cookie;
 if (cokieSubmit) {
   body("وبلاگ", "#", "");
 } else {
-  body("ورود / ثبت نام", "../html/vrood.html", "");
+  body("ورود / ثبت نام", "./html/vrood.html", "");
 }
 console.log(cokieSubmit);
 Header();
@@ -35,7 +35,7 @@ ShowDivKhabarName();
 SearchProduct("./html/SearchMahsol.html?id=");
 listNextSearch();
 ShowBasket();
-AbutMe();
+AbutMe("");
 IconHeader();
 ShoeMenuMobile();
 success();
@@ -408,5 +408,5 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
 // Create Basket Shop
 
 let ArrayUserBasket = [].concat(JSON.parse(localStorage.getItem("mahsol")));
-CreateMahsolBasket(ArrayUserBasket);
+CreateMahsolBasket(ArrayUserBasket, "");
 RemoveItem(ArrayUserBasket);
