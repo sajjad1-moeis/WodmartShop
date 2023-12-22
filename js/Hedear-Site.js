@@ -415,7 +415,7 @@ function CreateMahsolBasket(arr, dot) {
       <div class="w-full flex justify-between border-b-[1px] border-zinc-500 py-2">
       <div class="flex w-full">
       <div>
-      <img src="${dot}${item.img}" class="w-20" alt="" />
+      <img src="${item.img}" class="w-20" alt="" />
       </div>
       <div class="my-auto ms-4">
       <p>${item.title}</p>
