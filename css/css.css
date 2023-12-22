@@ -82,7 +82,7 @@ li{
     
     height: 600px;
     object-fit: cover;
-    background: url("/img/slide-1.jpg") no-repeat fixed 40%/cover;
+    background: url("../img/slide-1.jpg") no-repeat fixed 40%/cover;
     width: 100%;
 }
 .mySwiper1 .swiper-slide .AbutSite{
@@ -92,10 +92,10 @@ li{
     transform: translate(-50%, -50%);
 }
 .mySwiper1 .a2{
-    background: url("/img/slide-2-1.jpg") no-repeat fixed 40%/cover;
+    background: url("../img/slide-2-1.jpg") no-repeat fixed 40%/cover;
 }
 .mySwiper1 .a3{
-    background: url("/img/slide-3.jpg") no-repeat fixed 40%/cover;
+    background: url("../img/slide-3.jpg") no-repeat fixed 40%/cover;
 }
 .mySwiper2 .swiper .swiper-button-prev::after{
     transition: 0.2s;
