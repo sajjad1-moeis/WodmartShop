@@ -86,7 +86,7 @@ function AddToBasket() {
       let parent = e.target.parentElement;
       if (document.cookie.includes("name")) {
         if (parent.className.includes("kharid")) {
-          findMahsol(div.dataset.id, mahsol, arrUserMahsol, DivBasket);
+          findMahsol(div.dataset.id, mahsol, arrUserMahsol, ".");
           $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
           let DivElanKharid = $.querySelector(".IsProduct");
 
@@ -127,7 +127,7 @@ let arrUserMahsol = [];
 let local = JSON.parse(localStorage.getItem("mahsol"));
 arrUserMahsol = local;
 CreateMahsolBasket(local, ".");
-RemoveItem(arrUserMahsol);
+RemoveItem(arrUserMahsol, ".");
 SetLocal(arrUserMahsol);
 $.querySelector(".resultSerch").innerHTML = ` نتیجه جستجو : ${SearchLocation}`;
 success();

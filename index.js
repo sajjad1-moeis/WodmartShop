@@ -30,13 +30,13 @@ if (cokieSubmit) {
   body("ورود / ثبت نام", "./html/vrood.html", "");
 }
 console.log(cokieSubmit);
-Header("");
+Header(" ");
 ShowDivKhabarName();
 SearchProduct("./html/SearchMahsol.html?id=");
 listNextSearch();
 ShowBasket();
 AbutMe("");
-IconHeader();
+IconHeader("");
 ShoeMenuMobile();
 success();
 notSuccess();
@@ -384,7 +384,7 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
       console.log(id);
       if (e.target.parentElement.className.includes("kharid")) {
         console.log("object");
-        findMahsol(id, arrMahsol, ArrayUserBasket, document.querySelector(".DivBasket"));
+        findMahsol(id, arrMahsol, ArrayUserBasket, "");
         document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
         let DivElanKharid = $.querySelector(".IsProduct");
         let width = 100;
@@ -408,5 +408,5 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
 // Create Basket Shop
 
 let ArrayUserBasket = [].concat(JSON.parse(localStorage.getItem("mahsol")));
-CreateMahsolBasket(ArrayUserBasket, "");
-RemoveItem(ArrayUserBasket);
+CreateMahsolBasket(ArrayUserBasket, " ");
+RemoveItem(ArrayUserBasket, "");

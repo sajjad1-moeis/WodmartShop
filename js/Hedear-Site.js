@@ -94,10 +94,14 @@ function Header(dot) {
     }
   });
 }
-const IconHeader = () => {
+const IconHeader = (dot) => {
   let index = 0;
   let img = [
-    ["../img/heart-svgrepo-com (8).svg ", "../img/sort-arrow-svgrepo-com (1).svg", "../img/shopping-bag-svgrepo-com.svg"],
+    [
+      `${dot}./img/heart-svgrepo-com (8).svg `,
+      `${dot}./img/sort-arrow-svgrepo-com (1).svg`,
+      `${dot}./img/shopping-bag-svgrepo-com.svg`,
+    ],
     ["علاقه مندی", "مقایسه کردن", "سبد خرید"],
   ];
   document.querySelectorAll(".iconHeader").forEach((div) => {
@@ -141,7 +145,7 @@ function body(IsSubmit, href, dot) {
                     <a href="${dot}./html/Ertebat.html">
                     <div class="p-2.5 border-y-[1px] border-b-0 border-silver h-full">تماس با ما</div>
                     </a>
-                <a href="../html/Soal.html">
+                <a href="${dot}./html/Soal.html">
                 <div class="p-2.5 border-[1px] border-b-0 border-silver h-full">سوالات متداول</div>
                 </a>
                 </div>
@@ -382,7 +386,7 @@ function AbutMe(dot) {
   let arr = [
     [`${dot}./img/github.png`, "https://github.com/sajjad1-moei/project"],
     [`${dot}./img/instagram.png`, "#"],
-    ["../img/telegram.png", "https://t.me/Assistedd"],
+    [`${dot}./img/telegram.png", "https://t.me/Assistedd`],
   ];
   arr.forEach((img) => {
     document.querySelector(".Ertebat").innerHTML += `
@@ -407,7 +411,7 @@ function ShoeMenuMobile() {
   });
 }
 
-function CreateMahsolBasket(arr, dot) {
+function CreateMahsolBasket(arr, dott) {
   document.querySelector(".ProductUser").innerHTML = "";
   if (JSON.parse(localStorage.getItem("mahsol"))) {
     arr.forEach((item) => {
@@ -415,7 +419,7 @@ function CreateMahsolBasket(arr, dot) {
       <div class="w-full flex justify-between border-b-[1px] border-zinc-500 py-2">
       <div class="flex w-full">
       <div>
-      <img src="${dot}${item.img}" class="w-20" alt="" />
+      <img src="${dott}${item.img}" class="w-20" alt="" />
       </div>
       <div class="my-auto ms-4">
       <p>${item.title}</p>
@@ -427,7 +431,7 @@ function CreateMahsolBasket(arr, dot) {
       </div>
       <div class="my-auto cursor-pointer removeItemBasket"  data-remove="${
         item.id
-      }"><img src="${dot}./img/close4.png" class="w-5" alt="" /></div>
+      }"><img src="${dott}./img/close4.png" class="w-5" alt="" /></div>
       </div>`;
     });
   } else {
@@ -435,7 +439,7 @@ function CreateMahsolBasket(arr, dot) {
   }
 }
 
-function RemoveItem(arr) {
+function RemoveItem(arr, dot) {
   let y = document.querySelector(".ProductUser");
   y.addEventListener("click", (e) => {
     let parent = e.target.parentElement;
@@ -449,13 +453,13 @@ function RemoveItem(arr) {
     arr[IndexMahsol].count = 1;
     arr.splice(IndexMahsol, 1);
     SetLocal(arr);
-    CreateMahsolBasket(arr);
+    CreateMahsolBasket(arr, dot);
   }
 }
 function SetLocal(arr) {
   localStorage.setItem("mahsol", JSON.stringify(arr));
 }
-function findMahsol(id, arr, arr2, div) {
+function findMahsol(id, arr, arr2, dot) {
   let FindMahsol = arr.find((item) => item.id === id);
   let someMahsol = arr2.some((item) => item.id === id);
   let IndexMahsol = arr2.findIndex((item) => item.id === id);
@@ -464,7 +468,7 @@ function findMahsol(id, arr, arr2, div) {
   } else {
     arr2.push(FindMahsol);
   }
-  CreateMahsolBasket(arr2);
+  CreateMahsolBasket(arr2, dot);
   SetLocal(arr2);
 }
 

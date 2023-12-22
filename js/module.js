@@ -18,12 +18,14 @@ if (cokieSubmit) {
   body("ورود / ثبت نام", "../html/vrood.html", ".");
 }
 Header(".");
-IconHeader();
+IconHeader(".");
 ShowDivKhabarName();
 SearchProduct("./SearchMahsol.html?id=");
 ShowBasket();
 listNextSearch();
 AbutMe(".");
 ShoeMenuMobile();
-CreateMahsolBasket(JSON.parse(localStorage.getItem("mahsol")), ".");
-RemoveItem(JSON.parse(localStorage.getItem("mahsol")));
+let local = JSON.parse(localStorage.getItem("mahsol"));
+let f = ".";
+CreateMahsolBasket(local, `.`);
+RemoveItem(local, `.`);
