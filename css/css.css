@@ -84,6 +84,7 @@ li{
     object-fit: cover;
     background: url("../img/slide-1.jpg") no-repeat fixed 40%/cover;
     width: 100%;
+    
 }
 .mySwiper1 .swiper-slide .AbutSite{
     position: absolute;
@@ -361,6 +362,11 @@ header .list-next-search a:hover p{
 }
 body .mySwiper9 {
     padding: 0 0 100px;
+}
+.imgHover{
+    border-radius: 8px;
+    border: 1px solid rgb(97, 97, 97);
+    padding-bottom: 30px;
 }
 @media (min-width:768px) {
     .imgHover:hover .list-menu2{

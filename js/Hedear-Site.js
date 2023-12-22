@@ -483,7 +483,6 @@ function ShowElan(div, height, width) {
       width--;
       height.style.width = `${width}%`;
     }
-    console.log(width);
   }, 18);
 }
 function success() {
