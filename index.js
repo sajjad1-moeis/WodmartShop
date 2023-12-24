@@ -113,7 +113,7 @@ function slideSwiper2() {
     let div = $.createElement("div");
     div.classList = "swiper-slide";
     div.innerHTML = `
-              <a href="http://127.0.0.1:5500/html/Product.html?id=${item.title}">
+              <a href="./html/Product.html?id=${item.title}">
                 <div class="w-full bg-secondary">
                   <div class="hovermahsolList">
                     <img class="h-[182px] w-[182px]" src="${item.img}" alt="" />

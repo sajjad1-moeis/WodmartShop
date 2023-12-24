@@ -22,7 +22,12 @@ mahsol.forEach((element) => {
 });
 let ColorFilter = await fetch("https://657eea449d10ccb465d58032.mockapi.io/AbutMore");
 let jsonColor = await ColorFilter.json();
-
+function ShowNot() {
+  $.querySelector(".notSearch").classList.remove("hidden");
+}
+function HideNot() {
+  $.querySelector(".notSearch").classList.add("hidden");
+}
 jsonColor.slice(4).forEach((item) => {
   document.querySelector(".filterColorProduct").innerHTML += `
   <div class="flex justify-between px-2 my-3 DivColor -${item.more}">
@@ -43,9 +48,14 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     let sliceIndex = e.target.className.indexOf("bg");
     let result = await e.target.className.substring(sliceIndex + 3);
     let Array = await FilterColorMahsol(result);
-    console.log(Array);
+    if (Array == "") {
+      console.log(Array);
+      ShowNot();
+    } else {
+      HideNot();
+      AddToBasket(mahsol, arrUserMahsol);
+    }
     CreateMahsol(Array, document.querySelector(".SearchUser"));
-    AddToBasket(mahsol, arrUserMahsol);
   }
 };
 AddToBasket(mahsol, arrUserMahsol);

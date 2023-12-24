@@ -270,24 +270,7 @@ function body(IsSubmit, href, dot) {
       <a href="${dot}./index.html">
         <div class=" p-4 border-b-[1px] border-silver">خانه</div>
       </a>
-      <a href="${dot}./html/Product.html?id=پوشاک">
-        <div class=" p-4 border-b-[1px] border-silver">پوشاک</div>
-      </a>
-      <a href="${dot}./html/Product.html?id=تخت خواب">
-        <div class=" p-4 border-b-[1px] border-silver">تخت خواب</div>
-      </a>
-      <a href="${dot}./html/Product.html?id=کفش">
-        <div class=" p-4 border-b-[1px] border-silver">کفش</div>
-      </a>
-      <a href="${dot}./html/Product.html?id=گل و گیاه">
-        <div class=" p-4 border-b-[1px] border-silver">گل و گیاه</div>
-      </a>
-      <a href="${dot}./html/Product.html?id=لوازم خانگی">
-        <div class=" p-4 border-b-[1px] border-silver">لوازم خانگی</div>
-      </a>
-      <a href="${dot}./html/Product.html?id=مبلمان">
-        <div class=" p-4 border-b-[1px] border-silver">مبلمان</div>
-      </a>
+      
       <a href="${dot}./html/love.html">
         <div class=" p-4 border-b-[1px] border-silver">علاقه مندی</div>
       </a>
@@ -463,7 +446,7 @@ function RemoveItem(arr, dot) {
     let parent = e.target.parentElement;
     if (parent.className.includes("removeItemBasket")) {
       let id = parent.dataset.remove;
-      let IndexMahsol = arr.findIndex((item) => item.id == id);
+      let IndexMahsol = arr.findIndex((item) => item.id === id);
       if (arr[IndexMahsol]) {
         arr[IndexMahsol].count = 1;
       }

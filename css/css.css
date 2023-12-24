@@ -66,9 +66,9 @@ li:hover .g{
 
 
 }
-.show header,.show .mySwiper1,.show .swiper2 {
+.show header,.show .mySwiper1,.show main ,.show section {
     transition: 0.3s;
-filter: brightness(0.5);
+filter: blur(2px);
 }
 li{
     z-index: 1000;

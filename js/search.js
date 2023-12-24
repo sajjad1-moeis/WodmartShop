@@ -80,13 +80,12 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     let result = await e.target.className.substring(sliceIndex + 3);
     let Array = await FilterColorMahsol(result);
     console.log(Array);
-    if (Array) {
-      CreateMahsol(Array, document.querySelector(".SearchUser"));
-      HideNot();
-    } else {
-      alert("");
+    if (Array == "") {
       ShowNot();
+    } else {
+      HideNot();
     }
+    CreateMahsol(Array, document.querySelector(".SearchUser"));
     AddToBasket(mahsol, arrUserMahsol);
   }
 };
