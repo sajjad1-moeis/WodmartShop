@@ -25,17 +25,17 @@
       </div>
       <div class="container max-w-[1200px] w-full grid grid-cols-1 md:grid-cols-4 mt-8 gap-x-10">
         <div class="md:col-span-1">
-          <div class="border-2 bg-white border-zinc-200 p-3">
+          <div class="border-2 bg-white border-zinc-200 p-3 pb-10">
             <div class="h-max mt-1">
               <div class="w-full bg-zinc-200 p-3">فیلتر بر اساس قیمت</div>
             </div>
             <div class="px-2 my-3">
-              <input type="range" class="w-full" value="0" />
+              <input type="range" class="w-full FilterPrice" value="0" />
             </div>
-            <div>
-              <span>قیمت 0 تومان --- 1170000 تومان</span>
+            <div class="text-center">
+              <p class="text-right">قیمت :</p>
+              <span class="PriceSpan my-2"> 0 هزار تومان --- 4,300,000</span>
             </div>
-            <button class="bg-zinc-200 px-4 py-1.5 my-3 ms-1 rounded-full">فیلتر</button>
           </div>
           <div class="border-2 bg-white border-zinc-200 p-3 mb-5 mt-10">
             <div class="h-max mt-1">
@@ -44,7 +44,7 @@
             <div class="my-3 overflow-y-scroll filterColorProduct"></div>
           </div>
         </div>
-        <div class="md:col-span-3">
+        <div class="md:col-span-3 relative">
           <div class="w-full mb-5 text-base border-[1px] border-zinc-300 rounded-lg p-3 md:flex md:justify-between">
             <div>
               <span>
@@ -59,10 +59,10 @@
             <div class="float-left md:mt-0 mt-3">مرتب سازی بر اساس</div>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 SearchUser"></div>
+          <div class="mx-auto text-2xl w-max notSearch hidden mt-20">
+            <span> محصول مورد نظر یافت نشد ...!</span>
+          </div>
         </div>
-      </div>
-      <div class="mx-auto text-xl w-max notSearch">
-        <span>محصول موجود نمی باشد ...</span>
       </div>
     </div>
   </body>

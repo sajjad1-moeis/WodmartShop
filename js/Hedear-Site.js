@@ -376,7 +376,7 @@ function listNextSearch() {
   arr.forEach((item) => {
     $.querySelector("header .list-next-search div").innerHTML += `
     <a href="http://127.0.0.1:5500/html/Product.html?id=${item}">
-       <p class="p-1 border-b-[1px] border-b-zinc-200 w-full ">${item}</p>
+       <p class="p-1 border-b-[1px] border-b-zinc-200 w-full">${item}</p>
     </a>
 
     `;
@@ -471,39 +471,119 @@ function findMahsol(id, arr, arr2, dot) {
   CreateMahsolBasket(arr2, dot);
   SetLocal(arr2);
 }
-
 function ShowElan(div, height, width) {
   div.classList.replace("right-[-288px]", "right-10");
 
-  let interval = setInterval(() => {
+  let interval = setInterval(function () {
     if (width < 1) {
       div.classList.replace("right-10", "right-[-288px]");
       clearInterval(interval);
-    } else {
-      width--;
-      height.style.width = `${width}%`;
     }
+    width--;
+    height.style.width = `${width}%`;
   }, 18);
 }
 function success() {
   document.body.insertAdjacentHTML(
     "beforeend",
-    `<div class="fixed w-60 h-max p-3 py-5 rounded-lg right-[-288px] bg-success text-white z-50 top-10 shadow-md text-center IsProduct">
+    `<div class=" fixed w-60 h-max p-3 py-5 rounded-lg right-[-288px] bg-success text-white z-50 top-10 shadow-md text-center IsProduct">
   <span>با موفقیت اضافه شد</span>
-  <div class="h-[2px] bg-green-300 mx-auto mt-2 rounded heightDivIsKhard"></div>
+  <div class="h-[2px] bg-green-300 mx-auto mt-2 rounded w-full heightDivIsKhard"></div>
 </div>`
   );
 }
 function notSuccess() {
   document.body.insertAdjacentHTML(
     "beforeend",
-    ` <div class="fixed w-60 h-max p-3 py-5 rounded-lg bg-danger text-white z-50 right-[-288px] shadow-lg top-10 text-center IsSubmit">
+    ` <div class="fixed w-60  h-max p-3 py-5 rounded-lg bg-danger text-white z-50 right-[-288px] shadow-lg top-10 text-center IsSubmit">
     <span>لطفا ابتدا ثبت نام کنید</span>
-    <div class="h-[2px] bg-red-300 mx-auto mt-2 rounded heightDivIsSubmit"></div>
+    <div class="h-[2px] bg-red-300 mx-auto mt-2 rounded w-full heightDivIsSubmit"></div>
   </div>`
   );
 }
+function divVizhehAndPercon(label0, label1, color) {
+  return `<div class="absolute top-1 right-2 bg-danger  mx-auto text-xs px-3 w-max text-white"><span>${label0}</span></div>
+  <div class="absolute top-[30px] right-2 ${color}  mx-auto text-xs px-1.5 w-[50px] text-white">
+  <span> ${label1} </span>
+  </div>`;
+}
+function HoverBottom(id) {
+  return `
+  <div class="w-full bg-white absolute h-max bottom-0 lg:bottom-[-45px] p-2 shadow list-menu2  gap-y-5" data-id=${id}>
+  <div style="z-index: 1000" class="flex mx-auto w-max">
+  <div class="cursor-pointer w-[25px] love">
+  <img src="../img/heart-svgrepo-com (7).svg" alt="" class="w-full m-auto" />
+  </div>
+  <div class="cursor-pointer w-[60px] mx-3 border-x-[1px] border-zinc-200 kharid" >
+  <img src="../img/shopping-cart-svgrepo-com (1).svg" alt="" class="px-1 w-[35px] m-auto" />
+  </div>
+  <div class="cursor-pointer" >
+  <img src="../img/search-svgrepo-com (2).svg" class="w-[25px] m-auto" alt="" />
+  </div>
+  </div>
+  </div>`;
+}
+function CreateMahsol(arr, div) {
+  div.innerHTML = "";
+  arr.forEach((element) => {
+    if (element.current) {
+      div.innerHTML += `
+      <div class="relative rounded bg-secondary md:pt-3   h-max overflow-hidden imgHover">
+      ${divVizhehAndPercon(element.label[0], element.label[1], "bg-warning")}
+      ${HoverBottom(element.id)}
+      <div class=" h-[200px]">
+      <img src=".${element.img}" alt="" class="mx-auto w-full h-full object-cover"   />
+      </div>
+      <div class="text-center mt-3">
+      <p class="h-7 my-auto">${element.title}</p>
+      <p class="my-2 text-warning">${element.price.toLocaleString()} هزار تومان</p>
+      </div>
+      </div>`;
+    } else {
+      div.innerHTML += `
+      <div class="relative rounded bg-secondary pt-5  h-max opacity-50 overflow-hidden imgHover1">
+      ${divVizhehAndPercon(element.label[0], element.label[1], "bg-primary")}
+      <div class="h-[200px] md:h-max">
+      <img src=".${element.img}" alt="" class="object-cover mx-auto w-full h-full" />
+      </div>
+      <div class="text-center mt-3">
+      <p class="h-7">${element.title}</p>
+      <p class="my-2 text-warning">${element.price.toLocaleString()} هزار تومان</p>
+      </div>
+      </div>`;
+    }
+  });
+}
+function AddToBasket(arr, arr2) {
+  let DivKharid = $.querySelectorAll(".list-menu2");
+  DivKharid.forEach((div) => {
+    div.addEventListener("click", (e) => {
+      console.log("object");
+      console.log();
+      let parent = e.target.parentElement;
+      if (document.cookie.includes("name")) {
+        if (parent.className.includes("kharid")) {
+          findMahsol(div.dataset.id, arr, arr2, ".");
+          $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
+          let DivElanKharid = $.querySelector(".IsProduct");
+
+          let width = 100;
+          ShowElan(DivElanKharid, $.querySelector(".heightDivIsKhard"), width);
+        }
+      } else {
+        let width = 100;
+
+        let DivIsSubmit = document.querySelector(".IsSubmit");
+        ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"), width);
+      }
+    });
+  });
+}
 export {
+  AddToBasket,
+  CreateMahsol,
+  HoverBottom,
+  divVizhehAndPercon,
   notSuccess,
   success,
   ShowElan,

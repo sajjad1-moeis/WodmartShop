@@ -9,6 +9,8 @@ import {
   listNextSearch,
   AbutMe,
   RemoveItem,
+  success,
+  notSuccess,
 } from "./Hedear-Site.js";
 let cokieSubmit = document.cookie;
 
@@ -28,4 +30,6 @@ ShoeMenuMobile();
 let local = JSON.parse(localStorage.getItem("mahsol"));
 let f = ".";
 CreateMahsolBasket(local, `.`);
+success();
+notSuccess();
 RemoveItem(local, `.`);

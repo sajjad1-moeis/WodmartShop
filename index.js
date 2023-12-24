@@ -363,15 +363,14 @@ const MySwiper9 = () => {
   let swiper9 = new Swiper(".mySwiper9", {
     slidesPerView: 2,
     spaceBetween: 10,
-    navigation: { nextEl: ".mySwiper9 .swiper-button-next", prevEl: ".mySwiper9 .swiper-button-prev" },
-    pagination: { el: ".mySwiper9 .swiper-pagination", clickable: true },
+    navigation: { prevEl: ".swiper9 .swiper-button-next", nextEl: ".swiper9 .swiper-button-prev" },
     breakpoints: {
       768: { slidesPerView: 3, spaceBetween: 40 },
       1024: { slidesPerView: 6, spaceBetween: 10 },
-      1280: { loop: false, slidesPerView: 6, spaceBetween: 10 },
+      1280: { loop: false, slidesPerView: 5, spaceBetween: 10 },
     },
   });
-  CreateProductSlide4(arrMahsol.slice(16.3), document.querySelector(".mySwiper9 .swiper-wrapper"), "swiper-slide");
+  CreateProductSlide4(arrMahsol.slice(20, 26), document.querySelector(".mySwiper9 .swiper-wrapper"), "swiper-slide");
 };
 MySwiper9();
 
@@ -396,7 +395,6 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
       }
     } else {
       let width = 100;
-
       let DivIsSubmit = document.querySelector(".IsSubmit");
       ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"), width);
     }
