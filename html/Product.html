@@ -5,16 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../tailwind/tailwind.css" />
-
+    <link src="../components/Proudct/product.css" />
     <link rel="stylesheet" href="../css/css.css" />
     <link rel="stylesheet" href="../css/bundle-swiper.css" />
   </head>
   <body dir="rtl" class="bg-white">
-    <div class="body pb-10">
-      <div class="grid grid-cols-1 md:grid-cols-4 mt-8 gap-x-10 max-w-[1200px] w-full">
-        <div class="col-span-1"></div>
-        <div class="col-span-3">
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 filter"></div>
+    <div class="h-[100vh] bg-darkBlue loding">
+      <div class="mainloding">
+        <div class="box b1"></div>
+        <div class="box b2"></div>
+        <div class="box b3"></div>
+        <div class="box b4"></div>
+        <span class="text-white">...𝐋𝐨𝐝𝐢𝐧𝐠</span>
+      </div>
+    </div>
+    <div class="hidden body pb-10">
+      <div class="container grid grid-cols-1 md:grid-cols-3 mt-8 gap-x-10 max-w-[1200px] w-full">
+        <div class="md:col-span-1 my-5">
+          <divfilter-price></divfilter-price>
+          <div class="border-2 bg-white border-zinc-200 p-3 mb-5 mt-10">
+            <div class="h-max mt-1">
+              <div class="w-full bg-zinc-200 p-3">فیلتر بر اساس رنگ</div>
+            </div>
+            <div class="my-3 overflow-y-scroll filterColorProduct"></div>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-5 SearchUser px-3"></div>
         </div>
       </div>
     </div>

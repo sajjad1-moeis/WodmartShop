@@ -1,5 +1,8 @@
 let $ = document;
 import { AddToBasket, SetLocal, CreateMahsol, RemoveItem } from "./Hedear-Site.js";
+import { FilterPrice } from "../components/Proudct/product.js";
+customElements.define("divfilter-price", FilterPrice);
+
 let locationSite = location.search;
 let IdLocation = new URLSearchParams(locationSite);
 let SearchLocation = IdLocation.get("id");
@@ -87,20 +90,6 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     AddToBasket(mahsol, arrUserMahsol);
   }
 };
-AddToBasket(mahsol, arrUserMahsol);
 
-///Filter Price
-function FilterPrice() {
-  let InputFilterPrice = document.querySelector(".FilterPrice");
-  InputFilterPrice.oninput = () => {
-    let value = InputFilterPrice.value * 43000;
-
-    let sort = mahsol.filter((item) => item.price >= value);
-    CreateMahsol(sort, document.querySelector(".SearchUser"));
-    document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} هزار تومان --- 4,300,000`;
-    AddToBasket(mahsol, arrUserMahsol);
-  };
-}
-FilterPrice();
 ("bg-purple bg-orange-500 bg-pink-500");
 RemoveItem(arrUserMahsol, `.`);

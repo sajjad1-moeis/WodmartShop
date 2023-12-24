@@ -249,6 +249,7 @@ function body(IsSubmit, href, dot) {
       </div>
       
     <!--DivMenuMobile-->
+
     <div
     class="fixed h-[100vh] left-[-350px] w-[300px] lg:w-[350px] z-50 top-0 bg-darkBlue  DivMenu"
     style="transition: 0.4s ease-in-out"
@@ -267,16 +268,33 @@ function body(IsSubmit, href, dot) {
     </div>
     <div class="px-4 mt-1 text-white">
       <a href="${dot}./index.html">
-        <div class="ProductUser p-4 border-b-[1px] border-silver">خانه</div>
+        <div class=" p-4 border-b-[1px] border-silver">خانه</div>
       </a>
-      <div class="ProductUser p-4 border-b-[1px] border-silver">وبلاگ</div>
+      <a href="http://127.0.0.1:5500/html/Product.html?id=پوشاک">
+        <div class=" p-4 border-b-[1px] border-silver">پوشاک</div>
+      </a>
+      <a href="http://127.0.0.1:5500/html/Product.html?id=تخت خواب">
+        <div class=" p-4 border-b-[1px] border-silver">تخت خواب</div>
+      </a>
+      <a href="http://127.0.0.1:5500/html/Product.html?id=کفش">
+        <div class=" p-4 border-b-[1px] border-silver">کفش</div>
+      </a>
+      <a href="http://127.0.0.1:5500/html/Product.html?id=گل و گیاه">
+        <div class=" p-4 border-b-[1px] border-silver">گل و گیاه</div>
+      </a>
+      <a href="http://127.0.0.1:5500/html/Product.html?id=لوازم خانگی">
+        <div class=" p-4 border-b-[1px] border-silver">لوازم خانگی</div>
+      </a>
+      <a href="http://127.0.0.1:5500/html/Product.html?id=مبلمان">
+        <div class=" p-4 border-b-[1px] border-silver">مبلمان</div>
+      </a>
       <a href="${dot}./html/love.html">
-        <div class="ProductUser p-4 border-b-[1px] border-silver">علاقه مندی</div>
+        <div class=" p-4 border-b-[1px] border-silver">علاقه مندی</div>
       </a>
       <a href="${href}">
-        <div class="ProductUser p-4 border-b-[1px] border-silver">${IsSubmit}</div>
+        <div class=" p-4 border-b-[1px] border-silver">${IsSubmit}</div>
       </a>
-      <div class="ProductUser p-4 border-b-[1px] border-silver">مقایسه</div>
+      <div class=" p-4 border-b-[1px] border-silver">مقایسه</div>
     </div>
   </div>
 
@@ -372,7 +390,7 @@ function ShowBasket() {
   };
 }
 function listNextSearch() {
-  let arr = [" پوشاک", "تخت خواب", "کفش", "گیاه و گل ", "لوازم خانگی", "مبلمان"];
+  let arr = [" پوشاک", "تخت خواب", "کفش", "گل و گیاه", "لوازم خانگی", "مبلمان"];
   arr.forEach((item) => {
     $.querySelector("header .list-next-search div").innerHTML += `
     <a href="http://127.0.0.1:5500/html/Product.html?id=${item}">
@@ -444,18 +462,18 @@ function RemoveItem(arr, dot) {
   y.addEventListener("click", (e) => {
     let parent = e.target.parentElement;
     if (parent.className.includes("removeItemBasket")) {
-      console.log(parent.dataset.remove);
-      RemoveItemBasket(parent.dataset.remove, arr);
+      let id = parent.dataset.remove;
+      let IndexMahsol = arr.findIndex((item) => item.id == id);
+      if (arr[IndexMahsol]) {
+        arr[IndexMahsol].count = 1;
+      }
+      arr.splice(IndexMahsol, 1);
+      SetLocal(arr);
+      CreateMahsolBasket(arr, dot);
     }
   });
-  function RemoveItemBasket(id, arr) {
-    let IndexMahsol = arr.findIndex((item) => item.id === id);
-    arr[IndexMahsol].count = 1;
-    arr.splice(IndexMahsol, 1);
-    SetLocal(arr);
-    CreateMahsolBasket(arr, dot);
-  }
 }
+
 function SetLocal(arr) {
   localStorage.setItem("mahsol", JSON.stringify(arr));
 }
@@ -528,7 +546,7 @@ function CreateMahsol(arr, div) {
   arr.forEach((element) => {
     if (element.current) {
       div.innerHTML += `
-      <div class="relative rounded bg-secondary md:pt-3   h-max overflow-hidden imgHover">
+      <div class="relative rounded bg-secondary    h-max overflow-hidden imgHover">
       ${divVizhehAndPercon(element.label[0], element.label[1], "bg-warning")}
       ${HoverBottom(element.id)}
       <div class=" h-[200px]">

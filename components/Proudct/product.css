@@ -1,12 +1,19 @@
- .swiper-slide .list-menu{
-    transition: 0.5s;
+
+.FilterPrice[type="range"]{
+    width: 100%;
+    height: 3.5px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #dcdcdc;
+    border-radius: 3px;
+    outline: none;
 }
- .swiper-slide:hover .list-menu{
-    left: 0;
-}
-img:hover{
-    transform: scale(1.1);
-}
-img{
-    transition: 0.5s;
+.FilterPrice[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(253, 217, 14);
+    border-radius: 50%;
+    cursor: pointer;
 }

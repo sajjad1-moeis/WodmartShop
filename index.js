@@ -20,8 +20,7 @@ import {
   success,
   notSuccess,
 } from "./js/Hedear-Site.js";
-import { Proudct } from "./components/Proudct/product.js";
-customElements.define("product-item", Proudct);
+
 let cokieSubmit = document.cookie;
 
 if (cokieSubmit) {
@@ -29,7 +28,6 @@ if (cokieSubmit) {
 } else {
   body("ورود / ثبت نام", "./html/vrood.html", "");
 }
-console.log(cokieSubmit);
 Header(" ");
 ShowDivKhabarName();
 SearchProduct("./html/SearchMahsol.html?id=");
@@ -47,7 +45,6 @@ let api = await fetch("https://657eea449d10ccb465d58032.mockapi.io/gol");
 let arrMahsol = await api.json();
 document.querySelector(".body").classList.remove("hidden");
 document.querySelector(".loding").classList.add("hidden");
-console.log(arrMahsol);
 
 //header
 
