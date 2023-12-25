@@ -19,4 +19,20 @@ function ShowNot() {
 function HideNot() {
   $.querySelector(".notSearch").classList.add("hidden");
 }
-export { FilterColor, ShowNot, HideNot };
+
+///Nubmer Basket
+function TedadBasket(arr) {
+  document.querySelectorAll(".basket").forEach((span) => (span.innerHTML = arr.length));
+}
+function ResultPrice(arr) {
+  let result = arr.reduce((prev, next) => {
+    return prev + next.count * next.price;
+  }, 0);
+  document.querySelector(".TotalPrice").innerHTML = `مجموع سبد خرید شما : ${result.toLocaleString()} تومان`;
+}
+function TaiinBasket(arr) {
+  arr.length > 0
+    ? document.querySelector(".DivBasketKhali").classList.add("hidden")
+    : document.querySelector(".DivBasketKhali").classList.remove("hidden");
+}
+export { FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket };

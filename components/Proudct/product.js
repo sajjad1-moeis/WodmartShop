@@ -19,7 +19,7 @@ template.innerHTML = `
 let locationSite = location.search;
 let IdLocation = new URLSearchParams(locationSite);
 let SearchLocation = IdLocation.get("id");
-let arrUserMahsol = [];
+let arrUserMahsol = [].concat(JSON.parse(localStorage.getItem("mahsol")));
 import { CreateMahsol, AddToBasket } from "../../js/Hedear-Site.js";
 let api = await fetch("https://657eea449d10ccb465d58032.mockapi.io/gol");
 let mahsol = await api.json();
@@ -40,6 +40,7 @@ if (filter2 == "") {
 if (filter2 == "") {
   search = mahsol;
 }
+
 class FilterPrice extends HTMLElement {
   constructor() {
     super();
@@ -59,10 +60,9 @@ class FilterPrice extends HTMLElement {
 
       let FilterPrice = search.filter((item) => item.price >= value).sort((a, b) => a.price - b.price);
       CreateMahsol(FilterPrice, document.querySelector(".SearchUser"));
+
       console.log(FilterPrice);
-      AddToBasket(mahsol, arrUserMahsol);
     };
   }
 }
-
 export { FilterPrice };

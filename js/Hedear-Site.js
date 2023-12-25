@@ -71,11 +71,11 @@ const IconHeader = (dot) => {
       `${dot}./img/sort-arrow-svgrepo-com (1).svg`,
       `${dot}./img/shopping-bag-svgrepo-com.svg`,
     ],
-    ["علاقه مندی", "مقایسه کردن", "سبد خرید"],
+    ["interest", "moghaiese", "basket"],
   ];
   document.querySelectorAll(".iconHeader").forEach((div) => {
     div.innerHTML += `<span
-    class="absolute top-[-4px] bg-warning h-[14px] left-[-8px] text-center leading-[6px] pt-[5px] p-1 w-[15px] rounded-full text-xs">0</span>
+    class="absolute top-[-5px] bg-warning h-[16px] left-[-8px] text-center leading-[8px] pt-[5px]  p-1 w-[17px] rounded-full text-xs ${img[1][index]}">0</span>
     <img src="${img[0][index]}" class="w-6 h-5" alt="${img[1][index]}" />
     `;
     index++;
@@ -182,7 +182,7 @@ function body(IsSubmit, href, dot) {
                   </div>
                   <div class="btnShowBasket cursor-pointer relative">
                   <span
-                  class="absolute top-[-3px] bg-warning text-white h-[14px] left-[-6px] text-center leading-[6px] pt-[5px] p-1 w-[15px] rounded-full text-xs"
+                  class="absolute top-[-3px] bg-warning text-white h-[14px] left-[-6px] text-center leading-[6px] pt-[5px] p-1 w-[15px] rounded-full text-xs basket" 
                   >0</span
                   >
                   <img src="${dot}./img/shopping-bag-svgrepo-com.svg" class="w-6" alt="" />
@@ -199,7 +199,7 @@ function body(IsSubmit, href, dot) {
                   <!-- SabadKharid -->
                   
                   <div
-                  class="fixed h-[100vh] w-[300px] lg:w-[350px] bg-secondary  top-0 left-[-350px] DivBasket"
+                  class="fixed  h-[100vh] w-[300px] lg:w-[350px] bg-secondary  top-0 left-[-350px] DivBasket"
                   style="transition: 0.4s ease-in-out;z-index:55555"
     >
     <div class="flex justify-between p-3">
@@ -215,6 +215,18 @@ function body(IsSubmit, href, dot) {
           </div>
       <div class="border-b-2 border-warning w-[90%] mx-auto"></div>
       <div class="ProductUser p-3"></div>
+      <div class="p-5 text-center DivBasketKhali">
+          <div class="w-max mx-auto">
+            <img src="${dot}./img/notBasket.png" class="w-24" alt="" />
+          </div>
+          <div class="text-lg my-3">در حال حاضر سبد خرید شما خالی است</div>
+        </div>
+        <div class=" p-5 text-center text-base   w-full">
+            <div>
+              <div class="TotalPrice">مجموع سبد خرید شما : 0 تومان</div>
+            </div>
+            <div class="BtnNahaii w-full p-2 my-2 rounded-lg bg-warning text-white cursor-pointer">نهایی کردن خرید</div>
+          </div>
       </div>
       
     <!--DivMenuMobile-->
@@ -408,7 +420,7 @@ function CreateMahsolBasket(arr, dott) {
     SetLocal([]);
   }
 }
-
+import { TedadBasket, TaiinBasket, ResultPrice } from "./export.js";
 function RemoveItem(arr, dot) {
   let y = document.querySelector(".ProductUser");
   y.addEventListener("click", (e) => {
@@ -422,6 +434,9 @@ function RemoveItem(arr, dot) {
       arr.splice(IndexMahsol, 1);
       SetLocal(arr);
       CreateMahsolBasket(arr, dot);
+      TedadBasket(arr);
+      TaiinBasket(arr);
+      ResultPrice(arr);
     }
   });
 }
@@ -440,6 +455,9 @@ function findMahsol(id, arr, arr2, dot) {
   }
   CreateMahsolBasket(arr2, dot);
   SetLocal(arr2);
+  TedadBasket(arr2);
+  TaiinBasket(arr2);
+  ResultPrice(arr2);
 }
 function ShowElan(div) {
   div.classList.replace("right-[-288px]", "right-10");
@@ -447,14 +465,7 @@ function ShowElan(div) {
     div.classList.replace("right-10", "right-[-288px]");
   }, 2000);
 }
-function success() {
-  document.body.insertAdjacentHTML(
-    "beforeend",
-    `<div class=" fixed w-60 h-max p-3 py-5 rounded-lg right-[-288px]  bg-success text-white z-50 top-10 shadow-md text-center IsProduct">
-  <span>با موفقیت اضافه شد</span>
-</div>`
-  );
-}
+
 function notSuccess() {
   document.body.insertAdjacentHTML(
     "beforeend",
@@ -527,16 +538,10 @@ function AddToBasket(arr, arr2) {
         if (parent.className.includes("kharid")) {
           findMahsol(div.dataset.id, arr, arr2, ".");
           $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
-          let DivElanKharid = $.querySelector(".IsProduct");
-
-          let width = 100;
-          ShowElan(DivElanKharid, $.querySelector(".heightDivIsKhard"), width);
         }
       } else {
-        let width = 100;
-
         let DivIsSubmit = document.querySelector(".IsSubmit");
-        ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"), width);
+        ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"));
       }
     });
   });
@@ -547,7 +552,6 @@ export {
   HoverBottom,
   divVizhehAndPercon,
   notSuccess,
-  success,
   ShowElan,
   findMahsol,
   SetLocal,

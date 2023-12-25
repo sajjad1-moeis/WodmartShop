@@ -2,25 +2,6 @@ let $ = document;
 
 //import
 
-import {
-  body,
-  ShoeMenuMobile,
-  Header,
-  SearchProduct,
-  ShowDivKhabarName,
-  IconHeader,
-  listNextSearch,
-  ShowBasket,
-  AbutMe,
-  CreateMahsolBasket,
-  RemoveItem,
-  SetLocal,
-  findMahsol,
-  ShowElan,
-  success,
-  notSuccess,
-} from "./js/Hedear-Site.js";
-
 let cokieSubmit = document.cookie;
 
 if (cokieSubmit) {
@@ -28,16 +9,6 @@ if (cokieSubmit) {
 } else {
   body("ورود / ثبت نام", "./html/vrood.html", "");
 }
-Header(" ");
-ShowDivKhabarName();
-SearchProduct("./html/SearchMahsol.html?id=");
-listNextSearch();
-ShowBasket();
-AbutMe("");
-IconHeader("");
-ShoeMenuMobile();
-success();
-notSuccess();
 
 /// Api Mahsol
 
@@ -381,19 +352,15 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
       if (e.target.parentElement.className.includes("kharid")) {
         console.log("object");
         findMahsol(id, arrMahsol, ArrayUserBasket, "");
+        TedadBasket(ArrayUserBasket);
         document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
-        let DivElanKharid = $.querySelector(".IsProduct");
-        let width = 100;
-
-        ShowElan(DivElanKharid, $.querySelector(".heightDivIsKhard"), width);
       } else if (e.target.parentElement.className.includes("love")) {
         let find = arrMahsol.find((item) => item.id == id);
         console.log(find);
       }
     } else {
-      let width = 100;
       let DivIsSubmit = document.querySelector(".IsSubmit");
-      ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"), width);
+      ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"));
     }
   });
 });
@@ -403,5 +370,36 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
 // Create Basket Shop
 
 let ArrayUserBasket = [].concat(JSON.parse(localStorage.getItem("mahsol")));
-CreateMahsolBasket(ArrayUserBasket, " ");
-RemoveItem(ArrayUserBasket, "");
+import {
+  body,
+  ShoeMenuMobile,
+  Header,
+  SearchProduct,
+  ShowDivKhabarName,
+  IconHeader,
+  listNextSearch,
+  ShowBasket,
+  AbutMe,
+  CreateMahsolBasket,
+  RemoveItem,
+  findMahsol,
+  ShowElan,
+  notSuccess,
+} from "./js/Hedear-Site.js";
+import { TedadBasket, ResultPrice, TaiinBasket } from "./js/export.js";
+(() => {
+  CreateMahsolBasket(ArrayUserBasket, " ");
+  RemoveItem(ArrayUserBasket, "");
+  TedadBasket(ArrayUserBasket);
+  ResultPrice(ArrayUserBasket);
+  TaiinBasket(ArrayUserBasket);
+  Header(" ");
+  ShowDivKhabarName();
+  SearchProduct("./html/SearchMahsol.html?id=");
+  listNextSearch();
+  ShowBasket();
+  AbutMe("");
+  IconHeader("");
+  ShoeMenuMobile();
+  notSuccess();
+})();

@@ -1,7 +1,7 @@
 let $ = document;
 import { AddToBasket, SetLocal, CreateMahsol, RemoveItem } from "./Hedear-Site.js";
 import { FilterPrice } from "../components/Proudct/product.js";
-import { FilterColor, ShowNot, HideNot } from "./export.js";
+import { FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket } from "./export.js";
 FilterColor();
 customElements.define("divfilter-price", FilterPrice);
 
@@ -34,6 +34,8 @@ inputSearchProduct.addEventListener("keypress", (e) => {
       ? ShowNot() + CreateMahsol(filter1, document.querySelector(".SearchUser"))
       : HideNot() + CreateMahsol(filter1, document.querySelector(".SearchUser"));
     AddToBasket(mahsol, arrUserMahsol);
+    TedadBasket(arrUserMahsol);
+    TaiinBasket(arrUserMahsol);
   }
 });
 
@@ -69,9 +71,12 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     }
     CreateMahsol(Array, document.querySelector(".SearchUser"));
     AddToBasket(mahsol, arrUserMahsol);
+    TedadBasket(arrUserMahsol);
+    TaiinBasket(arrUserMahsol);
   }
 };
 AddToBasket(mahsol, arrUserMahsol);
 
 ("bg-purple bg-orange-500 bg-pink-500");
 RemoveItem(arrUserMahsol, `.`);
+TaiinBasket(arrUserMahsol);

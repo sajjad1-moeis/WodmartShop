@@ -9,11 +9,10 @@ import {
   listNextSearch,
   AbutMe,
   RemoveItem,
-  success,
   notSuccess,
 } from "./Hedear-Site.js";
 let cokieSubmit = document.cookie;
-
+import { TedadBasket } from "./export.js";
 if (cokieSubmit) {
   body("وبلاگ", "#", ".");
 } else {
@@ -30,6 +29,6 @@ ShoeMenuMobile();
 let local = JSON.parse(localStorage.getItem("mahsol"));
 let f = ".";
 CreateMahsolBasket(local, `.`);
-success();
 notSuccess();
 RemoveItem(local, `.`);
+TedadBasket(local);
