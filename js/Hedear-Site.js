@@ -15,7 +15,7 @@ function Header(dot) {
     if (item.current) {
       document.querySelector(".list-none").innerHTML += `
       <a href="${dot}${item.img[1]}">
-    <li class="text-sm  flex cursor-pointer">
+    <li class="  flex cursor-pointer text-base">
     ${item.name}
     <div class="mt-0.5 ms-0.5">
       <img src="${item.img[0]}" class="w-4">
@@ -84,7 +84,7 @@ function Header(dot) {
     } else {
       document.querySelector(".list-none").innerHTML += `
       <a href="${item.img[1]}">
-      <li class="text-sm  flex cursor-pointer">
+      <li class="text-base  flex cursor-pointer">
       ${item.name}
       <div class="mt-0.5 ms-0.5">
         <img src="${item.img[0]}" class="w-4">
@@ -167,7 +167,7 @@ function body(IsSubmit, href, dot) {
                 <input type="text" class="w-full outline-none inputSearchProduct px-3" placeholder="جستجو برای محصولات" />
             </div>
             <div class="flex justify-between xl:w-1/3 w-full border-r-[1px] border-zinc-300">
-              <div class="my-auto text-zinc-400 flex justify-between w-full text-xs ps-3 relative dasteBandi">
+              <div class="my-auto text-zinc-400 flex justify-between w-full  ps-3 relative dasteBandi">
                 <div>انتخاب دسته بندی</div>
                 <div class="text-zinc-600">
                   <div class="absolute pt-[32px] w-[180px] h-max right-0 leading-7 hidden list-next-search" style="z-index: 5000">
@@ -472,33 +472,25 @@ function findMahsol(id, arr, arr2, dot) {
   CreateMahsolBasket(arr2, dot);
   SetLocal(arr2);
 }
-function ShowElan(div, height, width) {
+function ShowElan(div) {
   div.classList.replace("right-[-288px]", "right-10");
-
-  let interval = setInterval(function () {
-    if (width < 1) {
-      div.classList.replace("right-10", "right-[-288px]");
-      clearInterval(interval);
-    }
-    width--;
-    height.style.width = `${width}%`;
-  }, 18);
+  let interval = setTimeout(function () {
+    div.classList.replace("right-10", "right-[-288px]");
+  }, 2000);
 }
 function success() {
   document.body.insertAdjacentHTML(
     "beforeend",
-    `<div class=" fixed w-60 h-max p-3 py-5 rounded-lg right-[-288px] bg-success text-white z-50 top-10 shadow-md text-center IsProduct">
+    `<div class=" fixed w-60 h-max p-3 py-5 rounded-lg right-[-288px] text-base bg-success text-white z-50 top-10 shadow-md text-center IsProduct">
   <span>با موفقیت اضافه شد</span>
-  <div class="h-[2px] bg-green-300 mx-auto mt-2 rounded w-full heightDivIsKhard"></div>
 </div>`
   );
 }
 function notSuccess() {
   document.body.insertAdjacentHTML(
     "beforeend",
-    ` <div class="fixed w-60  h-max p-3 py-5 rounded-lg bg-danger text-white z-50 right-[-288px] shadow-lg top-10 text-center IsSubmit">
+    ` <div class="fixed w-60  h-max p-3 py-5 rounded-lg bg-danger text-base text-white z-50 right-[-288px] shadow-lg top-10 text-center IsSubmit">
     <span>لطفا ابتدا ثبت نام کنید</span>
-    <div class="h-[2px] bg-red-300 mx-auto mt-2 rounded w-full heightDivIsSubmit"></div>
   </div>`
   );
 }
@@ -535,9 +527,9 @@ function CreateMahsol(arr, div) {
       <div class=" h-[200px]">
       <img src=".${element.img}" alt="" class="mx-auto w-full h-full object-cover"   />
       </div>
-      <div class="text-center mt-3">
+      <div class="text-center mt-3 text-base md:text-lg">
       <p class="h-7 my-auto">${element.title}</p>
-      <p class="my-2 text-warning">${element.price.toLocaleString()} هزار تومان</p>
+      <p class="my-1 text-warning">${element.price.toLocaleString()} هزار تومان</p>
       </div>
       </div>`;
     } else {

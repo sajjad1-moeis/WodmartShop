@@ -2,7 +2,7 @@ let template = document.createElement("template");
 template.innerHTML = `
 <link rel="stylesheet" href="../tailwind/tailwind.css" />
 <link rel="stylesheet" href="../components/Proudct/product.css" />
-<div class="border-2 bg-white border-zinc-200 p-3 pb-10">
+<div class="border-2 bg-white border-zinc-200 p-3 pb-10 text-xl">
 <div class="h-max mt-1">
 <div class="w-full bg-zinc-200 p-3">فیلتر بر اساس قیمت</div>
 </div>

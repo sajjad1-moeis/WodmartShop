@@ -64,16 +64,16 @@ function mySwiper1() {
     $.querySelector(".mySwiper1 .swiper-wrapper").innerHTML += `<div class="swiper-slide a${i}">
 <div class="max-w-[716px] w-3/4 md:w-full AbutSite">
   <div class="w-full text-center">
-    <div class="text-warning">
+    <div class="text-warning text-xl">
       <span>برترین سایت فروشگاهی سال</span>
     </div>
-    <div class="text-white text-2xl md:text-5xl mt-3 md:mt-6 md:leading-[60px]">
+    <div class="text-white text-3xl md:text-5xl mt-3 md:mt-6 md:leading-[60px]">
       <h1>خریدی امن در کمترین زمان ممکن با نازلترین قیمت و با کیفیت ترین محصول</h1>
     </div>
-    <div class="mt-5">
-      <button class="text-sm rounded-full py-3 px-5 text-white bg-warning me-2">مشاهده کنید</button>
+    <div class="mt-5 text-base">
+      <button class=" rounded-full py-3 px-5 text-white bg-warning me-2">مشاهده کنید</button>
       <button
-        class="text-sm rounded-full py-3 px-5 text-white bg-transparent border-[1.2px] border-white"
+        class=" rounded-full py-3 px-5 text-white bg-transparent border-[1.2px] border-white"
       >
         همین حالا خرید کنید
       </button>
@@ -118,8 +118,8 @@ function slideSwiper2() {
                   <div class="hovermahsolList">
                     <img class="h-[182px] w-[182px]" src="${item.img}" alt="" />
                   </div>
-                  <div class="mt-5">
-                    <p>${item.title}</p>
+                  <div class="mt-5 ">
+                    <p class="text-xl"> ${item.title}</p>
                     <p class="text-sm text-zinc-600 mt-1">${item.count} محصول</p>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ function hoverLeft(arr, div) {
                       </div>
                       <div class=" m-2 mt-4">
                         <p class="my-2">${item.title}</p>
-                        <p class="text-sm text-warning">${item.price.toLocaleString()} تومان</p>
+                        <p class="text-base text-warning">${item.price.toLocaleString()} تومان</p>
                       </div>
                  
 
@@ -201,15 +201,15 @@ MySwiper4();
 
 function hoverBottom(i) {
   return `
-      <div class="w-full bg-white absolute h-max bottom-1.5 md:bottom-[-45px] p-2 shadow list-menu2 gap-y-5" data-num="${i}">
+      <div class=" w-max lg:w-full bg-white absolute h-max bottom-8 lg:bottom-[-45px] px-3  p-1.5 shadow list-menu2 gap-y-5" data-num="${i}">
           <div style="z-index: 1000" class="flex mx-auto w-max ">
-          <div class="cursor-pointer w-[25px] love" >
+          <div class="cursor-pointer mt-0.5 w-5 lg:w-[25px] love" >
             <img src="./img/heart-svgrepo-com (7).svg" alt="" class="w-full m-auto " />
            </div>
-        <div class="cursor-pointer w-[60px] mx-3 border-x-[1px] border-zinc-200 kharid">
-           <img src="./img/shopping-cart-svgrepo-com (1).svg" alt="" class=" px-1 w-[35px] m-auto" />
+        <div class="cursor-pointer lg:w-[60px] ms-1 lg:mx-3 lg:border-x-[1px] border-zinc-200 kharid">
+           <img src="./img/shopping-cart-svgrepo-com (1).svg" alt="" class=" px-1 w-8 lg:w-[35px] m-auto" />
          </div>
-         <div class="cursor-pointer" >
+         <div class="cursor-pointer hidden lg:block" >
            <img src="./img/search-svgrepo-com (2).svg" class="w-[25px] m-auto " alt="" />
          </div>
       </div>
@@ -238,9 +238,9 @@ function CreateProductSlide4(arr, parent, slide) {
        <div class=" ">
          <img class="m-auto"  alt="" src="${item.img}"/>
        </div>
-       <div class="mt-7">
-         <p class="my-2 title text-sm h-10 md:h-max overflow-hidden">${item.title}</p>
-         <p class="text-sm text-warning price">${item.price.toLocaleString()} تومان</p>
+       <div class="mt-7 text-base">
+         <p class="mb-2 title  text-lg  h-10 md:h-max overflow-hidden">${item.title}</p>
+         <p class=" text-warning price">${item.price.toLocaleString()} تومان</p>
        </div>
      </div>
     `;
@@ -251,9 +251,9 @@ function CreateProductSlide4(arr, parent, slide) {
       <div class=" ">
         <img class="m-auto"  alt="" src="${item.img}"/>
       </div>
-      <div class="mt-7">
-        <p class="my-2 title text-sm h-10 md:h-max overflow-hidden">${item.title}</p>
-        <p class="text-sm text-warning price">${item.price.toLocaleString()} تومان</p>
+      <div class="mt-7 text-base">
+        <p class="my-2 title  h-10 md:h-max overflow-hidden">${item.title}</p>
+        <p class=" text-warning price">${item.price.toLocaleString()} تومان</p>
       </div>
     </div>`;
     }
@@ -285,9 +285,9 @@ function MySwiper6() {
                       <img src="${item.img}" alt="" class="w-[270px] m-auto" />
                       
                     </div>
-                    <div class="mt-2">
-                      <p class="text-sm">${item.title}</p>
-                      <p class="text-sm mt-2 text-warning">${item.price.toLocaleString()} هزار تومان</p>
+                    <div class="text-base mt-2">
+                      <p class="">${item.title}</p>
+                      <p class=" mt-2 text-warning">${item.price.toLocaleString()} هزار تومان</p>
                     </div>
     `;
     fragment.append(div);
@@ -312,7 +312,7 @@ async function moreAbut() {
                 <span class="mt-2 h-max text-warning">${item.count}</span>
               </div>
               <div class="ms-3">
-                <p class="text-xl">${item.diration}</p>
+                <p class="text-2xl">${item.diration}</p>
                 <p class="mt-2 text-zinc-500">${item.more}</p>
               </div>
            
@@ -345,9 +345,9 @@ const mySwiper8 = () => {
                       <img src="${item.img}" alt="" class="w-[270px] m-auto" />
                       
                     </div>
-                    <div class="mt-2">
-                      <p class="text-sm">${item.title}</p>
-                      <p class="text-sm mt-2 text-warning">${item.price.toLocaleString()} هزار تومان</p>
+                    <div class="mt-2 text-base">
+                      <p class="">${item.title}</p>
+                      <p class=" mt-2 text-warning">${item.price.toLocaleString()} هزار تومان</p>
                     </div>
     `;
     fragment.append(div);
