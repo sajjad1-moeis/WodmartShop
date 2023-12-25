@@ -1,8 +1,9 @@
 @font-face {
     font-family: "Iran";
- src: url('/fonts/vazir/Vazir-Medium.ttf')
+ src: url('/fonts/DanaPro(10Wt)/Farsi numerals/DanaFaNum-Medium.ttf'), format("ttf"),
 
 }
+
 *{
     margin: 0;
         padding: 0;
