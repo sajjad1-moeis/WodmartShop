@@ -1,6 +1,8 @@
 let $ = document;
 import { AddToBasket, SetLocal, CreateMahsol, RemoveItem } from "./Hedear-Site.js";
 import { FilterPrice } from "../components/Proudct/product.js";
+import { FilterColor, ShowNot, HideNot } from "./export.js";
+FilterColor();
 customElements.define("divfilter-price", FilterPrice);
 
 let locationSite = location.search;
@@ -12,12 +14,6 @@ let filter = await mahsol.filter((item) => {
   return item.title.includes(SearchLocation);
 });
 
-function ShowNot() {
-  $.querySelector(".notSearch").classList.remove("hidden");
-}
-function HideNot() {
-  $.querySelector(".notSearch").classList.add("hidden");
-}
 if (filter == "") {
   ShowNot();
 } else {
@@ -43,8 +39,9 @@ inputSearchProduct.addEventListener("keypress", (e) => {
 
 //// Set Time top Malsol
 
-let time = new Date();
-document.querySelector(".timeNow").innerHTML = ` تاریخ : ${time.getFullYear()} ,${time.getMonth()} ,${time.getDate()} `;
+let time = new Date().toLocaleString("fa-IR");
+console.log(time);
+document.querySelector(".timeNow").innerHTML = ` تاریخ : ${time.split(",")[0]} `;
 
 ///Add Product Basket
 let arrUserMahsol = [];
@@ -53,21 +50,6 @@ arrUserMahsol = local;
 
 SetLocal(arrUserMahsol);
 $.querySelectorAll(".resultSerch").forEach((span) => (span.innerHTML = ` نتیجه جستجو : ${SearchLocation}`));
-
-let ColorFilter = await fetch("https://657eea449d10ccb465d58032.mockapi.io/AbutMore");
-let jsonColor = await ColorFilter.json();
-console.log(jsonColor);
-let Color = [];
-jsonColor.slice(4).forEach((item) => {
-  document.querySelector(".filterColorProduct").innerHTML += `
-  <div class="flex justify-between px-2 my-3 DivColor text-lg -${item.more}">
-  <div class="flex -${item.more}">
-  <div class="w-7 h-7  rounded-full me-2  ${item.more}"></div>
-  <div class="mt-1 -${item.more}">${item.diration}</div>
-  </div>
-  <div class="border-[1px] border-zinc-300 px-3 md:text-xs py-0.5 rounded-full  my-auto -${item.more}">${item.count}</div>
-  </div>`;
-});
 
 async function FilterColorMahsol(Color) {
   let filterMahsol = await mahsol.filter((item) => item.label.includes(`${Color}`));
@@ -89,6 +71,7 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     AddToBasket(mahsol, arrUserMahsol);
   }
 };
+AddToBasket(mahsol, arrUserMahsol);
 
 ("bg-purple bg-orange-500 bg-pink-500");
 RemoveItem(arrUserMahsol, `.`);

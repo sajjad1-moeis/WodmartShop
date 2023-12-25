@@ -17,9 +17,6 @@ module.exports = {
       xxl: "1570px",
     },
     extend: {
-      fontSize: {
-        "text-base": "19px",
-      },
       colors: {
         primary: "#0d6efd",
         secondary: "#f7f7f7",

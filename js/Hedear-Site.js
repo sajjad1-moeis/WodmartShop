@@ -1,4 +1,21 @@
 let $ = document;
+function tekrar() {
+  return ` <div class="p-2 leading-loose">
+    <p>روشنایی</p>
+    
+    <p>لامپ</p>
+    <p>مهتابی</p>
+    <p>موس</p>
+    <p>برق</p>
+    <p>کتاب</p>
+    <p>موبایل</p>
+    <p>لبتاب</p>
+    <p>خودکار</p>
+    <p>ادکلن</p>
+  </div>
+`;
+}
+
 function Header(dot) {
   let arr = [
     { name: "خانه", img: ["", `${dot}./index.html`], current: false },
@@ -17,74 +34,26 @@ function Header(dot) {
       <a href="${dot}${item.img[1]}">
     <li class="  flex cursor-pointer text-base">
     ${item.name}
-    <div class="mt-0.5 ms-0.5">
-      <img src="${item.img[0]}" class="w-4">
+    <div class="mt-1 ms-1">
+      <img src="${item.img[0]}" class="w-2.5">
     </div>
         
           <div
             class="grid g absolute mt-5 p-2 md:w-full w-1/2   grid-cols-4 gap-3   text-center  "
           >
-            <div class="p-2">
-              <p>ساعت</p>
-              
-                 <p>جون</p>
-                 <p>جون</p>
-                 <p>جون</p>
-                 <p>جون</p>
-                 <p>جون</p>
-                 <p>جون</p>
-                 <p>جون</p>
-                 <p>جون</p>
-                 <p>جون</p>
-            </div>
-            <div class="p-2">
-              <p>سفره</p>
-              
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-            </div>
-            <div class="p-2">
-              <p>لوازم آشپزخانه</p>
-              
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-            </div>
-            <div class="p-2">
-              <p>روشنایی</p>
-              
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-              <p>جون</p>
-            </div>
-          </div>
+           ${tekrar()}
+           ${tekrar()}
+           ${tekrar()}
+           ${tekrar()}
         
+        </div>
       </li>
       </a>
           `;
     } else {
       document.querySelector(".list-none").innerHTML += `
       <a href="${item.img[1]}">
-      <li class="text-base  flex cursor-pointer">
+      <li class="  flex text-base cursor-pointer">
       ${item.name}
       <div class="mt-0.5 ms-0.5">
         <img src="${item.img[0]}" class="w-4">
@@ -481,7 +450,7 @@ function ShowElan(div) {
 function success() {
   document.body.insertAdjacentHTML(
     "beforeend",
-    `<div class=" fixed w-60 h-max p-3 py-5 rounded-lg right-[-288px] text-base bg-success text-white z-50 top-10 shadow-md text-center IsProduct">
+    `<div class=" fixed w-60 h-max p-3 py-5 rounded-lg right-[-288px]  bg-success text-white z-50 top-10 shadow-md text-center IsProduct">
   <span>با موفقیت اضافه شد</span>
 </div>`
   );
@@ -489,7 +458,7 @@ function success() {
 function notSuccess() {
   document.body.insertAdjacentHTML(
     "beforeend",
-    ` <div class="fixed w-60  h-max p-3 py-5 rounded-lg bg-danger text-base text-white z-50 right-[-288px] shadow-lg top-10 text-center IsSubmit">
+    ` <div class="fixed w-60  h-max p-3 py-5 rounded-lg bg-danger  text-white z-50 right-[-288px] shadow-lg top-10 text-center IsSubmit">
     <span>لطفا ابتدا ثبت نام کنید</span>
   </div>`
   );
@@ -527,7 +496,7 @@ function CreateMahsol(arr, div) {
       <div class=" h-[200px]">
       <img src=".${element.img}" alt="" class="mx-auto w-full h-full object-cover"   />
       </div>
-      <div class="text-center mt-3 text-base md:text-lg">
+      <div class="text-center mt-3  ">
       <p class="h-7 my-auto">${element.title}</p>
       <p class="my-1 text-warning">${element.price.toLocaleString()} هزار تومان</p>
       </div>

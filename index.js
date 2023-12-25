@@ -67,10 +67,10 @@ function mySwiper1() {
     <div class="text-warning text-xl">
       <span>برترین سایت فروشگاهی سال</span>
     </div>
-    <div class="text-white text-3xl md:text-5xl mt-3 md:mt-6 md:leading-[60px]">
+    <div class="text-white text-2xl md:text-5xl mt-3 md:mt-6 md:leading-[60px]">
       <h1>خریدی امن در کمترین زمان ممکن با نازلترین قیمت و با کیفیت ترین محصول</h1>
     </div>
-    <div class="mt-5 text-base">
+    <div class="mt-5 text-base flex justify-center">
       <button class=" rounded-full py-3 px-5 text-white bg-warning me-2">مشاهده کنید</button>
       <button
         class=" rounded-full py-3 px-5 text-white bg-transparent border-[1.2px] border-white"
@@ -161,7 +161,7 @@ function hoverLeft(arr, div) {
                       </div>
                       <div class=" m-2 mt-4">
                         <p class="my-2">${item.title}</p>
-                        <p class="text-base text-warning">${item.price.toLocaleString()} تومان</p>
+                        <p class=" text-warning">${item.price.toLocaleString()} تومان</p>
                       </div>
                  
 
@@ -239,7 +239,7 @@ function CreateProductSlide4(arr, parent, slide) {
          <img class="m-auto"  alt="" src="${item.img}"/>
        </div>
        <div class="mt-7 text-base">
-         <p class="mb-2 title  text-lg  h-10 md:h-max overflow-hidden">${item.title}</p>
+         <p class="md:mb-2 title   h-10 md:h-max overflow-hidden">${item.title}</p>
          <p class=" text-warning price">${item.price.toLocaleString()} تومان</p>
        </div>
      </div>
@@ -252,7 +252,7 @@ function CreateProductSlide4(arr, parent, slide) {
         <img class="m-auto"  alt="" src="${item.img}"/>
       </div>
       <div class="mt-7 text-base">
-        <p class="my-2 title  h-10 md:h-max overflow-hidden">${item.title}</p>
+        <p class="md:mb-2   h-10 md:h-max overflow-hidden">${item.title}</p>
         <p class=" text-warning price">${item.price.toLocaleString()} تومان</p>
       </div>
     </div>`;
@@ -312,7 +312,7 @@ async function moreAbut() {
                 <span class="mt-2 h-max text-warning">${item.count}</span>
               </div>
               <div class="ms-3">
-                <p class="text-2xl">${item.diration}</p>
+                <p class="text-xl">${item.diration}</p>
                 <p class="mt-2 text-zinc-500">${item.more}</p>
               </div>
            
