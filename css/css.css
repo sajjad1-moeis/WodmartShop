@@ -1,5 +1,5 @@
 @font-face{
-    font-family: "b";
+    font-family: 'b';
     src: url('/fonts/DanaPro(10Wt)/Farsi numerals/Webfonts/woff/DanaFaNum-Medium.woff') format('woff'),
 
 }
@@ -7,7 +7,7 @@
 *{
 margin: 0;
    padding: 0;
-   font-family: b !important; 
+   font-family: 'b' !important; 
 }
 
 /* اسکرول بار عمودی */
