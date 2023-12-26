@@ -365,6 +365,7 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
           }
         }
         localStorage.setItem("love", JSON.stringify(arrUserLove));
+        TedadLove();
       }
     } else {
       let DivIsSubmit = document.querySelector(".IsSubmit");

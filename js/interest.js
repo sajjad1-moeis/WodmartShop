@@ -1,5 +1,6 @@
-import { CreateMahsol } from "./Hedear-Site.js";
-import { TedadLove } from "./export.js";
+let $ = document;
+import { CreateMahsol, findMahsolLove, CreateMahsolBasket, RemoveItem } from "./Hedear-Site.js";
+import { TedadLove, TaiinBasket, ResultPrice, TedadBasket } from "./export.js";
 let LocalStorageItem = JSON.parse(localStorage.getItem("love"));
 let LocalStorageItemMahsol = JSON.parse(localStorage.getItem("mahsol"));
 let arrUserLove = [];
@@ -9,18 +10,15 @@ CreateMahsol(LocalStorageItem, document.querySelector(".love"));
 document.querySelectorAll(".list-menu2").forEach((div) => {
   div.addEventListener("click", (e) => {
     if (e.target.parentElement.className.includes("kharid")) {
-      let id = div.dataset.id;
-      let find = LocalStorageItem.find((item) => item.id === id);
-      let some = arrUserLove.some((item) => item.id === id);
-      let index = arrUserLove.findIndex((item) => item.id === id);
-      console.log(find);
-      if (some) {
-        arrUserLove[index].count++;
-      } else {
-        arrUserLove.push(find);
-      }
+      findMahsolLove(div.dataset.id, LocalStorageItem, arrUserLove, ".");
+      $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
       localStorage.setItem("mahsol", JSON.stringify(arrUserLove));
+      CreateMahsolBasket(arrUserLove, ".");
+      TaiinBasket(arrUserLove);
+      ResultPrice(arrUserLove);
+      TedadBasket(arrUserLove);
     }
   });
 });
 TedadLove();
+RemoveItem(arrUserLove, ".");

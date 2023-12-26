@@ -465,10 +465,11 @@ function findMahsolLove(id, arr, arr2, dot) {
   let FindMahsol = arr.find((item) => item.id === id);
   let someMahsol = arr2.some((item) => item.id === id);
   let IndexMahsol = arr2.findIndex((item) => item.id === id);
-  if (!someMahsol) {
+  if (someMahsol) {
+    arr2[IndexMahsol].count++;
+  } else {
     arr2.push(FindMahsol);
   }
-
   SetLocal(arr2);
 }
 function ShowElan(div) {
@@ -554,10 +555,6 @@ function AddToBasket(arr, arr2) {
         if (parent.className.includes("kharid")) {
           findMahsol(div.dataset.id, arr, arr2, ".");
           $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
-        } else if (parent.className.includes("love")) {
-          findMahsol(div.dataset.id, arr, arr2, ".");
-          findMahsolLove(div.dataset.id, arr, arr2, ".");
-          localStorage.setItem();
         }
       } else {
         let DivIsSubmit = document.querySelector(".IsSubmit");
@@ -603,4 +600,5 @@ export {
   listNextSearch,
   AbutMe,
   ShoeMenuMobile,
+  findMahsolLove,
 };
