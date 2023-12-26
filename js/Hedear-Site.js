@@ -202,7 +202,14 @@ function body(IsSubmit, href, dot) {
                   class="fixed  h-[100vh] w-[300px] lg:w-[350px]  bg-white  top-0 left-[-350px] DivBasket"
                   style="transition: 0.4s ease-in-out;z-index:55555"
     >
-    <div class="flex justify-between p-3">
+          <div class=" p-5 text-center text-base bg-white z-50  w-full absolute bottom-0">
+            <div>
+              <div class="TotalPrice">مجموع سبد خرید شما : 0 تومان</div>
+            </div>
+            <div class="BtnNahaii w-full p-2 my-2 rounded-lg bg-warning text-white cursor-pointer">نهایی کردن خرید</div>
+          </div>
+    <div class="flex justify-between p-3 relative">
+    
         <div class="text-lg mt-1 w-max">
           <h1>سبد خرید</h1>
           </div>
@@ -221,12 +228,7 @@ function body(IsSubmit, href, dot) {
           </div>
           <div class="text-lg my-3">در حال حاضر سبد خرید شما خالی است</div>
         </div>
-        <div class=" p-5 text-center text-base bg-white z-50  w-full">
-            <div>
-              <div class="TotalPrice">مجموع سبد خرید شما : 0 تومان</div>
-            </div>
-            <div class="BtnNahaii w-full p-2 my-2 rounded-lg bg-warning text-white cursor-pointer">نهایی کردن خرید</div>
-          </div>
+        
       </div>
       
     <!--DivMenuMobile-->

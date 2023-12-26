@@ -661,10 +661,6 @@ video {
   bottom: 0px;
 }
 
-.bottom-5 {
-  bottom: 1.25rem;
-}
-
 .left-5 {
   left: 1.25rem;
 }
@@ -705,6 +701,10 @@ video {
   top: 0.25rem;
 }
 
+.top-24 {
+  top: 6rem;
+}
+
 .top-5 {
   top: 1.25rem;
 }
@@ -723,34 +723,6 @@ video {
 
 .bottom-8 {
   bottom: 2rem;
-}
-
-.bottom-10 {
-  bottom: 2.5rem;
-}
-
-.bottom-32 {
-  bottom: 8rem;
-}
-
-.top-3\/4 {
-  top: 75%;
-}
-
-.top-3 {
-  top: 0.75rem;
-}
-
-.top-8 {
-  top: 2rem;
-}
-
-.top-11 {
-  top: 2.75rem;
-}
-
-.top-24 {
-  top: 6rem;
 }
 
 .z-40 {
@@ -889,16 +861,16 @@ video {
   margin-top: 2rem;
 }
 
-.me-2 {
-  margin-inline-end: 0.5rem;
-}
-
 .me-1 {
   margin-inline-end: 0.25rem;
 }
 
 .me-1\.5 {
   margin-inline-end: 0.375rem;
+}
+
+.me-2 {
+  margin-inline-end: 0.5rem;
 }
 
 .me-4 {
@@ -927,10 +899,6 @@ video {
 
 .ms-\[7px\] {
   margin-inline-start: 7px;
-}
-
-.mt-24 {
-  margin-top: 6rem;
 }
 
 .inline-block {
@@ -966,12 +934,12 @@ video {
   height: max-content;
 }
 
-.h-7 {
-  height: 1.75rem;
-}
-
 .h-5 {
   height: 1.25rem;
+}
+
+.h-7 {
+  height: 1.75rem;
 }
 
 .h-\[14px\] {
@@ -1047,10 +1015,6 @@ video {
   width: max-content;
 }
 
-.w-7 {
-  width: 1.75rem;
-}
-
 .w-1\/2 {
   width: 50%;
 }
@@ -1077,6 +1041,10 @@ video {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-7 {
+  width: 1.75rem;
 }
 
 .w-8 {
@@ -1515,16 +1483,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.py-0\.5 {
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -1631,10 +1589,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.text-right {
-  text-align: right;
 }
 
 .text-2xl {
@@ -1765,10 +1719,6 @@ video {
   outline-offset: 2px;
 }
 
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1877,11 +1827,6 @@ video {
 
   .md\:p-10 {
     padding: 2.5rem;
-  }
-
-  .md\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
   }
 
   .md\:text-5xl {
