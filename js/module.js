@@ -12,7 +12,7 @@ import {
   notSuccess,
 } from "./Hedear-Site.js";
 let cokieSubmit = document.cookie;
-import { ResultPrice, TaiinBasket, TedadBasket } from "./export.js";
+import { ResultPrice, TaiinBasket, TedadBasket, TedadLove } from "./export.js";
 if (cokieSubmit) {
   body("وبلاگ", "#", ".");
 } else {
@@ -34,3 +34,4 @@ RemoveItem(local, `.`);
 TaiinBasket(local);
 ResultPrice(local);
 TedadBasket(local);
+TedadLove();

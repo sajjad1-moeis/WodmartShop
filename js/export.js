@@ -25,6 +25,9 @@ function HideNot() {
 function TedadBasket(arr) {
   document.querySelectorAll(".basket").forEach((span) => (span.innerHTML = arr.length));
 }
+function TedadLove() {
+  document.querySelectorAll(".interest").forEach((span) => (span.innerHTML = JSON.parse(localStorage.getItem("love")).length));
+}
 function ResultPrice(arr) {
   let result = arr.reduce((prev, next) => {
     return prev + next.count * next.price;
@@ -51,4 +54,4 @@ function Price() {
   </div>`;
 }
 
-export { FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price };
+export { FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove };

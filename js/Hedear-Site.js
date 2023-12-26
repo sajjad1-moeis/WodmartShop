@@ -461,6 +461,16 @@ function findMahsol(id, arr, arr2, dot) {
   TaiinBasket(arr2);
   ResultPrice(arr2);
 }
+function findMahsolLove(id, arr, arr2, dot) {
+  let FindMahsol = arr.find((item) => item.id === id);
+  let someMahsol = arr2.some((item) => item.id === id);
+  let IndexMahsol = arr2.findIndex((item) => item.id === id);
+  if (!someMahsol) {
+    arr2.push(FindMahsol);
+  }
+
+  SetLocal(arr2);
+}
 function ShowElan(div) {
   div.classList.replace("right-[-288px]", "right-10");
   let interval = setTimeout(function () {
@@ -499,10 +509,11 @@ function HoverBottom(id) {
   </div>`;
 }
 function CreateMahsol(arr, div) {
-  div.innerHTML = "";
+  let divFrag = document.createDocumentFragment();
   arr.forEach((element) => {
+    let divS = document.createElement("div");
     if (element.current) {
-      div.innerHTML += `
+      divS.innerHTML = `
       <div class="relative rounded bg-secondary    h-max overflow-hidden imgHover">
       ${divVizhehAndPercon(element.label[0], element.label[1], "bg-warning")}
       ${HoverBottom(element.id)}
@@ -515,7 +526,7 @@ function CreateMahsol(arr, div) {
       </div>
       </div>`;
     } else {
-      div.innerHTML += `
+      divS.innerHTML = `
       <div class="relative rounded bg-secondary pt-5  h-max opacity-50 overflow-hidden imgHover1">
       ${divVizhehAndPercon(element.label[0], element.label[1], "bg-primary")}
       <div class="h-[200px] md:h-max">
@@ -527,7 +538,9 @@ function CreateMahsol(arr, div) {
       </div>
       </div>`;
     }
+    divFrag.append(divS);
   });
+  div.append(divFrag);
 }
 function AddToBasket(arr, arr2) {
   let DivKharid = $.querySelectorAll(".list-menu2");
@@ -540,6 +553,10 @@ function AddToBasket(arr, arr2) {
         if (parent.className.includes("kharid")) {
           findMahsol(div.dataset.id, arr, arr2, ".");
           $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
+        } else if (parent.className.includes("love")) {
+          findMahsol(div.dataset.id, arr, arr2, ".");
+          findMahsolLove(div.dataset.id, arr, arr2, ".");
+          localStorage.setItem();
         }
       } else {
         let DivIsSubmit = document.querySelector(".IsSubmit");

@@ -343,12 +343,14 @@ const MySwiper9 = () => {
 MySwiper9();
 
 ///click Div Kharid
+let LocalStorageItem = JSON.parse(localStorage.getItem("love"));
+let arrUserLove = [];
+arrUserLove = LocalStorageItem;
 
 document.querySelectorAll(".list-menu2").forEach((btnLove) => {
   btnLove.addEventListener("click", (e) => {
     if (document.cookie.includes("name")) {
       let id = btnLove.dataset.num;
-      console.log(id);
       if (e.target.parentElement.className.includes("kharid")) {
         console.log("object");
         findMahsol(id, arrMahsol, ArrayUserBasket, "");
@@ -356,7 +358,11 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
         document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
       } else if (e.target.parentElement.className.includes("love")) {
         let find = arrMahsol.find((item) => item.id == id);
-        console.log(find);
+        let some = arrUserLove.some((item) => item.id == id);
+        if (!some) {
+          arrUserLove.push(find);
+        }
+        localStorage.setItem("love", JSON.stringify(arrUserLove));
       }
     } else {
       let DivIsSubmit = document.querySelector(".IsSubmit");
@@ -386,7 +392,7 @@ import {
   ShowElan,
   notSuccess,
 } from "./js/Hedear-Site.js";
-import { TedadBasket, ResultPrice, TaiinBasket } from "./js/export.js";
+import { TedadBasket, ResultPrice, TaiinBasket, TedadLove } from "./js/export.js";
 (() => {
   CreateMahsolBasket(ArrayUserBasket, "");
   RemoveItem(ArrayUserBasket, "");
@@ -402,4 +408,5 @@ import { TedadBasket, ResultPrice, TaiinBasket } from "./js/export.js";
   ShoeMenuMobile();
   notSuccess();
   TedadBasket(ArrayUserBasket);
+  TedadLove();
 })();
