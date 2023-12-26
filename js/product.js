@@ -2,8 +2,8 @@ let $ = document;
 let locationSite = location.search;
 let IdLocation = new URLSearchParams(locationSite);
 let SearchLocation = IdLocation.get("id");
-import { CreateMahsol, AddToBasket, RemoveItem } from "./Hedear-Site.js";
-import { FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, ResultPrice, Price } from "./export.js";
+import { CreateMahsol, AddToBasket, RemoveItem, FilterPrice } from "./Hedear-Site.js";
+import { FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, Price, ResultPrice } from "./export.js";
 ///Id Is Location
 FilterColor();
 document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
@@ -17,16 +17,17 @@ document.querySelector(".loding").classList.add("hidden");
 document.querySelector(".body").classList.remove("hidden");
 
 ///Color Filter
-
 let arrUserMahsol = [];
-let local = JSON.parse(localStorage.getItem("mahsol"));
-arrUserMahsol = local;
-CreateMahsol(filter, document.querySelector(".SearchUser"));
-AddToBasket(mahsol, arrUserMahsol);
-RemoveItem(arrUserMahsol, `.`);
-TaiinBasket(arrUserMahsol);
-TedadBasket(arrUserMahsol);
-ResultPrice(arrUserMahsol);
+(() => {
+  let local = JSON.parse(localStorage.getItem("mahsol"));
+  arrUserMahsol = local;
+  CreateMahsol(filter, document.querySelector(".SearchUser"));
+  AddToBasket(mahsol, arrUserMahsol);
+  RemoveItem(arrUserMahsol, `.`);
+  TaiinBasket(arrUserMahsol);
+  TedadBasket(arrUserMahsol);
+  ResultPrice(arrUserMahsol);
+})();
 
 //Create Div Filter Color
 
@@ -51,20 +52,5 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     TaiinBasket(arrUserMahsol);
   }
 };
-function FilterPrice(arr, div) {
-  let InputFilterPrice = document.querySelector(".FilterPrice");
-  let max = arr.sort((a, b) => b.price - a.price)[0];
-  let value = InputFilterPrice.value * (max.price / 100);
-  document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
 
-  InputFilterPrice.oninput = () => {
-    let value = InputFilterPrice.value * (max.price / 100);
-    let filter1 = arr.filter((item) => {
-      return item.price >= value;
-    });
-    CreateMahsol(filter1, div);
-    document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
-    AddToBasket(filter1, arrUserMahsol);
-  };
-}
-FilterPrice(filter, document.querySelector(".SearchUser"));
+FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"));

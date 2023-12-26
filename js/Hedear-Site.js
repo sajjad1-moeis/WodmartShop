@@ -548,7 +548,24 @@ function AddToBasket(arr, arr2) {
     });
   });
 }
+function FilterPrice(arr, arr2, div) {
+  let InputFilterPrice = document.querySelector(".FilterPrice");
+  let max = arr.sort((a, b) => b.price - a.price)[0];
+  let value = InputFilterPrice.value * (max.price / 100);
+  document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
+
+  InputFilterPrice.oninput = () => {
+    let value = InputFilterPrice.value * (max.price / 100);
+    let filter1 = arr.filter((item) => {
+      return item.price >= value;
+    });
+    CreateMahsol(filter1, div);
+    document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
+    AddToBasket(filter1, arr2);
+  };
+}
 export {
+  FilterPrice,
   AddToBasket,
   CreateMahsol,
   HoverBottom,

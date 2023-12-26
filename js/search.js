@@ -1,5 +1,5 @@
 let $ = document;
-import { AddToBasket, SetLocal, CreateMahsol, RemoveItem } from "./Hedear-Site.js";
+import { AddToBasket, SetLocal, CreateMahsol, RemoveItem, FilterPrice } from "./Hedear-Site.js";
 import { FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket, Price } from "./export.js";
 FilterColor();
 let g = Price();
@@ -80,20 +80,5 @@ AddToBasket(mahsol, arrUserMahsol);
 ("bg-purple bg-orange-500 bg-pink-500");
 RemoveItem(arrUserMahsol, `.`);
 TaiinBasket(arrUserMahsol);
-function FilterPrice(arr, div) {
-  let InputFilterPrice = document.querySelector(".FilterPrice");
-  let max = arr.sort((a, b) => b.price - a.price)[0];
-  let value = InputFilterPrice.value * (max.price / 100);
-  document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
 
-  InputFilterPrice.oninput = () => {
-    let value = InputFilterPrice.value * (max.price / 100);
-    let filter1 = arr.filter((item) => {
-      return item.price >= value;
-    });
-    CreateMahsol(filter1, div);
-    document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
-    AddToBasket(filter1, arrUserMahsol);
-  };
-}
-FilterPrice(filter, document.querySelector(".SearchUser"));
+FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"));
