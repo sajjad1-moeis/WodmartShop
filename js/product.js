@@ -3,13 +3,10 @@ let locationSite = location.search;
 let IdLocation = new URLSearchParams(locationSite);
 let SearchLocation = IdLocation.get("id");
 import { CreateMahsol, AddToBasket, RemoveItem } from "./Hedear-Site.js";
-import { FilterPrice } from "../components/Proudct/product.js";
-
-import { FilterColor, ShowNot, HideNot } from "./export.js";
-FilterColor();
-customElements.define("divfilter-price", FilterPrice);
-
+import { FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, ResultPrice, Price } from "./export.js";
 ///Id Is Location
+FilterColor();
+document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
 
 let api = await fetch("https://657eea449d10ccb465d58032.mockapi.io/gol");
 let mahsol = await api.json();
@@ -25,6 +22,11 @@ let arrUserMahsol = [];
 let local = JSON.parse(localStorage.getItem("mahsol"));
 arrUserMahsol = local;
 CreateMahsol(filter, document.querySelector(".SearchUser"));
+AddToBasket(mahsol, arrUserMahsol);
+RemoveItem(arrUserMahsol, `.`);
+TaiinBasket(arrUserMahsol);
+TedadBasket(arrUserMahsol);
+ResultPrice(arrUserMahsol);
 
 //Create Div Filter Color
 
@@ -42,10 +44,27 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
       ShowNot();
     } else {
       HideNot();
-      AddToBasket(mahsol, arrUserMahsol);
     }
     CreateMahsol(Array, document.querySelector(".SearchUser"));
+    AddToBasket(mahsol, arrUserMahsol);
+    TedadBasket(arrUserMahsol);
+    TaiinBasket(arrUserMahsol);
   }
 };
-AddToBasket(mahsol, arrUserMahsol);
-RemoveItem(arrUserMahsol, `.`);
+function FilterPrice(arr, div) {
+  let InputFilterPrice = document.querySelector(".FilterPrice");
+  let max = arr.sort((a, b) => b.price - a.price)[0];
+  let value = InputFilterPrice.value * (max.price / 100);
+  document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
+
+  InputFilterPrice.oninput = () => {
+    let value = InputFilterPrice.value * (max.price / 100);
+    let filter1 = arr.filter((item) => {
+      return item.price >= value;
+    });
+    CreateMahsol(filter1, div);
+    document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
+    AddToBasket(filter1, arrUserMahsol);
+  };
+}
+FilterPrice(filter, document.querySelector(".SearchUser"));

@@ -2,24 +2,16 @@ let template = document.createElement("template");
 template.innerHTML = `
 <link rel="stylesheet" href="../tailwind/tailwind.css" />
 <link rel="stylesheet" href="../components/Proudct/product.css" />
-<div class="border-2 bg-white border-zinc-200 p-3 pb-10 text-xl">
-<div class="h-max mt-1">
-<div class="w-full bg-zinc-200 p-3">فیلتر بر اساس قیمت</div>
-</div>
-<div class="px-2 my-3">
-<input type="range" class="w-full FilterPrice" value="0" />
-</div>
-<div class="text-center">
-<p class="text-right">قیمت :</p>
-<span class="PriceSpan my-2"> 0 هزار تومان --- 20,400,000</span>
-</div>
-</div>
+
 
 `;
 let locationSite = location.search;
 let IdLocation = new URLSearchParams(locationSite);
 let SearchLocation = IdLocation.get("id");
-let arrUserMahsol = [].concat(JSON.parse(localStorage.getItem("mahsol")));
+let arrUserMahsol = [];
+let local = JSON.parse(localStorage.getItem("mahsol"));
+arrUserMahsol = local;
+
 import { CreateMahsol, AddToBasket } from "../../js/Hedear-Site.js";
 let api = await fetch("https://657eea449d10ccb465d58032.mockapi.io/gol");
 let mahsol = await api.json();
@@ -60,7 +52,6 @@ class FilterPrice extends HTMLElement {
 
       let FilterPrice = search.filter((item) => item.price >= value).sort((a, b) => a.price - b.price);
       CreateMahsol(FilterPrice, document.querySelector(".SearchUser"));
-
       console.log(FilterPrice);
     };
   }

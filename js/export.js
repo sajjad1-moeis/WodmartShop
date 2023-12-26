@@ -1,4 +1,5 @@
 let $ = document;
+import { CreateMahsol, AddToBasket } from "./Hedear-Site.js";
 async function FilterColor() {
   let ColorFilter = await fetch("https://657eea449d10ccb465d58032.mockapi.io/AbutMore");
   let jsonColor = await ColorFilter.json();
@@ -35,4 +36,19 @@ function TaiinBasket(arr) {
     ? document.querySelector(".DivBasketKhali").classList.add("hidden")
     : document.querySelector(".DivBasketKhali").classList.remove("hidden");
 }
-export { FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket };
+function Price() {
+  return `<div class="border-2 bg-white border-zinc-200 p-3 pb-10 text-xl">
+  <div class="h-max mt-1">
+  <div class="w-full bg-zinc-200 p-3">فیلتر بر اساس قیمت</div>
+  </div>
+  <div class="px-2 my-3">
+  <input type="range" class="w-full FilterPrice" value="0" />
+  </div>
+  <div class="text-center">
+  <p class="text-right">قیمت :</p>
+  <span class="PriceSpan my-2"> 0 هزار تومان --- 20,400,000</span>
+  </div>
+  </div>`;
+}
+
+export { FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price };

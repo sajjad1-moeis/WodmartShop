@@ -388,9 +388,8 @@ import {
 } from "./js/Hedear-Site.js";
 import { TedadBasket, ResultPrice, TaiinBasket } from "./js/export.js";
 (() => {
-  CreateMahsolBasket(ArrayUserBasket, " ");
+  CreateMahsolBasket(ArrayUserBasket, "");
   RemoveItem(ArrayUserBasket, "");
-  TedadBasket(ArrayUserBasket);
   ResultPrice(ArrayUserBasket);
   TaiinBasket(ArrayUserBasket);
   Header(" ");
@@ -402,4 +401,5 @@ import { TedadBasket, ResultPrice, TaiinBasket } from "./js/export.js";
   IconHeader("");
   ShoeMenuMobile();
   notSuccess();
+  TedadBasket(ArrayUserBasket);
 })();

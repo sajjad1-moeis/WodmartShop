@@ -24,7 +24,16 @@ margin: 0;
     background-color: #dbdbdb; /* رنگ پس زمینه اسکرول بار */
 }
 
-
+.ProductUser{
+    height: 720px;
+    overflow: auto;
+}
+body .DivBasket .DivBasketKhal{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-2%);
+}
 html,
     body {
       position: relative;
@@ -473,4 +482,23 @@ cursor: pointer;
 }
 .DivColor:hover .flex{
 opacity: 0.5;
+}
+
+.FilterPrice[type="range"]{
+    width: 100%;
+    height: 3.5px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #dcdcdc;
+    border-radius: 3px;
+    outline: none;
+}
+.FilterPrice[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(253, 217, 14);
+    border-radius: 50%;
+    cursor: pointer;
 }

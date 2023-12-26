@@ -199,7 +199,7 @@ function body(IsSubmit, href, dot) {
                   <!-- SabadKharid -->
                   
                   <div
-                  class="fixed  h-[100vh] w-[300px] lg:w-[350px] bg-secondary  top-0 left-[-350px] DivBasket"
+                  class="fixed  h-[100vh] w-[300px] lg:w-[350px]  bg-white  top-0 left-[-350px] DivBasket"
                   style="transition: 0.4s ease-in-out;z-index:55555"
     >
     <div class="flex justify-between p-3">
@@ -215,13 +215,13 @@ function body(IsSubmit, href, dot) {
           </div>
       <div class="border-b-2 border-warning w-[90%] mx-auto"></div>
       <div class="ProductUser p-3"></div>
-      <div class="p-5 text-center DivBasketKhali">
+      <div class="p-5 text-center DivBasketKhali absolute w-full top-24 left-1/2 translate-x-[-50%]">
           <div class="w-max mx-auto">
             <img src="${dot}./img/notBasket.png" class="w-24" alt="" />
           </div>
           <div class="text-lg my-3">در حال حاضر سبد خرید شما خالی است</div>
         </div>
-        <div class=" p-5 text-center text-base   w-full">
+        <div class=" p-5 text-center text-base bg-white z-50  w-full">
             <div>
               <div class="TotalPrice">مجموع سبد خرید شما : 0 تومان</div>
             </div>
