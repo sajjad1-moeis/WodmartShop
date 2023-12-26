@@ -182,8 +182,8 @@ function body(IsSubmit, href, dot) {
                   </div>
                   <div class="btnShowBasket cursor-pointer relative">
                   <span
-                  class="absolute top-[-3px] bg-warning text-white h-[14px] left-[-6px] text-center leading-[6px] pt-[5px] p-1 w-[15px] rounded-full text-xs basket" 
-                  >0</span
+                  class="absolute top-[-5px] bg-warning text-white h-[16px] left-[-8px] text-center leading-[8px] pt-[5px] p-1 w-[17px] rounded-full text-xs basket" 
+                  >0</span 
                   >
                   <img src="${dot}./img/shopping-bag-svgrepo-com.svg" class="w-6" alt="" />
                   </div>
@@ -202,7 +202,7 @@ function body(IsSubmit, href, dot) {
                   class="fixed  h-[100vh] w-[300px] lg:w-[350px]  bg-white  top-0 left-[-350px] DivBasket"
                   style="transition: 0.4s ease-in-out;z-index:55555"
     >
-          <div class=" p-5 text-center text-base bg-white z-50  w-full absolute bottom-0">
+          <div class=" p-5 text-center text-base bg-white z-50  w-full absolute top-2/4 md:bottom-5">
             <div>
               <div class="TotalPrice">مجموع سبد خرید شما : 0 تومان</div>
             </div>

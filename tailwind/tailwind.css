@@ -725,6 +725,18 @@ video {
   bottom: 2rem;
 }
 
+.bottom-7 {
+  bottom: 1.75rem;
+}
+
+.top-3\/4 {
+  top: 75%;
+}
+
+.top-2\/4 {
+  top: 50%;
+}
+
 .z-40 {
   z-index: 40;
 }
@@ -1652,6 +1664,10 @@ video {
   line-height: 2;
 }
 
+.leading-\[6\.5px\] {
+  line-height: 6.5px;
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1744,6 +1760,10 @@ video {
 @media (min-width: 768px) {
   .md\:left-\[-50px\] {
     left: -50px;
+  }
+
+  .md\:bottom-5 {
+    bottom: 1.25rem;
   }
 
   .md\:col-span-1 {

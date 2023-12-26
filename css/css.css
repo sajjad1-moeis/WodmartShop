@@ -182,7 +182,7 @@ li{
 }
 @media (max-width:1024px) {
    
-     .list-menu2:not(.imgHover .list-menu2){
+     .list-menu2:not(.imgHover .list-menu2,.mySwiper3 .list-menu2){
         border-radius: 50px;
         left: 50%;
         transform: translate(-50%, 20px);
