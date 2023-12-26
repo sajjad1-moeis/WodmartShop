@@ -202,7 +202,7 @@ function body(IsSubmit, href, dot) {
                   class="fixed  h-[100vh] w-[300px] lg:w-[350px]  bg-white  top-0 left-[-350px] DivBasket"
                   style="transition: 0.4s ease-in-out;z-index:55555"
     >
-          <div class=" p-5 text-center text-base bg-white z-50  w-full absolute top-2/4 md:bottom-5">
+          <div class=" p-5 text-center text-base bg-white z-50  w-full absolute top-[80%]">
             <div>
               <div class="TotalPrice">مجموع سبد خرید شما : 0 تومان</div>
             </div>
@@ -509,6 +509,7 @@ function HoverBottom(id) {
   </div>`;
 }
 function CreateMahsol(arr, div) {
+  div.innerHTML = "";
   let divFrag = document.createDocumentFragment();
   arr.forEach((element) => {
     let divS = document.createElement("div");

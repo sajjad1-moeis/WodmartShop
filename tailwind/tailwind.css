@@ -657,8 +657,16 @@ video {
   top: 2.5rem;
 }
 
+.top-2\/4 {
+  top: 50%;
+}
+
 .bottom-0 {
   bottom: 0px;
+}
+
+.bottom-1\/4 {
+  bottom: 25%;
 }
 
 .left-5 {
@@ -667,10 +675,6 @@ video {
 
 .left-\[-350px\] {
   left: -350px;
-}
-
-.left-\[-6px\] {
-  left: -6px;
 }
 
 .left-\[-8px\] {
@@ -709,10 +713,6 @@ video {
   top: 1.25rem;
 }
 
-.top-\[-3px\] {
-  top: -3px;
-}
-
 .top-\[-5px\] {
   top: -5px;
 }
@@ -721,20 +721,16 @@ video {
   top: 30px;
 }
 
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
+.top-\[80\%\] {
+  top: 80%;
+}
+
 .bottom-8 {
   bottom: 2rem;
-}
-
-.bottom-7 {
-  bottom: 1.75rem;
-}
-
-.top-3\/4 {
-  top: 75%;
-}
-
-.top-2\/4 {
-  top: 50%;
 }
 
 .z-40 {
@@ -743,10 +739,6 @@ video {
 
 .z-50 {
   z-index: 50;
-}
-
-.col-span-2 {
-  grid-column: span 2 / span 2;
 }
 
 .float-left {
@@ -958,10 +950,6 @@ video {
   height: 1.75rem;
 }
 
-.h-\[14px\] {
-  height: 14px;
-}
-
 .h-\[16px\] {
   height: 16px;
 }
@@ -1067,10 +1055,6 @@ video {
   width: 2rem;
 }
 
-.w-\[15px\] {
-  width: 15px;
-}
-
 .w-\[17px\] {
   width: 17px;
 }
@@ -1119,6 +1103,10 @@ video {
   width: 270px;
 }
 
+.max-w-\[1100px\] {
+  max-width: 1100px;
+}
+
 .max-w-\[1200px\] {
   max-width: 1200px;
 }
@@ -1145,10 +1133,6 @@ video {
 
 .max-w-\[716px\] {
   max-width: 716px;
-}
-
-.max-w-\[1100px\] {
-  max-width: 1100px;
 }
 
 .translate-x-\[-50\%\] {
@@ -1215,10 +1199,6 @@ video {
 
 .gap-2 {
   gap: 0.5rem;
-}
-
-.gap-10 {
-  gap: 2.5rem;
 }
 
 .gap-x-10 {
@@ -1684,20 +1664,12 @@ video {
   line-height: 1.75rem;
 }
 
-.leading-\[6px\] {
-  line-height: 6px;
-}
-
 .leading-\[8px\] {
   line-height: 8px;
 }
 
 .leading-loose {
   line-height: 2;
-}
-
-.leading-\[6\.5px\] {
-  line-height: 6.5px;
 }
 
 .text-black {
@@ -1767,6 +1739,10 @@ video {
   outline-offset: 2px;
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1792,10 +1768,6 @@ video {
 @media (min-width: 768px) {
   .md\:left-\[-50px\] {
     left: -50px;
-  }
-
-  .md\:bottom-5 {
-    bottom: 1.25rem;
   }
 
   .md\:col-span-1 {
@@ -1869,12 +1841,12 @@ video {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-7 {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 
   .md\:justify-between {
@@ -1951,10 +1923,6 @@ video {
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:border-x-\[1px\] {
