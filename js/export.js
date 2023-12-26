@@ -26,7 +26,12 @@ function TedadBasket(arr) {
   document.querySelectorAll(".basket").forEach((span) => (span.innerHTML = arr.length));
 }
 function TedadLove() {
-  document.querySelectorAll(".interest").forEach((span) => (span.innerHTML = JSON.parse(localStorage.getItem("love")).length));
+  let local = JSON.parse(localStorage.getItem("love"));
+  if (local) {
+    document.querySelectorAll(".interest").forEach((span) => (span.innerHTML = JSON.parse(localStorage.getItem("love")).length));
+  } else {
+    localStorage.setItem("love", JSON.stringify([]));
+  }
 }
 function ResultPrice(arr) {
   let result = arr.reduce((prev, next) => {

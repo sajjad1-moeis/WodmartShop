@@ -358,9 +358,11 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
         document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
       } else if (e.target.parentElement.className.includes("love")) {
         let find = arrMahsol.find((item) => item.id == id);
-        let some = arrUserLove.some((item) => item.id == id);
-        if (!some) {
-          arrUserLove.push(find);
+        if (arrMahsol) {
+          let some = arrUserLove.some((item) => item.id == id);
+          if (!some) {
+            arrUserLove.push(find);
+          }
         }
         localStorage.setItem("love", JSON.stringify(arrUserLove));
       }
