@@ -257,6 +257,12 @@ function body(IsSubmit, href, dot) {
       <a href="${dot}./html/love.html">
         <div class=" p-4 border-b-[1px] border-silver">علاقه مندی</div>
       </a>
+      <a href="${dot}./html/Ertebat.html">
+        <div class=" p-4 border-b-[1px] border-silver">ارتباط با ما</div>
+      </a>
+      <a href="${dot}./html/Soal.html">
+        <div class=" p-4 border-b-[1px] border-silver">سوالات متداول</div>
+      </a>
       <a href="${href}">
         <div class=" p-4 border-b-[1px] border-silver">${IsSubmit}</div>
       </a>
