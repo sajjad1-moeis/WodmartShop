@@ -283,7 +283,7 @@ async function moreAbut() {
                 <span class="mt-2 h-max text-warning">${item.count}</span>
               </div>
               <div class="ms-3">
-                <p class="text-xl">${item.diration}</p>
+                <p class="text-2xl">${item.diration}</p>
                 <p class="mt-2 text-zinc-500">${item.more}</p>
               </div>
            
@@ -335,7 +335,6 @@ const MySwiper9 = () => {
     breakpoints: {
       768: { slidesPerView: 3, spaceBetween: 40 },
       1024: { slidesPerView: 6, spaceBetween: 10 },
-      1280: { loop: false, slidesPerView: 5, spaceBetween: 10 },
     },
   });
   CreateProductSlide4(arrMahsol.slice(20, 26), document.querySelector(".mySwiper9 .swiper-wrapper"), "swiper-slide");
@@ -401,7 +400,7 @@ import { TedadBasket, ResultPrice, TaiinBasket, TedadLove } from "./js/export.js
   RemoveItem(ArrayUserBasket, "");
   ResultPrice(ArrayUserBasket);
   TaiinBasket(ArrayUserBasket);
-  Header(" ");
+  Header("");
   ShowDivKhabarName();
   SearchProduct("./html/SearchMahsol.html?id=");
   listNextSearch();

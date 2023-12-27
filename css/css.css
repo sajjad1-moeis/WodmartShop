@@ -13,7 +13,7 @@ margin: 0;
 /* اسکرول بار عمودی */
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -21,7 +21,7 @@ margin: 0;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #dbdbdb; /* رنگ پس زمینه اسکرول بار */
+    background-color: #eeeeee; /* رنگ پس زمینه اسکرول بار */
 }
 
 .ProductUser{
@@ -38,10 +38,7 @@ html,
     body {
       position: relative;
       height: 100%;
-    }
-
-    body {
-      background: #eee;
+      background-color: white;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
       font-size: 14px;
       color: #000;
@@ -83,7 +80,7 @@ li:hover .g{
 }
 .show header,.show .mySwiper1,.show main ,.show section {
     transition: 0.3s;
-filter: blur(2px);
+filter: blur(3px);
 }
 li{
     z-index: 1000;
@@ -150,7 +147,7 @@ li{
 
 }
 .swiper3 .swiper-button-prev ,.swiper4 .swiper-button-prev{
-    left: -50px;
+    left: -40px;
 }
 
 .swiper3 .swiper-button-next ,.swiper4 .swiper-button-next{
@@ -501,4 +498,7 @@ opacity: 0.5;
     background-color: rgb(253, 217, 14);
     border-radius: 50%;
     cursor: pointer;
+}
+.show main{
+    filter: blur(3px);
 }

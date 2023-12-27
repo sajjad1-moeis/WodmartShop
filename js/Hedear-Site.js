@@ -89,7 +89,7 @@ function body(IsSubmit, href, dot) {
   <header>
   <div class="bg-darkBlue lg:block hidden">
   <div class="w-full border-b-[1px] border-silver">
-          <div class="container p-0 h-max max-w-[1200px] w-full flex justify-between ps-1.5">
+          <div class="container p-0 h-max  w-full flex justify-between ps-1.5">
           <div class="text-slate-300 my-auto text-xs">
           <span>بهترین ها رو میتونید از سایت ما خریداری کنید</span>
           </div>
@@ -124,7 +124,7 @@ function body(IsSubmit, href, dot) {
                 </div>
                 
                 <div class="h-max py-7 w-full bg-darkBlue lg:block hidden">
-                <div class="max-w-[1200px] container w-full flex justify-between">
+                <div class=" container w-full flex justify-between">
                 <div class="w-[245px] h-[35px]">
                 <a href="${dot}./index.html">
                    <img src="${dot}./img/wood-logo-white-reserve.svg" alt="" />
@@ -190,7 +190,7 @@ function body(IsSubmit, href, dot) {
                   </div>
                   
                   <div class="h-max bg-white py-3 shadow lg:flex hidden border-[1px] border-b-silver">
-                  <div class="max-w-[1200px] container">
+                  <div class=" container">
                   <ul class="list-none gap-5 grid-cols-4 text-sm relative flex"></ul>
                   </div>
                   </div>
