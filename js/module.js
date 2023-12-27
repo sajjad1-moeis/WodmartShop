@@ -14,7 +14,7 @@ import {
 let cokieSubmit = document.cookie;
 import { ResultPrice, TaiinBasket, TedadBasket, TedadLove } from "./export.js";
 if (cokieSubmit) {
-  body("وبلاگ", "#", ".");
+  body("حساب کاربری من", "#", ".");
 } else {
   body("ورود / ثبت نام", "../html/vrood.html", ".");
 }

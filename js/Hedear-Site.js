@@ -152,7 +152,7 @@ function body(IsSubmit, href, dot) {
                   </div>
                   <div class="flex my-auto text-white alage">
                   <div class="ms-4">
-                  <a href="${href}">
+                  <a href="${dot}./html/userPage.html">
                   <span>${IsSubmit}</span>
                   </a>
                   </div>
@@ -263,7 +263,7 @@ function body(IsSubmit, href, dot) {
       <a href="${dot}./html/Soal.html">
         <div class=" p-4 border-b-[1px] border-silver">سوالات متداول</div>
       </a>
-      <a href="${href}">
+      <a href="${dot}./html/userPage.html">
         <div class=" p-4 border-b-[1px] border-silver">${IsSubmit}</div>
       </a>
       <div class=" p-4 border-b-[1px] border-silver">مقایسه</div>

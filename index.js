@@ -5,7 +5,7 @@ let $ = document;
 let cokieSubmit = document.cookie;
 
 if (cokieSubmit) {
-  body("وبلاگ", "#", "");
+  body("حساب کاربری من", "#", "");
 } else {
   body("ورود / ثبت نام", "./html/vrood.html", "");
 }
@@ -238,7 +238,6 @@ export { CreateProductSlide4 };
 // MySwiper6
 
 function MySwiper6() {
-  /////////////
   let swiper6 = new Swiper(".mySwiper6", {
     pagination: { el: ".mySwiper6 .swiper-pagination", clickable: true },
     navigation: { nextEl: ".mySwiper6 .swiper-button-next", prevEl: ".mySwiper6 .swiper-button-prev" },
