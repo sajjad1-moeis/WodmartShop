@@ -502,3 +502,6 @@ opacity: 0.5;
 .show main{
     filter: blur(3px);
 }
+.colapse2{
+    transition: 1s;
+}

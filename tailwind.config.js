@@ -16,6 +16,9 @@ module.exports = {
       xl: "1222px",
     },
     extend: {
+      fontSize: {
+        sm: "16px",
+      },
       colors: {
         primary: "#0d6efd",
         secondary: "#f7f7f7",
