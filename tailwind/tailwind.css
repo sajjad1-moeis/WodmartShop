@@ -1870,6 +1870,10 @@ video {
     margin-inline-end: 0px;
   }
 
+  .md\:mt-20 {
+    margin-top: 5rem;
+  }
+
   .md\:block {
     display: block;
   }
