@@ -32,8 +32,8 @@ function mySwiper1() {
   });
 
   for (let i = 1; i < 4; i++) {
-    $.querySelector(".mySwiper1 .swiper-wrapper").innerHTML += `<div class="swiper-slide a${i}">
-<div class="max-w-[716px] w-3/4 md:w-full AbutSite">
+    $.querySelector(".mySwiper1 .swiper-wrapper").innerHTML += `<div  class=" swiper-slide a${i}">
+<div class="max-w-[716px]  w-3/4 md:w-full AbutSite" >
   <div class="w-full text-center">
     <div class="text-warning text-xl">
       <span>برترین سایت فروشگاهی سال</span>
@@ -341,6 +341,7 @@ const MySwiper9 = () => {
 MySwiper9();
 
 ///click Div Kharid
+
 let LocalStorageItem = JSON.parse(localStorage.getItem("love"));
 let arrUserLove = [];
 arrUserLove = LocalStorageItem;
@@ -360,6 +361,9 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
           let some = arrUserLove.some((item) => item.id == id);
           if (!some) {
             arrUserLove.push(find);
+            alert("محصول به علاقه مندی اضافه شد");
+          } else {
+            alert("محصول در علاقه مندی وجود دارد");
           }
         }
         localStorage.setItem("love", JSON.stringify(arrUserLove));

@@ -202,7 +202,7 @@ function body(IsSubmit, href, dot) {
                   class="fixed  h-[100vh] w-[300px] lg:w-[350px]  bg-white  top-0 left-[-350px] DivBasket"
                   style="transition: 0.4s ease-in-out;z-index:55555"
     >
-          <div class=" p-5 text-center text-base bg-white z-50  w-full absolute top-3/4">
+          <div class=" p-5 text-center text-base bg-white z-50  w-full absolute top-[85%]">
             <div>
               <div class="TotalPrice">مجموع سبد خرید شما : 0 تومان</div>
             </div>

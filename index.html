@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./tailwind/tailwind.css" />
     <link rel="stylesheet" href="./css/css.css" />
     <link rel="stylesheet" href="./css/bundle-swiper.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body dir="rtl" class="bg-white">
@@ -56,7 +57,7 @@
         <!-- Swiper 2 -->
 
         <section>
-          <div class="w-full container h-max bg-white">
+          <div class="w-full container h-max bg-white" data-aos="fade-up">
             <div class="grid grid-cols-1 md:grid-cols-7 gap-8 mt-10">
               <div class="md:col-span-4 overflow-hidden mt-3 relative">
                 <div class="w-full border-b-2 border-b-zinc-200 flex">
@@ -122,7 +123,7 @@
 
               <!-- Swiper 3 -->
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-3 mt-20" data-aos="fade-up">
               <div class="lg:col-span-2 relative">
                 <div>
                   <img src="./img/retail-img-map-1-1-860x645-1.jpg" class="w-full" alt="" />
@@ -152,12 +153,12 @@
 
             <!-- more Abut -->
 
-            <section>
+            <section data-aos="fade-up">
               <div class="grid md:grid-cols-2 xl:grid-cols-4 grid-cols-1 mt-10 gap-20 more-abut"></div>
             </section>
 
             <!-- mySwiper8 -->
-            <div class="mt-10 grid lg:grid-cols-3 grid-cols-1">
+            <div class="mt-10 grid lg:grid-cols-3 grid-cols-1" data-aos="fade-up">
               <div class="lg:col-span-1 p-2.5 bg-secondary">
                 <div dir="rtl" class="swiper mySwiper8 relative p-5">
                   <div class="text-center xl:mt-10">
@@ -183,7 +184,7 @@
             <!-- mySwiper8 -->
 
             <!-- mySwiper9 -->
-            <div class="swiper9 relative mt-10">
+            <div class="swiper9 relative mt-10" data-aos="fade-up">
               <div class="gap-5 flex">
                 <div class="p-2 border-b-2 border-warning text-2xl">
                   <span>محصولات پر بازدید</span>
@@ -207,8 +208,13 @@
           </div>
         </section>
       </main>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </div>
     <script type="module" src="index.js"></script>
     <script src="./js/bundle-swiper.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
