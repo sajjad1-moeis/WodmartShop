@@ -5,7 +5,6 @@ let LocalStorageItem = JSON.parse(localStorage.getItem("love"));
 let LocalStorageItemMahsol = JSON.parse(localStorage.getItem("mahsol"));
 let arrUserLove = [];
 arrUserLove = LocalStorageItemMahsol;
-console.log(LocalStorageItem);
 CreateMahsol(LocalStorageItem, document.querySelector(".loveeee"));
 document.querySelectorAll(".list-menu2").forEach((div) => {
   div.addEventListener("click", (e) => {
@@ -28,4 +27,3 @@ document.querySelectorAll(".list-menu2").forEach((div) => {
 });
 TedadLove();
 RemoveItem(arrUserLove, ".");
-console.log(document.querySelector(".loveeee"));

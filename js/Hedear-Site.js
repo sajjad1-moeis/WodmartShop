@@ -576,18 +576,16 @@ function FilterPrice(arr, arr2, div) {
   inputFilter.forEach((item) => {});
   document.querySelector(".btnFilter").onclick = () => {
     if (inputFilter[0].value && inputFilter[1].value) {
-      let is1 = inputFilter[0].value + 1;
-      let is2 = inputFilter[1].value + 1;
+      let is1 = Number(inputFilter[0].value) + 1;
+      let is2 = Number(inputFilter[1].value) + 1;
       if (!isNaN(is1) && !isNaN(is2)) {
-        if (+inputFilter[0].value > +inputFilter[1].value) {
-          console.log(Number(inputFilter[0].value));
-          console.log(Number(inputFilter[1].value));
+        if (is1 > is2) {
           spanNotFilter.innerHTML = "لطفا مقدار کمتر را بیشتر از قیمت بالاتر وارد نکنید";
         } else {
           spanNotFilter.innerHTML = "";
           let max = arr.sort((a, b) => b.price - a.price)[0];
-          let value1 = inputFilter[0].value;
-          let value2 = inputFilter[1].value;
+          let value1 = Number(inputFilter[0].value);
+          let value2 = Number(inputFilter[1].value);
           let filter1 = arr.filter((item) => {
             return item.price >= value1 && item.price <= value2;
           });
