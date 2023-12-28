@@ -6,7 +6,7 @@ let LocalStorageItemMahsol = JSON.parse(localStorage.getItem("mahsol"));
 let arrUserLove = [];
 arrUserLove = LocalStorageItemMahsol;
 console.log(LocalStorageItem);
-CreateMahsol(LocalStorageItem, document.querySelector(".love"));
+CreateMahsol(LocalStorageItem, document.querySelector(".loveeee"));
 document.querySelectorAll(".list-menu2").forEach((div) => {
   div.addEventListener("click", (e) => {
     if (e.target.parentElement.className.includes("kharid")) {
@@ -20,11 +20,12 @@ document.querySelectorAll(".list-menu2").forEach((div) => {
     } else if (e.target.parentElement.className.includes("love")) {
       let find = LocalStorageItem.findIndex((item) => item.id == div.dataset.id);
       LocalStorageItem.splice(find, 1);
-      CreateMahsol(LocalStorageItem, document.querySelector(".love"));
       console.log(e.target.parentElement);
       localStorage.setItem("love", JSON.stringify(LocalStorageItem));
+      CreateMahsol(JSON.parse(localStorage.getItem("love")), document.querySelector(".loveeee"));
     }
   });
 });
 TedadLove();
 RemoveItem(arrUserLove, ".");
+console.log(document.querySelector(".loveeee"));

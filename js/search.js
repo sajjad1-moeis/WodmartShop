@@ -1,6 +1,6 @@
 let $ = document;
 import { AddToBasket, SetLocal, CreateMahsol, RemoveItem, FilterPrice } from "./Hedear-Site.js";
-import { FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket, Price } from "./export.js";
+import { FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket, Price, AddLove } from "./export.js";
 FilterColor();
 let g = Price();
 document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
@@ -30,9 +30,8 @@ inputSearchProduct.addEventListener("keypress", (e) => {
     let filter1 = mahsol.filter((item) => {
       return item.title.includes(inputSearchProduct.value);
     });
-    filter1 == ""
-      ? ShowNot() + CreateMahsol(filter1, document.querySelector(".SearchUser"))
-      : HideNot() + CreateMahsol(filter1, document.querySelector(".SearchUser"));
+    filter1 == "" ? ShowNot() : HideNot();
+    CreateMahsol(sortArr(filter1), document.querySelector(".SearchUser"));
     AddToBasket(mahsol, arrUserMahsol);
     TedadBasket(arrUserMahsol);
     TaiinBasket(arrUserMahsol);
@@ -57,7 +56,9 @@ async function FilterColorMahsol(Color) {
   let filterMahsol = await mahsol.filter((item) => item.label.includes(`${Color}`));
   return filterMahsol;
 }
-
+function sortArr(arr) {
+  return arr.sort((a, b) => a.price - b.price);
+}
 document.querySelector(".filterColorProduct").onclick = async (e) => {
   if (e.target.className.includes("-bg") || e.target.className.includes("bg")) {
     let sliceIndex = e.target.className.indexOf("bg");
@@ -69,7 +70,7 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     } else {
       HideNot();
     }
-    CreateMahsol(Array, document.querySelector(".SearchUser"));
+    CreateMahsol(sortArr(Array), document.querySelector(".SearchUser"));
     AddToBasket(mahsol, arrUserMahsol);
     TedadBasket(arrUserMahsol);
     TaiinBasket(arrUserMahsol);
@@ -82,3 +83,5 @@ RemoveItem(arrUserMahsol, `.`);
 TaiinBasket(arrUserMahsol);
 
 FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"));
+let o = mahsol.filter((item) => item.price > 50000 && item.price < 1000000);
+console.log(o);

@@ -152,7 +152,7 @@ function body(IsSubmit, href, dot) {
                   </div>
                   <div class="flex my-auto text-white alage">
                   <div class="ms-4">
-                  <a href="${dot}./html/userPage.html">
+                  <a href="${dot}${href}">
                   <span>${IsSubmit}</span>
                   </a>
                   </div>
@@ -263,7 +263,7 @@ function body(IsSubmit, href, dot) {
       <a href="${dot}./html/Soal.html">
         <div class=" p-4 border-b-[1px] border-silver">سوالات متداول</div>
       </a>
-      <a href="${dot}./html/userPage.html">
+      <a href="${dot}${href}">
         <div class=" p-4 border-b-[1px] border-silver">${IsSubmit}</div>
       </a>
       <div class=" p-4 border-b-[1px] border-silver">مقایسه</div>
@@ -428,7 +428,7 @@ function CreateMahsolBasket(arr, dott) {
     SetLocal([]);
   }
 }
-import { TedadBasket, TaiinBasket, ResultPrice } from "./export.js";
+import { TedadBasket, TaiinBasket, ResultPrice, AddLove, TedadLove } from "./export.js";
 function RemoveItem(arr, dot) {
   let y = document.querySelector(".ProductUser");
   y.addEventListener("click", (e) => {
@@ -554,13 +554,14 @@ function AddToBasket(arr, arr2) {
   let DivKharid = $.querySelectorAll(".list-menu2");
   DivKharid.forEach((div) => {
     div.addEventListener("click", (e) => {
-      console.log("object");
-      console.log();
       let parent = e.target.parentElement;
       if (document.cookie.includes("name")) {
         if (parent.className.includes("kharid")) {
           findMahsol(div.dataset.id, arr, arr2, ".");
           $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
+        } else if (parent.className.includes("love")) {
+          AddLove(arr, JSON.parse(localStorage.getItem("love")), div.dataset.id);
+          TedadLove();
         }
       } else {
         let DivIsSubmit = document.querySelector(".IsSubmit");
@@ -570,19 +571,40 @@ function AddToBasket(arr, arr2) {
   });
 }
 function FilterPrice(arr, arr2, div) {
-  let InputFilterPrice = document.querySelector(".FilterPrice");
-  let max = arr.sort((a, b) => b.price - a.price)[0];
-  let value = InputFilterPrice.value * (max.price / 100);
-  document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
-
-  InputFilterPrice.oninput = () => {
-    let value = InputFilterPrice.value * (max.price / 100);
-    let filter1 = arr.filter((item) => {
-      return item.price >= value;
-    });
-    CreateMahsol(filter1, div);
-    document.querySelector(".PriceSpan").innerHTML = `${value.toLocaleString()} تومان --- ${max.price.toLocaleString()} تومان`;
-    AddToBasket(filter1, arr2);
+  let spanNotFilter = document.querySelector(".notFilter");
+  let inputFilter = document.querySelectorAll(".filterInput");
+  inputFilter.forEach((item) => {});
+  document.querySelector(".btnFilter").onclick = () => {
+    if (inputFilter[0].value && inputFilter[1].value) {
+      let is1 = inputFilter[0].value + 1;
+      let is2 = inputFilter[1].value + 1;
+      if (!isNaN(is1) && !isNaN(is2)) {
+        if (+inputFilter[0].value > +inputFilter[1].value) {
+          console.log(Number(inputFilter[0].value));
+          console.log(Number(inputFilter[1].value));
+          spanNotFilter.innerHTML = "لطفا مقدار کمتر را بیشتر از قیمت بالاتر وارد نکنید";
+        } else {
+          spanNotFilter.innerHTML = "";
+          let max = arr.sort((a, b) => b.price - a.price)[0];
+          let value1 = inputFilter[0].value;
+          let value2 = inputFilter[1].value;
+          let filter1 = arr.filter((item) => {
+            return item.price >= value1 && item.price <= value2;
+          });
+          console.log(filter1);
+          CreateMahsol(
+            filter1.sort((a, b) => a.price - b.price),
+            div
+          );
+          AddToBasket(filter1, arr2);
+          document.querySelector(".PriceSpan").innerHTML = `${Number(value1).toLocaleString()} هزار تومان --- ${Number(
+            value2
+          ).toLocaleString()} هزار تومان`;
+        }
+      } else {
+        spanNotFilter.innerHTML = "لطفا عدد وارد کنید";
+      }
+    }
   };
 }
 export {

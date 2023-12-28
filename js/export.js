@@ -45,18 +45,45 @@ function TaiinBasket(arr) {
     : document.querySelector(".DivBasketKhali").classList.remove("hidden");
 }
 function Price() {
-  return `<div class="border-2 bg-white border-zinc-200 p-3 pb-10 text-xl">
+  return `<div class="border-2 bg-white border-zinc-200 p-3 py-5 text-xl">
   <div class="h-max mt-1">
   <div class="w-full bg-zinc-200 p-3">فیلتر بر اساس قیمت</div>
   </div>
   <div class="px-2 my-3">
-  <input type="range" class="w-full FilterPrice" value="0" />
+  <div class="flex text-sm text-zinc-400">
+  <div class="w-1/2">از :</div>
+  <div class="w-1/2">تا :</div>
+</div>
+<div class="flex gap-3">
+  <input type="text" class="form-control filterInput w-1/2 text-sm placeholder:text-sm" placeholder="0 تومان" /><input
+    type="text"
+    class="form-control w-1/2 text-sm placeholder:text-sm filterInput"
+    placeholder="0 تومان"
+  />
+</div>
+<div class="mt-4">
+<span class="notFilter  text-danger text-sm"></span>
+</div>
   </div>
-  <div class="text-center">
-  <p class="text-right">قیمت :</p>
-  <span class="PriceSpan my-2"> 0 هزار تومان --- 20,400,000</span>
+  <div class="my-5 px-2">
+  <span class="PriceSpan my-2"> 0 هزار تومان --- 0 هزار تومان</span>
   </div>
+  <div class="w-full p-2 cursor-pointer text-center mt-4 btnFilter rounded-lg bg-warning text-white text-lg">فیلتر کردن</div>
+
   </div>`;
 }
 
-export { FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove };
+function AddLove(arrMahsol, arrUserLove, id) {
+  let find = arrMahsol.find((item) => item.id == id);
+  let some = arrUserLove.some((item) => item.id == id);
+  if (!some) {
+    arrUserLove.push(find);
+    alert("محصول به علاقه مندی اضافه شد");
+  } else {
+    alert("محصول در علاقه مندی وجود دارد");
+  }
+
+  localStorage.setItem("love", JSON.stringify(arrUserLove));
+}
+
+export { FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove, AddLove };

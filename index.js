@@ -5,7 +5,7 @@ let $ = document;
 let cokieSubmit = document.cookie;
 
 if (cokieSubmit) {
-  body("حساب کاربری من", "#", "");
+  body("حساب کاربری من", "./html/userPage.html", "");
 } else {
   body("ورود / ثبت نام", "./html/vrood.html", "");
 }
@@ -357,17 +357,18 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
         TedadBasket(ArrayUserBasket);
         document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
       } else if (e.target.parentElement.className.includes("love")) {
-        let find = arrMahsol.find((item) => item.id == id);
-        if (arrMahsol) {
-          let some = arrUserLove.some((item) => item.id == id);
-          if (!some) {
-            arrUserLove.push(find);
-            alert("محصول به علاقه مندی اضافه شد");
-          } else {
-            alert("محصول در علاقه مندی وجود دارد");
-          }
-        }
-        localStorage.setItem("love", JSON.stringify(arrUserLove));
+        AddLove(arrMahsol, arrUserLove, id);
+        // let find = arrMahsol.find((item) => item.id == id);
+        // if (arrMahsol) {
+        //   let some = arrUserLove.some((item) => item.id == id);
+        //   if (!some) {
+        //     arrUserLove.push(find);
+        //     alert("محصول به علاقه مندی اضافه شد");
+        //   } else {
+        //     alert("محصول در علاقه مندی وجود دارد");
+        //   }
+        // }
+        // localStorage.setItem("love", JSON.stringify(arrUserLove));
         TedadLove();
       }
     } else {
@@ -398,7 +399,7 @@ import {
   ShowElan,
   notSuccess,
 } from "./js/Hedear-Site.js";
-import { TedadBasket, ResultPrice, TaiinBasket, TedadLove } from "./js/export.js";
+import { TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove } from "./js/export.js";
 (() => {
   CreateMahsolBasket(ArrayUserBasket, "");
   RemoveItem(ArrayUserBasket, "");

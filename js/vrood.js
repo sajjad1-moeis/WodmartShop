@@ -39,7 +39,7 @@ btnLogin.addEventListener("click", () => {
       let cokie = document.cookie.split(";");
       let y = cokie.map((item) => item.slice(item.indexOf("=") + 1));
       console.log(y);
-      if (inputLogin[0].value === y[0] && inputLogin[1].value === y[1]) {
+      if (inputLogin[0].value === `${y[0]} ${y[1]}` && inputLogin[1].value === y[2]) {
         alert("با موفقیت ورود کردید");
         location.href = "../index.html";
       } else {
@@ -62,7 +62,8 @@ btnSubmit.addEventListener("click", () => {
       let date = new Date();
       console.log(date.getTime());
       let now = date.setTime(date.getTime() + 20 * 24 * 60 * 60 * 1000);
-      $.cookie = `name=${inputSubmit[0].value + inputSubmit[1].value};path=/;expires=${date}`;
+      $.cookie = `name=${inputSubmit[0].value};path=/;expires=${date}`;
+      $.cookie = `family=${inputSubmit[1].value};path=/;expires=${date}`;
       $.cookie = `pass=${inputSubmit[3].value};path=/;expires=${date}`;
       alert("ثبت نام با موفقیت انجام شد");
       setTimeout(() => {
