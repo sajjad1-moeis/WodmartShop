@@ -275,6 +275,7 @@ async function moreAbut() {
   let fragment = $.createDocumentFragment();
   arr.slice(0, 4).forEach((item) => {
     let div = $.createElement("div");
+    div.setAttribute("data-aos", "fade-up");
     div.className = "flex";
     div.innerHTML = `
           
