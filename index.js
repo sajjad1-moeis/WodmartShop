@@ -86,7 +86,7 @@ function slideSwiper2(div, swiper) {
               <a href="./html/Product.html?id=${item.title}">
                 <div class="w-full bg-secondary">
                   <div class="hovermahsolList">
-                    <img class="h-[182px] w-[182px]" src="${item.img}" alt="" />
+                    <img class="h-[182px] w-[182px]  m-auto" src="${item.img}" alt="" />
                   </div>
                   <div class="mt-5 ">
                     <p class="text-xl"> ${item.title}</p>
@@ -206,13 +206,13 @@ function CreateProductSlide4(arr, parent, slide) {
   let fragment = $.createDocumentFragment();
   arr.forEach((item) => {
     let div = $.createElement("div");
-    div.classList = `bg-secondary rounded-md overflow-hidden ${slide}`;
+    div.classList = `bg-secondary rounded-lg border-[1px] md:border-0 border-zinc-100 pb-5 md:pb-0 overflow-hidden ${slide}`;
     if (item.current) {
       div.innerHTML = `
        <div class=" itemKharid relative">
        ${divVizhehAndPercon(item.label[0], item.label[1], "bg-warning")}
           ${hoverBottom(item.id)}
-       <div class=" ">
+       <div class=" w-[200px] h-[200px] object-cover overflow-hidden m-auto">
          <img class="m-auto"  alt="" src="${item.img}"/>
        </div>
        <div class="mt-7 text-base">
@@ -225,8 +225,8 @@ function CreateProductSlide4(arr, parent, slide) {
       div.innerHTML = `
       <div class=" itemKharid relative opacity-50">
       ${divVizhehAndPercon(item.label[0], item.label[1], "bg-primary")}
-      <div class=" ">
-        <img class="m-auto"  alt="" src="${item.img}"/>
+      <div class=" w-[200px] h-[200px] object-cover">
+        <img class="m-auto w-full h-full"  alt="" src="${item.img}"/>
       </div>
       <div class="mt-7 text-base">
         <p class="md:mb-2   h-10 md:h-max overflow-hidden">${item.title}</p>
@@ -367,6 +367,9 @@ import {
   notSuccess,
 } from "./js/Hedear-Site.js";
 import { TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove } from "./js/export.js";
+import { AbutSwiper, HideMdAbut } from "./components/Btn-Swiper/Btn-Swiper.js";
+customElements.define("abut-swiper", AbutSwiper);
+customElements.define("hide-abut-swiper", HideMdAbut);
 (() => {
   CreateMahsolBasket(ArrayUserBasket, "");
   RemoveItem(ArrayUserBasket, "");
@@ -402,11 +405,6 @@ let arrswips = [
 //best-selling products myswiper7
 
 let sellproductsarr = [
-  { id: 100, title: "صندلی راحتی", price: 245_000, label: ["-6%", "جدید"], img: "./img/product-furniture-19-2-200x200 copy.jpg", count: "", current: true },
-  { id: 101, title: "عروسک چوبی", price: 70_000, label: ["", ""], img: "./img/product-furniture-15-200x200.jpg", count: "", current: true },
-  { id: 102, title: "ساعت فانتزی ظرح مهتاب ساده", price: 90_000, label: ["", "ویژه"], img: "./img/clocks5_2-200x200.jpg", count: "", current: true },
-  { id: 103, title: " جاخودکاری ساده", price: 15_000, label: ["-20%", "ویژه"], img: "./img/product-furniture-14-200x200.jpg", count: "", current: true },
-  { id: 104, title: " چراغ فانتزی 107", price: 95_000, label: ["-20%", "ویژه"], img: "./img/لامپ قرمز.jpg", count: "", current: true },
   { id: 105, title: "قفسه آیفون چوبی", price: 180_000, label: ["", ""], img: "./img/dock-black-walnut-ip6-grid-B1_1-200x200.jpg", count: "", current: true },
   { id: 106, title: "موبایل اپل 8", price: 8_000_000, label: ["", ""], img: "./img/white-electronics-product-1-200x200.jpg", count: "", current: true },
   { id: 107, title: "هندزفری مدل ال جی 114", price: 140_000, label: ["", ""], img: "./img/white-electronics-product-2-200x200.jpg", count: "", current: true },
@@ -424,9 +422,15 @@ let sellproductsarr = [
   },
 ];
 
-CreateProductSlide4(arrMahsol.slice(0, 6), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
-CreateProductSlide4(arrMahsol.slice(6, 12), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
-
+function MySwiper7() {
+  //swiper7
+  let swiper7 = new Swiper(".mySwiper7", {
+    navigation: { prevEl: ".swiper7 .swiper-button-next", nextEl: ".swiper7 .swiper-button-prev" },
+  });
+  CreateProductSlide4(arrMahsol.slice(12, 18), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
+  CreateProductSlide4(arrMahsol.slice(24, 30), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
+}
+MySwiper7();
 //brands-Swiper11
 
 let brandsarry = [
@@ -449,7 +453,7 @@ const mySwiper11 = (parentDiv2, sliceitem2) => {
     slidesPerView: 1,
     spaceBetween: 30,
     freeMode: true,
-    autoplay: { delay: 12000, disableOnInteraction: false },
+    autoplay: { delay: 2000, disableOnInteraction: false },
     pagination: { el: ".swiper-pagination", clickable: true },
   });
 
@@ -466,30 +470,10 @@ const mySwiper11 = (parentDiv2, sliceitem2) => {
   });
   parentDiv2.append(swiperfragment4);
 };
-let mySwiper16 = new Swiper(" .mySwiper16", {
-  slidesPerView: 2,
-  spaceBetween: 30,
-  freeMode: true,
-  autoplay: { delay: 2000, disableOnInteraction: false },
-  breakpoints: {
-    768: { slidesPerView: 3, spaceBetween: 40 },
-    1024: { slidesPerView: 6, spaceBetween: 10 },
-  },
-  pagination: { el: ".swiper-pagination", clickable: true },
-});
-let mySwiper17 = new Swiper(" .mySwiper17", {
-  slidesPerView: 2,
-  spaceBetween: 30,
-  freeMode: true,
-  autoplay: { delay: 2000, disableOnInteraction: false },
-  pagination: { el: ".swiper-pagination", clickable: true },
-  breakpoints: {
-    768: { slidesPerView: 3, spaceBetween: 40 },
-    1024: { slidesPerView: 6, spaceBetween: 10 },
-  },
-});
-mySwiper11(document.querySelector(".swiper .brands-1 "), brandsarry.slice(0, 6));
-mySwiper11(document.querySelector(".swiper .brands-2 "), brandsarry.slice(6, 12));
+
+mySwiper11(document.querySelector(".mySwiper13 .brands-1 "), brandsarry.slice(0, 6));
+mySwiper11(document.querySelector(".mySwiper14 .brands-2 "), brandsarry.slice(6, 12));
+mySwiper11(document.querySelector(".mySwiper15 .brands-3 "), brandsarry.slice(0));
 
 //brands-Swiper11
 
@@ -514,8 +498,8 @@ let newproductsarr = [
 ];
 let swiper12 = new Swiper(".mySwiper12", {
   navigation: {
-    nextEl: ".mySwiper12 .swiper-button-next",
-    prevEl: ".mySwiper12 .swiper-button-prev",
+    prevEl: ".swiper12 .swiper-button-next",
+    nextEl: ".swiper12 .swiper-button-prev",
   },
   pagination: {
     // el: ".swiper-pagination",
@@ -523,8 +507,8 @@ let swiper12 = new Swiper(".mySwiper12", {
   },
 });
 
-CreateProductSlide4(arrMahsol.slice(0, 8), document.querySelector(".mySwiper12 .slide3"), "swiper-slide");
-CreateProductSlide4(arrMahsol.slice(8, 16), document.querySelector(".mySwiper12 .slide4"), "swiper-slide");
+CreateProductSlide4(arrMahsol.slice(40, 48), document.querySelector(".mySwiper12 .slide3"), "swiper-slide");
+CreateProductSlide4(arrMahsol.slice(50, 58), document.querySelector(".mySwiper12 .slide4"), "swiper-slide");
 
 // omid
 
@@ -555,5 +539,20 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
     }
   });
 });
-
 ///////////////////////////////////////////////////////////////// Code JS
+function i(swiper) {
+  let mySwiper16 = new Swiper(`${swiper}`, {
+    slidesPerView: 2,
+    spaceBetween: 30,
+    freeMode: true,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    autoplay: { delay: 2000, disableOnInteraction: false },
+    breakpoints: {
+      768: { slidesPerView: 3, spaceBetween: 40 },
+      1024: { slidesPerView: 6, spaceBetween: 10 },
+    },
+  });
+}
+i(".mySwiper13");
+i(".mySwiper14");
+i(".mySwiper15");

@@ -27,7 +27,7 @@
 
       <!-- Swiper 1 -->
 
-      <section>
+      <section data-aos="fade-up">
         <div class="h-max">
           <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper1">
             <div class="swiper-wrapper"></div>
@@ -40,12 +40,13 @@
 
       <!-- Swiper 2 -->
 
-      <section class="h-max bg-secondary swiper2">
+      <section class="h-max bg-secondary swiper2 pt-10">
         <div class="w-full pb-11 container">
-          <div class="my-2 w-full border-b-2 border-b-zinc-200">
-            <div class="w-max border-b-2 z-40 border-b-warning text-2xl py-2">
+          <div class="flex">
+            <div class="w-max border-b-2 z-40 border-b-warning text-2xl py-2 flex-none">
               <h1>دسته بندی محصولات</h1>
             </div>
+            <div class="w-full border-b-2 border-b-zinc-200"></div>
           </div>
           <div class="swiper mySwiper2">
             <div class="swiper-wrapper mt-7"></div>
@@ -57,36 +58,24 @@
 
       <section>
         <div class="w-full container h-max bg-white" data-aos="fade-up">
-          <div class="grid grid-cols-1 md:grid-cols-7 gap-8 mt-10">
-            <div class="md:col-span-4 overflow-hidden mt-3 relative">
-              <div class="w-full border-b-2 border-b-zinc-200 flex">
-                <div class="w-max border-b-2 border-b-warning py-2 flex">
-                  <div class="text-2xl w-max">
-                    <span>محصولات پر طرفدار</span>
-                  </div>
-                </div>
-                <div class="gap-5 hidden mt-3 text-base ms-4 lg:flex">
-                  <span class="cursor-pointer text-warning">ویژه </span>
-                  <span class="cursor-pointer"> جدیدترین</span>
-                  <span class="cursor-pointer">محصولات حرفه ایی</span>
-                </div>
-              </div>
-
-              <!-- Swiper 2 -->
+          <div class="grid grid-cols-1 lg:grid-cols-7 gap-8 mt-10">
+            <div class="lg:col-span-4 overflow-hidden mt-3 relative">
+              <abut-swiper title="محصولات پر طرفدار"></abut-swiper>
 
               <!-- Swiper 4 -->
 
               <div class="swiper4 overflow-hidden">
-                <div class="absolute w-[20px] left-10" style="top: 30px">
+                <div class="absolute w-[20px] left-10" style="top: 20px">
                   <div class="swiper-button-next left-0"></div>
                   <div class="swiper-button-prev"></div>
                 </div>
                 <div class="swiper mySwiper4 h-max py-10 text-base my-5">
-                  <div class="gap-5 md:hidden w-max mt-3 ms-4 flex" style="margin: 20px auto">
+                  <!-- <div class="gap-5 md:hidden w-max mt-3 ms-4 flex" style="margin: 20px auto">
                     <span class="text-warning">ویژه </span>
                     <span> جدیدترین</span>
                     <span>محصولات حرفه ایی</span>
-                  </div>
+                  </div> -->
+                  <hide-abut-swiper></hide-abut-swiper>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="grid grid-cols-2 md:grid-cols-3 mt-5 gap-3 pb-[50px] slide1"></div>
@@ -105,7 +94,7 @@
 
             <!-- Swiper 3 -->
 
-            <div class="md:col-span-3 border-2 border-warning p-7 relative h-max pb-7">
+            <div class="lg:col-span-3 border-2 border-warning p-7 relative h-max pb-7">
               <div class="text-3xl my-2">
                 <span>محصولات سفارشی</span>
               </div>
@@ -155,10 +144,12 @@
           <section class="my-20">
             <div class="grid md:grid-cols-2 xl:grid-cols-4 grid-cols-1 mt-10 gap-20 more-abut"></div>
           </section>
+
+          <!--   myswiper5  -->
+
           <section class="product-selers">
-            <!--   myswiper5  -->
-            <div class="grid grid-cols-1 md:grid-cols-7 gap-8 container w-full relative mt-10 p-0" data-aos="fade-up">
-              <div class="md:col-span-3 border-2 border-warning relative h-max p-7">
+            <div class="grid grid-cols-1 lg:grid-cols-7 gap-8 container w-full relative mt-10 p-0" data-aos="fade-up">
+              <div class="lg:col-span-3 border-2 border-warning relative h-max p-7">
                 <div class="text-3xl my-2">
                   <span>محصولات پرفروش</span>
                 </div>
@@ -172,10 +163,18 @@
                   </div>
                 </div>
               </div>
+
               <!-- swiper7 -->
-              <div class="md:col-span-4">
-                <div class="mySwiper7">
-                  <div class="swiper-wrapper overflow-hidden">
+
+              <div class="lg:col-span-4 relative swiper7">
+                <div class="absolute w-[20px] left-10" style="top: 20px">
+                  <div class="swiper-button-next left-0"></div>
+                  <div class="swiper-button-prev" style="right: 35px"></div>
+                </div>
+                <abut-swiper title="محصولات پر فروش"></abut-swiper>
+                <div class="mySwiper7 overflow-hidden mt-8">
+                  <hide-abut-swiper></hide-abut-swiper>
+                  <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="slide1 grid grid-cols-2 md:grid-cols-3 gap-3"></div>
                     </div>
@@ -186,8 +185,8 @@
                 </div>
               </div>
             </div>
-            <!-- swiper7 -->
           </section>
+          <!-- swiper7 -->
 
           <!-- mySwiper8 -->
           <div class="mt-10 grid lg:grid-cols-3 grid-cols-1" data-aos="fade-up">
@@ -217,22 +216,13 @@
 
           <!-- mySwiper9 -->
           <div class="swiper9 relative mt-10" data-aos="fade-up">
-            <div class="gap-5 flex">
-              <div class="p-2 border-b-2 border-warning text-2xl">
-                <span>محصولات پر بازدید</span>
-              </div>
-              <div class="gap-5 text-base my-auto cursor-pointer md:flex hidden">
-                <span class="text-warning">جدید</span>محصولات ویژه<span>پر فروش ترین</span>
-              </div>
-            </div>
+            <abut-swiper title="محصولات پر بازدید"></abut-swiper>
             <div class="btn">
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
             </div>
             <div dir="rtl" class="swiper mySwiper9 pt-8">
-              <div class="justify-center text-base my-6 gap-5 cursor-pointer md:hidden flex">
-                <span class="text-warning">جدید</span>محصولات ویژه<span>پر فروش ترین</span>
-              </div>
+              <hide-abut-swiper></hide-abut-swiper>
               <div class="swiper-wrapper top-2/4"></div>
             </div>
           </div>
@@ -246,8 +236,8 @@
       <section class="specials flex mb-12" data-aos="fade-up">
         <div class="container w-full">
           <div class="special-galery bg-white grid grid-cols-1 md:grid-cols-2 gap-5 overflow-hidden">
-            <garden-elm img="img1" noehFrosh="فروش ویژه محصولات" t1="تخفیف 30 درصدی" t2="برای محصولات باغبانی"></garden-elm>
-            <garden-elm img="img2" noehFrosh="فروش ویژه تابستانه" t1="محصولات جدید و حرفه ایی" t2="با قیمتی باورنکردنی و مناسب"></garden-elm>
+            <garden-elm size="text-3xl" img="img1" noehFrosh="فروش ویژه محصولات" t1="تخفیف 30 درصدی" t2="برای محصولات باغبانی"></garden-elm>
+            <garden-elm size="text-3xl" img="img2" noehFrosh="فروش ویژه تابستانه" t1="محصولات جدید و حرفه ایی" t2="با قیمتی باورنکردنی و مناسب"></garden-elm>
           </div>
         </div>
       </section>
@@ -257,10 +247,11 @@
       <section class="category bg-secondary relative" data-aos="fade-up">
         <section class="h-max bg-secondary swiper2">
           <div class="w-full pb-11 container">
-            <div class="my-2 w-full border-b-2 border-b-zinc-200">
-              <div class="w-max border-b-2 z-40 border-b-warning text-2xl py-2">
+            <div class="flex">
+              <div class="w-max border-b-2 z-40 border-b-warning text-2xl py-2 flex-none">
                 <h1>دسته بندی محصولات</h1>
               </div>
+              <div class="w-full border-b-2 border-b-zinc-200"></div>
             </div>
             <div class="swiper mySwiper88">
               <div class="swiper-wrapper mt-7"></div>
@@ -271,33 +262,36 @@
         <!-- category-swiper10 -->
 
         <!-- brands-swiper11 -->
-        <div class="brands overflow-hidden container w-full h-32 relative bottom-6">
+        <div class="brands overflow-hidden container w-full h-32 relative bottom-6 lg:block hidden">
           <div class="swiper mySwiper11">
-            <div class="swiper-wrapper mt-14">
+            <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="mySwiper16">
+                <div class="swiper mySwiper13">
                   <div class="swiper-wrapper brands-1"></div>
                 </div>
-                <!-- <div class="relative overflow-hidden grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-9"></div> -->
               </div>
               <div class="swiper-slide">
-                <div class="mySwiper17">
+                <div class="swiper mySwiper14">
                   <div class="swiper-wrapper brands-2"></div>
                 </div>
-                <!-- <div class="brands-2 relative overflow-hidden grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-9"></div> -->
               </div>
             </div>
+          </div>
+        </div>
+        <div class="block lg:hidden">
+          <div class="swiper mySwiper15">
+            <div class="swiper-wrapper brands-3"></div>
           </div>
         </div>
         <!-- brands-swiper11 -->
       </section>
 
       <!-- new-products-mySwiper12 -->
-      <section class="new-products relative">
-        <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 gap-5 container sm:grid-cols-3 max-w-[1230px] w-full relative">
-          <div class="md:col-span-2 hidden md:hidden lg:block">
+      <section class="new-products relative" data-aos="fade-up">
+        <div class="grid grid-cols-1 lg:grid-cols-8 gap-5 container max-w-[1230px] w-full relative">
+          <div class="lg:col-span-2">
             <div>
-              <div class="container w-full h-max">
+              <div class="container w-full h-max grid-cols-2 md:grid-cols-1">
                 <div class="special-offers bg-white mt-10 gap-10">
                   <garden-elm
                     img="img3"
@@ -306,9 +300,11 @@
                   در دسته مبلمان و
                   دکوراسیون"
                     t2="با نازل ترین قیمت برای ارائه"
+                    size="text-2xl"
                   ></garden-elm>
                   <br />
                   <garden-elm
+                    size="text-2xl"
                     img="img4"
                     noehFrosh="به همراه هدیه"
                     t1="بیش از 25 محصول
@@ -320,20 +316,14 @@
               </div>
             </div>
           </div>
-          <div class="md:col-span-6">
+          <div class="lg:col-span-6 mt-10 swiper12 relative">
+            <div class="absolute w-[20px] left-14" style="top: 20px">
+              <div class="swiper-button-next left-0"></div>
+              <div class="swiper-button-prev" style="right: 35px"></div>
+            </div>
+            <abut-swiper title="محصولات جدید"></abut-swiper>
             <div dir="rtl" class="swiper mySwiper12 flex">
-              <div class="w-full border-b-2 border-b-zinc-200 flex" style="margin-top: 41px">
-                <div class="w-max border-b-2 border-b-warning py-2 flex">
-                  <div class="text-xl w-max">
-                    <span>محصولات جدید</span>
-                  </div>
-                </div>
-                <div class="gap-5 hidden mt-3 ms-4 lg:flex">
-                  <span class="cursor-pointer text-warning">جدیدترین ها</span>
-                  <span class="cursor-pointer"> محصولات ویژه</span>
-                  <span class="cursor-pointer">پرفروش ترین ها</span>
-                </div>
-              </div>
+              <hide-abut-swiper></hide-abut-swiper>
               <div class="swiper-wrapper flex">
                 <div class="swiper-slide akhar flex relative">
                   <div class="">
@@ -347,20 +337,14 @@
                   <div class="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-4 gap-x-5 gap-y-6 mt-5 slide4"></div>
                 </div>
               </div>
-              <div class="btns4">
-                <div class="swiper-button-next" style="right: 40px"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
             </div>
           </div>
         </div>
       </section>
       <!-- mySwiper12  -->
-
-      <!-- mySwiper12  -->
+      <br /><br /><br /><br /><br />
+      <!-- Omid -->
     </div>
-
-    <!-- Omid -->
     <script type="module" src="index.js"></script>
     <script src="./js/bundle-swiper.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

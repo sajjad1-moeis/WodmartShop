@@ -152,12 +152,12 @@ li{
 .swiper3 .swiper-button-next ,.swiper4 .swiper-button-next ,.swiper5 .swiper-button-next{
     left: 50px;
 }
-.swiper3 .swiper-button-prev::after ,.swiper3 .swiper-button-next::after,.swiper5 .swiper-button-prev::after ,.swiper5 .swiper-button-next::after{
+.swiper3 .swiper-button-prev::after ,.swiper3 .swiper-button-next::after,.swiper5 .swiper-button-prev::after,.swiper7 .swiper-button-prev::after ,.swiper5 .swiper-button-next::after{
     font-size: 14px;
     font-weight: bold;
     color: #000;
 }
-.swiper4 .swiper-button-prev::after ,.swiper4 .swiper-button-next::after{
+.swiper4 .swiper-button-prev::after ,.swiper4 .swiper-button-next::after,.swiper7 .swiper-button-next::after{
     font-size: 14px;
     font-weight: bold;
     color: #000;
@@ -379,7 +379,7 @@ body .swiper9{
 }
 body .swiper9 .btn{
     position: absolute;
-    left: 54px;
+    left: 64px;
     top: 21px;
 }
 .swiper9 .btn .swiper-button-prev{
@@ -539,15 +539,16 @@ opacity: 0.5;
       }
     
      
-      .btns3 .swiper-button-prev::after, .btns .swiper-button-prev::after,.btns2 .swiper-button-prev::after,.btns4 .swiper-button-prev::after{
-          font-size: 13.5px;
+     .swiper12 .swiper-button-prev::after,  .btns3 .swiper-button-prev::after, .btns .swiper-button-prev::after,.btns2 .swiper-button-prev::after,.btns4 .swiper-button-prev::after{
+          font-size: 14px;
           color: black;
-     
+      font-weight: 900;
   
       }
-      .btns4 .swiper-button-next::after, .btns .swiper-button-next::after,.btns2 .swiper-button-next::after,.btns3 .swiper-button-next::after{
-        font-size: 13.5px;
+      .swiper12 .swiper-button-next::after,  .btns4 .swiper-button-next::after, .btns .swiper-button-next::after,.btns2 .swiper-button-next::after,.btns3 .swiper-button-next::after{
+        font-size: 14px;
         color: black;
+      font-weight: 900;
         
     }
   
@@ -566,7 +567,7 @@ opacity: 0.5;
     position: absolute;
       /* margin-left: 8px; */
       left: 90px;
-      top: 70px;
+      top: 25px;
       
   
   }
@@ -620,12 +621,12 @@ opacity: 0.5;
     
   }
    */
-  .mySwiper11 img{
+  .mySwiper11 img,.mySwiper15 img{
   width: 110px;
   
   filter:grayscale(3) ;
   }
-  .mySwiper11 img:hover{
+  .mySwiper11 img:hover,.mySwiper15 img:hover{
     filter: grayscale(0);
     
   }

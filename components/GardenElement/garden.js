@@ -6,9 +6,9 @@ templete.innerHTML = `
            <div class="divimg1 overflow-hidden relative">
               <div class="label-garden1 absolute top-5 right-5 z-50">
                 <p class="noehFrosh text-warning mt-1 ms-1"> </p>
-                <div class="my-2 text-white text-3xl cursor-pointer">
-                  <p class="t1"></p>
-                  <p class="t2"></p>
+                <div class="my-2 text-white size cursor-pointer">
+                  <p class="t1 "></p>
+                  <p class="t2 text-sm mt-3"></p>
                 </div>
                 <a href="#" class="no-underline text-white border-b-2 border-white pb-0.5"> مشاهده کنید </a>
               </div>
@@ -26,6 +26,7 @@ class Garden extends HTMLElement {
     this.shadowRoot.querySelector(".t1").innerHTML = this.getAttribute("t1");
     this.shadowRoot.querySelector(".t2").innerHTML = this.getAttribute("t2");
     this.shadowRoot.querySelector(".v").classList.add(this.getAttribute("img"));
+    this.shadowRoot.querySelector(".size").classList.add(this.getAttribute("size"));
   }
 }
 
