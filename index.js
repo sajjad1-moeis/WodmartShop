@@ -58,8 +58,8 @@ mySwiper1();
 
 //MySwiper2
 
-function slideSwiper2() {
-  let swiper2 = new Swiper(".mySwiper2", {
+function slideSwiper2(div, swiper) {
+  let swiper2 = new Swiper(`${swiper}`, {
     loop: true,
     slidesPerView: 2,
     spaceBetween: 10,
@@ -70,7 +70,6 @@ function slideSwiper2() {
       1280: { loop: false, slidesPerView: 6, spaceBetween: 10 },
     },
   });
-
   let slideSwiper2 = [
     { img: "./img/لباس.png", count: 4, title: "پوشاک" },
     { img: "./img/تخت خواب.png", count: 3, title: "تخت خواب" },
@@ -99,9 +98,11 @@ function slideSwiper2() {
 `;
     fragmentSlid.append(div);
   });
-  $.querySelector(".mySwiper2  .swiper-wrapper").append(fragmentSlid);
+  div.append(fragmentSlid);
+  div.append(fragmentSlid);
 }
-slideSwiper2();
+slideSwiper2($.querySelector(" .mySwiper2  .swiper-wrapper"), ".mySwiper2");
+slideSwiper2($.querySelector(" .mySwiper88  .swiper-wrapper"), ".mySwiper88");
 
 //MySwiper2
 
@@ -150,6 +151,11 @@ function slideSwiper3() {
   hoverLeft(arrMahsol.slice(6, 11), ".mySwiper3 .swiper-wrapper");
 }
 slideSwiper3();
+let mySwiper5 = () => {
+  let swiper5 = new Swiper(".mySwiper5", { rewind: true, navigation: { prevEl: ".swiper5 .swiper-button-next", nextEl: ".swiper5 .swiper-button-prev" } });
+  hoverLeft(arrMahsol.slice(6, 11), ".mySwiper5 .swiper-wrapper");
+};
+mySwiper5();
 
 ///MySwiper3
 
@@ -341,45 +347,6 @@ const MySwiper9 = () => {
 };
 MySwiper9();
 
-///click Div Kharid
-
-let LocalStorageItem = JSON.parse(localStorage.getItem("love"));
-let arrUserLove = [];
-arrUserLove = LocalStorageItem;
-
-document.querySelectorAll(".list-menu2").forEach((btnLove) => {
-  btnLove.addEventListener("click", (e) => {
-    if (document.cookie.includes("name")) {
-      let id = btnLove.dataset.num;
-      if (e.target.parentElement.className.includes("kharid")) {
-        console.log("object");
-        findMahsol(id, arrMahsol, ArrayUserBasket, "");
-        TedadBasket(ArrayUserBasket);
-        document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
-      } else if (e.target.parentElement.className.includes("love")) {
-        AddLove(arrMahsol, arrUserLove, id);
-        // let find = arrMahsol.find((item) => item.id == id);
-        // if (arrMahsol) {
-        //   let some = arrUserLove.some((item) => item.id == id);
-        //   if (!some) {
-        //     arrUserLove.push(find);
-        //     alert("محصول به علاقه مندی اضافه شد");
-        //   } else {
-        //     alert("محصول در علاقه مندی وجود دارد");
-        //   }
-        // }
-        // localStorage.setItem("love", JSON.stringify(arrUserLove));
-        TedadLove();
-      }
-    } else {
-      let DivIsSubmit = document.querySelector(".IsSubmit");
-      ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"));
-    }
-  });
-});
-
-///////////////////////////////////////////////////////////////// Code JS
-
 // Create Basket Shop
 
 let ArrayUserBasket = [].concat(JSON.parse(localStorage.getItem("mahsol")));
@@ -417,3 +384,176 @@ import { TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove } from "./js/
   TedadBasket(ArrayUserBasket);
   TedadLove();
 })();
+import { Garden } from "./components/GardenElement/garden.js";
+customElements.define("garden-elm", Garden);
+
+// omid
+//omid
+//myswiper5
+
+let arrswips = [
+  { img: "./img/دریل.jpg", title: "پیچ گوشتی الکترونیکی DeWlat", price: 254_000, count: 1, current: true },
+  { img: "./img/پاپیون.jpg", title: "پاپیون رنگ چوبی ", price: 72_000, count: 1, current: true },
+  { img: "./img/النگو.jpg", title: "النگوزنانه", price: 3_600_000, count: 1, current: true },
+  { img: "./img/are.png", title: " اره برقی مدلهStanley", price: 870_000, count: 1, current: true },
+  { img: "./img/are2.png", title: "اره برقی رومیزی Hitachi", price: 670_000, count: 1, current: true },
+];
+
+//best-selling products myswiper7
+
+let sellproductsarr = [
+  { id: 100, title: "صندلی راحتی", price: 245_000, label: ["-6%", "جدید"], img: "./img/product-furniture-19-2-200x200 copy.jpg", count: "", current: true },
+  { id: 101, title: "عروسک چوبی", price: 70_000, label: ["", ""], img: "./img/product-furniture-15-200x200.jpg", count: "", current: true },
+  { id: 102, title: "ساعت فانتزی ظرح مهتاب ساده", price: 90_000, label: ["", "ویژه"], img: "./img/clocks5_2-200x200.jpg", count: "", current: true },
+  { id: 103, title: " جاخودکاری ساده", price: 15_000, label: ["-20%", "ویژه"], img: "./img/product-furniture-14-200x200.jpg", count: "", current: true },
+  { id: 104, title: " چراغ فانتزی 107", price: 95_000, label: ["-20%", "ویژه"], img: "./img/لامپ قرمز.jpg", count: "", current: true },
+  { id: 105, title: "قفسه آیفون چوبی", price: 180_000, label: ["", ""], img: "./img/dock-black-walnut-ip6-grid-B1_1-200x200.jpg", count: "", current: true },
+  { id: 106, title: "موبایل اپل 8", price: 8_000_000, label: ["", ""], img: "./img/white-electronics-product-1-200x200.jpg", count: "", current: true },
+  { id: 107, title: "هندزفری مدل ال جی 114", price: 140_000, label: ["", ""], img: "./img/white-electronics-product-2-200x200.jpg", count: "", current: true },
+  { id: 108, title: "لپ تاب ایسوس مدل P520", price: 12_000_000, label: ["", ""], img: "./img/lobtap.png", count: "", current: true },
+  { id: 109, title: " هدفون بلوتوث دار سونی ", price: 210_000, label: ["", ""], img: "./img/ghosh.jpg", count: "", current: true },
+  { id: 110, title: "هدفون ایسوس 12", price: 174_000, label: ["", ""], img: "./img/white-electronics-product-8-200x200.jpg", count: "", current: true },
+  {
+    id: 119,
+    title: "لپ تاپ ایسوس مدل K700",
+    price: 8_600_000,
+    label: ["", ""],
+    img: "./img/white-electronics-product-7-200x200.jpg",
+    count: "",
+    current: true,
+  },
+];
+
+CreateProductSlide4(arrMahsol.slice(0, 6), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
+CreateProductSlide4(arrMahsol.slice(6, 12), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
+
+//brands-Swiper11
+
+let brandsarry = [
+  { img: "./img/huawei.png" },
+  { img: "./img/gucci.png" },
+  { img: "./img/sony.png" },
+  { img: "./img/samsun.png" },
+  { img: "./img/ray-ban.png" },
+  { img: "./img/tosan.png" },
+  /*  step2 */
+  { img: "./img/panasonic.png" },
+  { img: "./img/pars.png" },
+  { img: "./img/bosch.png" },
+  { img: "./img/xvision.png" },
+  { img: "./img/Lg.png" },
+  { img: "./img/adata.png" },
+];
+const mySwiper11 = (parentDiv2, sliceitem2) => {
+  let swiper11 = new Swiper(".mySwiper11", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    freeMode: true,
+    autoplay: { delay: 12000, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+
+  let swiperfragment4 = document.createDocumentFragment();
+
+  sliceitem2.forEach((element) => {
+    let wraperfargment4 = document.createElement("div");
+    wraperfargment4.className = "swiper-slide";
+    wraperfargment4.innerHTML = `
+
+      <div><a href="#"><img src="${element.img}" class="m-auto" alt=""></a></div>
+`;
+    swiperfragment4.append(wraperfargment4);
+  });
+  parentDiv2.append(swiperfragment4);
+};
+let mySwiper16 = new Swiper(" .mySwiper16", {
+  slidesPerView: 2,
+  spaceBetween: 30,
+  freeMode: true,
+  autoplay: { delay: 2000, disableOnInteraction: false },
+  breakpoints: {
+    768: { slidesPerView: 3, spaceBetween: 40 },
+    1024: { slidesPerView: 6, spaceBetween: 10 },
+  },
+  pagination: { el: ".swiper-pagination", clickable: true },
+});
+let mySwiper17 = new Swiper(" .mySwiper17", {
+  slidesPerView: 2,
+  spaceBetween: 30,
+  freeMode: true,
+  autoplay: { delay: 2000, disableOnInteraction: false },
+  pagination: { el: ".swiper-pagination", clickable: true },
+  breakpoints: {
+    768: { slidesPerView: 3, spaceBetween: 40 },
+    1024: { slidesPerView: 6, spaceBetween: 10 },
+  },
+});
+mySwiper11(document.querySelector(".swiper .brands-1 "), brandsarry.slice(0, 6));
+mySwiper11(document.querySelector(".swiper .brands-2 "), brandsarry.slice(6, 12));
+
+//brands-Swiper11
+
+//new-products-mySwiper12
+let newproductsarr = [
+  { id: 200, title: "LED چراغ خواب", price: 230_000, label: ["-14%", ""], img: "./img/چراغ قرمزی.jpg", count: "", current: true },
+  { id: 200, title: " چراغ خواب طرح سرامیکی", price: 78_000, label: ["-16%", ""], img: "./img/چراغ چتری.jpg", count: "", current: true },
+  { id: 200, title: "چراغ فانتزی 107", price: 60_000, label: ["-20%", ""], img: "./img/لامپ قرمز.jpg", count: "", current: true },
+  { id: 200, title: " دوربین عمودی پاناسونیک", price: 1_200_000, label: ["", ""], img: "./img/دوربین ایستاده.jpg", count: "", current: true },
+  { id: 200, title: " چراغ لامپ کم مصرف", price: 239, label: ["", "ویژه"], img: "./img/لامپ سگی.jpg", count: "", current: true },
+  { id: 200, title: "درختچه هلندی", price: 42_000, label: ["", ""], img: "./img/gol3.png", count: "", current: true },
+  { id: 200, title: "پیرهن سفید زنانه", price: 185_000, label: ["", ""], img: "./img/داف.jpg", count: "", current: true },
+  { id: 200, title: "دکوراسیون چوبی ساده", price: 890_000, label: ["", ""], img: "./img/خیارچوبی.jpg", count: "", current: true },
+  { id: 200, title: "مایکرویو Oven", price: 750_000, label: ["", ""], img: "./img/مایکرویو.jpg", count: "", current: true },
+  { id: 200, title: "مبل چرم شرکتی", price: 340_000, label: ["", ""], img: "./img/صندلی قرمز.jpg", count: "", current: true },
+  { id: 200, title: "مانیتور Leonovo 700", price: 620_000, label: ["-9%", ""], img: "./img/مانیتور.jpg", count: "", current: true },
+  { id: 200, title: " موبایل Huawei P Smart", price: 1_950_000, label: ["-7%", ""], img: "./img/huawei p smart.jpg", count: "", current: true },
+  { id: 200, title: "کیبورد ایسوس 634", price: 67_000, label: ["-26%", ""], img: "./img/کیبورد.jpg", count: "", current: true },
+  { id: 200, title: "موبایل ال جی V30", price: 3_450_000, label: ["", ""], img: "./img/ال جی 730.jpg", count: "", current: true },
+  { id: 200, title: "موبایل سونی اکسپریا XZ1", price: 3_800_000, label: ["", ""], img: "./img/سونی اکسپریا.jpg", count: "", current: true },
+  { id: 200, title: "موبایل گلکسی S8", price: 5_800_000, label: ["", ""], img: "./img/گلکسی s8.jpg", count: "", current: true },
+];
+let swiper12 = new Swiper(".mySwiper12", {
+  navigation: {
+    nextEl: ".mySwiper12 .swiper-button-next",
+    prevEl: ".mySwiper12 .swiper-button-prev",
+  },
+  pagination: {
+    // el: ".swiper-pagination",
+    //clickable: true,
+  },
+});
+
+CreateProductSlide4(arrMahsol.slice(0, 8), document.querySelector(".mySwiper12 .slide3"), "swiper-slide");
+CreateProductSlide4(arrMahsol.slice(8, 16), document.querySelector(".mySwiper12 .slide4"), "swiper-slide");
+
+// omid
+
+///click Div Kharid
+
+let LocalStorageItem = JSON.parse(localStorage.getItem("love"));
+let arrUserLove = [];
+arrUserLove = LocalStorageItem;
+
+document.querySelectorAll(".list-menu2").forEach((btnLove) => {
+  btnLove.addEventListener("click", (e) => {
+    console.log(e.target);
+    if (document.cookie.includes("name")) {
+      let id = btnLove.dataset.num;
+      if (e.target.parentElement.className.includes("kharid")) {
+        console.log("object");
+        findMahsol(id, arrMahsol.concat(sellproductsarr), ArrayUserBasket, "");
+        TedadBasket(ArrayUserBasket);
+        document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
+      } else if (e.target.parentElement.className.includes("love")) {
+        AddLove(arrMahsol, arrUserLove, id);
+
+        TedadLove();
+      }
+    } else {
+      let DivIsSubmit = document.querySelector(".IsSubmit");
+      ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"));
+    }
+  });
+});
+
+///////////////////////////////////////////////////////////////// Code JS

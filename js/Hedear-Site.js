@@ -66,11 +66,7 @@ function Header(dot) {
 const IconHeader = (dot) => {
   let index = 0;
   let img = [
-    [
-      `${dot}./img/heart-svgrepo-com (8).svg `,
-      `${dot}./img/sort-arrow-svgrepo-com (1).svg`,
-      `${dot}./img/shopping-bag-svgrepo-com.svg`,
-    ],
+    [`${dot}./img/heart-svgrepo-com (8).svg `, `${dot}./img/sort-arrow-svgrepo-com (1).svg`, `${dot}./img/shopping-bag-svgrepo-com.svg`],
     ["interest", "moghaiese", "basket"],
   ];
   document.querySelectorAll(".iconHeader").forEach((div) => {
@@ -419,9 +415,7 @@ function CreateMahsolBasket(arr, dott) {
       </p>
       </div>
       </div>
-      <div class="my-auto cursor-pointer removeItemBasket"  data-remove="${
-        item.id
-      }"><img src="${dott}./img/close4.png" class="md:w-5 w-7" alt="" /></div>
+      <div class="my-auto cursor-pointer removeItemBasket"  data-remove="${item.id}"><img src="${dott}./img/close4.png" class="md:w-5 w-7" alt="" /></div>
       </div>`;
     });
   } else {
@@ -595,9 +589,7 @@ function FilterPrice(arr, arr2, div) {
             div
           );
           AddToBasket(filter1, arr2);
-          document.querySelector(".PriceSpan").innerHTML = `${Number(value1).toLocaleString()} هزار تومان --- ${Number(
-            value2
-          ).toLocaleString()} هزار تومان`;
+          document.querySelector(".PriceSpan").innerHTML = `${Number(value1).toLocaleString()} هزار تومان --- ${Number(value2).toLocaleString()} هزار تومان`;
         }
       } else {
         spanNotFilter.innerHTML = "لطفا عدد وارد کنید";
