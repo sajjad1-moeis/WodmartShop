@@ -68,8 +68,8 @@ li .g{
     background-color: white;
     z-index: 100;
     display: none;
-    transition: 0.5s;
-    right: 0;
+    transition: 0.5s;text-align: right;
+    padding: 15px 5px 5px 60px ;
 }
 li:hover .g{
     display: grid;
@@ -517,28 +517,7 @@ opacity: 0.5;
     object-fit: cover;
     transition: 0.5s;
   
-  }
-
-      
-  
-    @media (min-width:768px) {
-      .swiper-slide:hover .hidenav{
-        left: 39px;
-    }
-    
-      }
-      .swiper-slide .hidenav2{
-        transition: 0.5s;
-  
-      }
-      @media (min-width:768px) {
-        .swiper-slide:hover .hidenav2{
-          bottom: 164px;
-      
-        }
-      }
-    
-     
+  }  
      .swiper12 .swiper-button-prev::after,  .btns3 .swiper-button-prev::after, .btns .swiper-button-prev::after,.btns2 .swiper-button-prev::after,.btns4 .swiper-button-prev::after{
           font-size: 14px;
           color: black;
@@ -551,84 +530,48 @@ opacity: 0.5;
       font-weight: 900;
         
     }
-  
     .swiper  .btns2{
         position: absolute;
         left: 90px;
         top: 100px;
-        
-    
     }
-   
-  
-   
-  
   .swiper  .btns4{
     position: absolute;
-      /* margin-left: 8px; */
       left: 90px;
       top: 25px;
-      
-  
   }
-  
-  
     .swiper10 .btns3{
-   position: absolute;
-  /* margin-left: 8px; */
-  left: 90px;
-  
-   
-  }
+     position: absolute;
+      left: 90px;
+      }
     .swiper {
      width: 100%;
      height: 100%;
     }
-  
    .swiper-slide .list-kharid:hover .hidenav3{
-      
-     
      bottom: 2px;
-      
     }
-    
     .swiper-slide .hidenav3{
-      
      transition: 0.3s;
-     
-  
     }
 
-   .selsmall{
-  font-size: medium;
-  
-  }
-  .selsmall1{
-  font-size: medium;
-  
-  }
-  .selsmall2,.selsmall3{
-    font-size: medium;
-    
-    }
-    
-    
- 
-  
-  
-  /* .img-product1{
-   
-    
-  }
-   */
   .mySwiper11 img,.mySwiper15 img{
   width: 110px;
-  
+  transition: 0.2s;
   filter:grayscale(3) ;
   }
   .mySwiper11 img:hover,.mySwiper15 img:hover{
     filter: grayscale(0);
     
   }
-  
+  .mySwiper11  .swiper-slide{
+    height: max-content;
+  }
 /* omid */
+
+.swiper15{
+    border-top: 1px solid;
+    padding-top: 33px;
+    width: 90%;
+    margin: auto;
+}

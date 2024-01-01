@@ -21,7 +21,7 @@ document.querySelector(".loding").classList.add("hidden");
 
 //mySwiper1
 
-function mySwiper1() {
+const mySwiper1 = () => {
   let swiper1 = new Swiper(".mySwiper1", {
     rewind: true,
     navigation: { nextEl: ".mySwiper1 .swiper-button-next", prevEl: ".mySwiper1 .swiper-button-prev" },
@@ -53,12 +53,12 @@ function mySwiper1() {
 </div>
 </div>`;
   }
-}
+};
 mySwiper1();
 
 //MySwiper2
 
-function slideSwiper2(div, swiper) {
+const slideSwiper2 = (div, swiper) => {
   let swiper2 = new Swiper(`${swiper}`, {
     loop: true,
     slidesPerView: 2,
@@ -100,7 +100,7 @@ function slideSwiper2(div, swiper) {
   });
   div.append(fragmentSlid);
   div.append(fragmentSlid);
-}
+};
 slideSwiper2($.querySelector(" .mySwiper2  .swiper-wrapper"), ".mySwiper2");
 slideSwiper2($.querySelector(" .mySwiper88  .swiper-wrapper"), ".mySwiper88");
 
@@ -108,7 +108,7 @@ slideSwiper2($.querySelector(" .mySwiper88  .swiper-wrapper"), ".mySwiper88");
 
 ///MySwiper3
 
-function hoverLeft(arr, div) {
+const hoverLeft = (arr, div) => {
   let fragment = $.createDocumentFragment();
   arr.forEach((item) => {
     let div = $.createElement("div");
@@ -142,14 +142,14 @@ function hoverLeft(arr, div) {
   });
 
   $.querySelector(`${div}`).append(fragment);
-}
-function slideSwiper3() {
+};
+const slideSwiper3 = () => {
   let swiper3 = new Swiper(".mySwiper3", {
     rewind: true,
     navigation: { prevEl: ".swiper3 .swiper-button-next", nextEl: ".swiper3 .swiper-button-prev" },
   });
   hoverLeft(arrMahsol.slice(6, 11), ".mySwiper3 .swiper-wrapper");
-}
+};
 slideSwiper3();
 let mySwiper5 = () => {
   let swiper5 = new Swiper(".mySwiper5", { rewind: true, navigation: { prevEl: ".swiper5 .swiper-button-next", nextEl: ".swiper5 .swiper-button-prev" } });
@@ -213,7 +213,7 @@ function CreateProductSlide4(arr, parent, slide) {
        ${divVizhehAndPercon(item.label[0], item.label[1], "bg-warning")}
           ${hoverBottom(item.id)}
        <div class=" w-[200px] h-[200px] object-cover overflow-hidden m-auto">
-         <img class="m-auto"  alt="" src="${item.img}"/>
+         <img class="m-auto h-full w-full object-cover"  alt="" src="${item.img}"/>
        </div>
        <div class="mt-7 text-base">
          <p class="md:mb-2 title   h-10 md:h-max overflow-hidden">${item.title}</p>
@@ -243,7 +243,7 @@ export { CreateProductSlide4 };
 
 // MySwiper6
 
-function MySwiper6() {
+const MySwiper6 = () => {
   let swiper6 = new Swiper(".mySwiper6", {
     pagination: { el: ".mySwiper6 .swiper-pagination", clickable: true },
     navigation: { nextEl: ".mySwiper6 .swiper-button-next", prevEl: ".mySwiper6 .swiper-button-prev" },
@@ -270,7 +270,7 @@ function MySwiper6() {
   });
 
   $.querySelector(".mySwiper6 .swiper-wrapper").append(fragment);
-}
+};
 MySwiper6();
 
 //more-abut
@@ -391,16 +391,6 @@ import { Garden } from "./components/GardenElement/garden.js";
 customElements.define("garden-elm", Garden);
 
 // omid
-//omid
-//myswiper5
-
-let arrswips = [
-  { img: "./img/دریل.jpg", title: "پیچ گوشتی الکترونیکی DeWlat", price: 254_000, count: 1, current: true },
-  { img: "./img/پاپیون.jpg", title: "پاپیون رنگ چوبی ", price: 72_000, count: 1, current: true },
-  { img: "./img/النگو.jpg", title: "النگوزنانه", price: 3_600_000, count: 1, current: true },
-  { img: "./img/are.png", title: " اره برقی مدلهStanley", price: 870_000, count: 1, current: true },
-  { img: "./img/are2.png", title: "اره برقی رومیزی Hitachi", price: 670_000, count: 1, current: true },
-];
 
 //best-selling products myswiper7
 
@@ -422,50 +412,45 @@ let sellproductsarr = [
   },
 ];
 
-function MySwiper7() {
+const MySwiper7 = () => {
   //swiper7
   let swiper7 = new Swiper(".mySwiper7", {
     navigation: { prevEl: ".swiper7 .swiper-button-next", nextEl: ".swiper7 .swiper-button-prev" },
   });
-  CreateProductSlide4(arrMahsol.slice(12, 18), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
-  CreateProductSlide4(arrMahsol.slice(24, 30), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
-}
+  CreateProductSlide4(arrMahsol.slice(62, 68), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
+  CreateProductSlide4(arrMahsol.slice(75, 81), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
+};
 MySwiper7();
 //brands-Swiper11
 
 let brandsarry = [
-  { img: "./img/huawei.png" },
-  { img: "./img/gucci.png" },
-  { img: "./img/sony.png" },
-  { img: "./img/samsun.png" },
-  { img: "./img/ray-ban.png" },
-  { img: "./img/tosan.png" },
-  /*  step2 */
-  { img: "./img/panasonic.png" },
-  { img: "./img/pars.png" },
-  { img: "./img/bosch.png" },
-  { img: "./img/xvision.png" },
-  { img: "./img/Lg.png" },
-  { img: "./img/adata.png" },
+  "./img/huawei.png",
+  "./img/gucci.png",
+  "./img/sony.png",
+  "./img/samsun.png",
+  "./img/ray-ban.png",
+  "./img/tosan.png",
+  "./img/panasonic.png",
+  "./img/pars.png",
+  "./img/bosch.png",
+  "./img/xvision.png",
+  "./img/Lg.png",
+  "./img/adata.png",
 ];
 const mySwiper11 = (parentDiv2, sliceitem2) => {
   let swiper11 = new Swiper(".mySwiper11", {
+    loop: true,
     slidesPerView: 1,
     spaceBetween: 30,
     freeMode: true,
-    autoplay: { delay: 2000, disableOnInteraction: false },
+    autoplay: { delay: 3500, disableOnInteraction: false },
     pagination: { el: ".swiper-pagination", clickable: true },
   });
-
   let swiperfragment4 = document.createDocumentFragment();
-
   sliceitem2.forEach((element) => {
     let wraperfargment4 = document.createElement("div");
-    wraperfargment4.className = "swiper-slide";
-    wraperfargment4.innerHTML = `
-
-      <div><a href="#"><img src="${element.img}" class="m-auto" alt=""></a></div>
-`;
+    wraperfargment4.className = "swiper-slide  m-auto";
+    wraperfargment4.innerHTML = `<div><a href="#"><img src="${element}" class="m-auto" alt=""></a></div>`;
     swiperfragment4.append(wraperfargment4);
   });
   parentDiv2.append(swiperfragment4);
@@ -478,37 +463,18 @@ mySwiper11(document.querySelector(".mySwiper15 .brands-3 "), brandsarry.slice(0)
 //brands-Swiper11
 
 //new-products-mySwiper12
-let newproductsarr = [
-  { id: 200, title: "LED چراغ خواب", price: 230_000, label: ["-14%", ""], img: "./img/چراغ قرمزی.jpg", count: "", current: true },
-  { id: 200, title: " چراغ خواب طرح سرامیکی", price: 78_000, label: ["-16%", ""], img: "./img/چراغ چتری.jpg", count: "", current: true },
-  { id: 200, title: "چراغ فانتزی 107", price: 60_000, label: ["-20%", ""], img: "./img/لامپ قرمز.jpg", count: "", current: true },
-  { id: 200, title: " دوربین عمودی پاناسونیک", price: 1_200_000, label: ["", ""], img: "./img/دوربین ایستاده.jpg", count: "", current: true },
-  { id: 200, title: " چراغ لامپ کم مصرف", price: 239, label: ["", "ویژه"], img: "./img/لامپ سگی.jpg", count: "", current: true },
-  { id: 200, title: "درختچه هلندی", price: 42_000, label: ["", ""], img: "./img/gol3.png", count: "", current: true },
-  { id: 200, title: "پیرهن سفید زنانه", price: 185_000, label: ["", ""], img: "./img/داف.jpg", count: "", current: true },
-  { id: 200, title: "دکوراسیون چوبی ساده", price: 890_000, label: ["", ""], img: "./img/خیارچوبی.jpg", count: "", current: true },
-  { id: 200, title: "مایکرویو Oven", price: 750_000, label: ["", ""], img: "./img/مایکرویو.jpg", count: "", current: true },
-  { id: 200, title: "مبل چرم شرکتی", price: 340_000, label: ["", ""], img: "./img/صندلی قرمز.jpg", count: "", current: true },
-  { id: 200, title: "مانیتور Leonovo 700", price: 620_000, label: ["-9%", ""], img: "./img/مانیتور.jpg", count: "", current: true },
-  { id: 200, title: " موبایل Huawei P Smart", price: 1_950_000, label: ["-7%", ""], img: "./img/huawei p smart.jpg", count: "", current: true },
-  { id: 200, title: "کیبورد ایسوس 634", price: 67_000, label: ["-26%", ""], img: "./img/کیبورد.jpg", count: "", current: true },
-  { id: 200, title: "موبایل ال جی V30", price: 3_450_000, label: ["", ""], img: "./img/ال جی 730.jpg", count: "", current: true },
-  { id: 200, title: "موبایل سونی اکسپریا XZ1", price: 3_800_000, label: ["", ""], img: "./img/سونی اکسپریا.jpg", count: "", current: true },
-  { id: 200, title: "موبایل گلکسی S8", price: 5_800_000, label: ["", ""], img: "./img/گلکسی s8.jpg", count: "", current: true },
-];
-let swiper12 = new Swiper(".mySwiper12", {
-  navigation: {
-    prevEl: ".swiper12 .swiper-button-next",
-    nextEl: ".swiper12 .swiper-button-prev",
-  },
-  pagination: {
-    // el: ".swiper-pagination",
-    //clickable: true,
-  },
-});
+const Swiper12 = () => {
+  let swiper12 = new Swiper(".mySwiper12", {
+    navigation: {
+      prevEl: ".swiper12 .swiper-button-next",
+      nextEl: ".swiper12 .swiper-button-prev",
+    },
+  });
 
-CreateProductSlide4(arrMahsol.slice(40, 48), document.querySelector(".mySwiper12 .slide3"), "swiper-slide");
-CreateProductSlide4(arrMahsol.slice(50, 58), document.querySelector(".mySwiper12 .slide4"), "swiper-slide");
+  CreateProductSlide4(arrMahsol.slice(68, 76), document.querySelector(".mySwiper12 .slide3"), "swiper-slide");
+  CreateProductSlide4(arrMahsol.slice(76, 84), document.querySelector(".mySwiper12 .slide4"), "swiper-slide");
+};
+Swiper12();
 
 // omid
 
@@ -520,11 +486,9 @@ arrUserLove = LocalStorageItem;
 
 document.querySelectorAll(".list-menu2").forEach((btnLove) => {
   btnLove.addEventListener("click", (e) => {
-    console.log(e.target);
     if (document.cookie.includes("name")) {
       let id = btnLove.dataset.num;
       if (e.target.parentElement.className.includes("kharid")) {
-        console.log("object");
         findMahsol(id, arrMahsol.concat(sellproductsarr), ArrayUserBasket, "");
         TedadBasket(ArrayUserBasket);
         document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
@@ -540,7 +504,7 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
   });
 });
 ///////////////////////////////////////////////////////////////// Code JS
-function i(swiper) {
+const i = (swiper) => {
   let mySwiper16 = new Swiper(`${swiper}`, {
     slidesPerView: 2,
     spaceBetween: 30,
@@ -552,7 +516,7 @@ function i(swiper) {
       1024: { slidesPerView: 6, spaceBetween: 10 },
     },
   });
-}
+};
 i(".mySwiper13");
 i(".mySwiper14");
 i(".mySwiper15");

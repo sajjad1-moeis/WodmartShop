@@ -1,6 +1,6 @@
 let $ = document;
 function tekrar() {
-  return ` <div class="p-2 leading-loose">
+  return ` <div class="p-2 leading-loose  justify-evenly">
     <p>روشنایی</p>
     
     <p>لامپ</p>
@@ -37,15 +37,9 @@ function Header(dot) {
     <div class="mt-1 ms-1">
       <img src="${item.img[0]}" class="w-2.5">
     </div>
-        
           <div
-            class="grid g absolute mt-5 p-2 md:w-full w-1/2   grid-cols-4 gap-3   text-center  "
-          >
+            class="grid g absolute mt-5 p-2  gap-3">
            ${tekrar()}
-           ${tekrar()}
-           ${tekrar()}
-           ${tekrar()}
-        
         </div>
       </li>
       </a>
