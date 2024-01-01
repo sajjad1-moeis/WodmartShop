@@ -575,3 +575,32 @@ opacity: 0.5;
     width: 90%;
     margin: auto;
 }
+/* OMID */
+.mySwiper16 .akharin img{
+    transition: 0.6s;
+    cursor: pointer;
+  }
+  .mySwiper16 .akharin img:hover{
+  
+    filter: blur(4px);
+  transform: scale(1.05);
+  }
+
+  
+  .vf{
+    overflow: hidden;
+    position: absolute;
+    width: 84px;
+    height: 30px;
+    inset: 0;
+    margin: auto;
+  
+  
+  }
+  .max-w-full:hover .vf .z-50{
+    bottom: 0px;
+  }
+  .vf .bg-transparent{
+    bottom: -25px;
+    transition: 0.5s;
+  }

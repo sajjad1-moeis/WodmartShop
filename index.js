@@ -520,3 +520,131 @@ const i = (swiper) => {
 i(".mySwiper13");
 i(".mySwiper14");
 i(".mySwiper15");
+
+//site's weblag
+let weblagsarray = [
+  {
+    title: "طراحی داخلی",
+    img: "./img/interior decorasion.jpg",
+    date: "22",
+    lable: "مبلمان",
+  },
+  {
+    title: "وسایل مورد نیاز کوهنوردی",
+    img: "./img/climbing things.jpg",
+    date: "16",
+    lable: "وسایل",
+  },
+  {
+    title: "طراحی دکوراسیون داخلی",
+    img: "./img/design decorasion.jpg",
+    date: "11",
+    lable: "طراحی سه بعدی",
+  },
+  {
+    title: "وسایل باغبانی",
+    img: "./img/things garden.jpg",
+    date: "4",
+    lable: "وسایل",
+  },
+];
+const mySwiper16 = (parentDiv5, sliceitem5) => {
+  let swiper10 = new Swiper(".mySwiper16", {
+    //rewind: true,
+    navigation: {
+      nextEl: ".mySwiper13 .swiper-button-next",
+      prevEl: ".mySwiper13 .swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    slidesPerView: 2,
+    spaceBetween: 16,
+    breakpoints: {
+      195: {
+        slidesPerView: 1,
+        spaceBetween: 16,
+      },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 16,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 16,
+      },
+    },
+  });
+
+  let swiperfragment5 = document.createDocumentFragment();
+  sliceitem5.forEach((element) => {
+    let wraperfargment5 = document.createElement("div");
+    wraperfargment5.className = "swiper-slide akharin ";
+    //wraperfargment5.setAttribute("style", "width:max-content");
+    wraperfargment5.innerHTML = `
+      <div class="interior-design h-[481px]  border-[2px] border-gray-100  shadow-sm relative overflow-hidden">
+    <div class="divimg5  overflow-hidden  relative max-w-full">
+    <div class="h-max w-full relative vf">
+            <div class="m-auto text-center absolute p-3 bg-transparent flex gap-3 z-50">
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+            </div>
+          </div>
+ 
+    <img src="${element.img}" alt="" class="last-img w-full object-cover">
+    
+    </div>
+    <div class="relative w-[54px]  mx-auto">
+    <div class="design-title bg-warning w-[54px] h-[26px] text-center text-white  bottom-[-11px] absolute overflow-hidden">${element.lable}</div>
+  </div>
+    <div class="label-interior-design text-dark  top-5  text-center overflow-hidden mt-4"  >
+      <div class="mt-2   font-bold ">
+    <p class="font-bold">
+    ${element.title}
+  </p>
+  </div>
+<div class="small-label " >
+  <div class="lable-icon flex relative mx-16">
+    <small class="lorm-small1   block mt-3  mx-2.5 text-gray-400" style="font-size: 14px;">
+      منتشر شده در
+    </small>
+    <img class="w-[20px] h-[20px] rounded-full mt-3" alt="author-avatar" src="https://secure.gravatar.com/avatar/9bc2e2258167305294dc4ad35e49e01f?s=32&amp;d=mm&amp;r=g">
+    <a href="#">
+    <small class="lorm-small1   block mt-3  mx-2.5 text-gray-400" style="font-size: 14px;">
+      Woodmart
+    </small></a>
+    <div class="meta-reply relative mt-3  " >
+      <a href="#">
+       
+        <i class="fa fa-envelope-o ">
+        </i>
+        <i class="fa fa-circle text-gray-300 z-500 absolute right-2"><i class="text-dark z-500 absolute right-[1.5px]">2</i></i>
+        <i class="fa fa-share-alt  z-500 absolute right-8 mt-1 text-lg"></i>
+      </a></div>
+  </div>
+   <small class="lorm-small1   block mt-3  mx-6 text-gray-600" style="font-size: 14px;"  >
+ لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از 
+    صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها 
+        و متون بلکه روزنامه و مجله در ستون...
+          </small>
+        </div>
+        <div class="bg-white mt-3">
+        </div>
+        <small class="text-warning font-bold " style="font-size: 13px;">
+          ادامه مطلب
+        </small>
+  </div>
+      </div>
+      <div class="swiper-wrapper">
+      </div>
+ 
+    `;
+    swiperfragment5.append(wraperfargment5);
+  });
+  parentDiv5.append(swiperfragment5);
+};
+mySwiper16(document.querySelector(".mySwiper16 .swiper-wrapper"), weblagsarray);
+
+//site's weblag

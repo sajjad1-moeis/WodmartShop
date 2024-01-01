@@ -5,4 +5,30 @@
     
   }
  
+  .akharin .last-img{
+    transition: 0.5s;
+  }
+.akharin:hover .last-img{
+  transform: scale(1.1);
+}
+/* .akharin:hover .vf{
+  bottom: 50%
+} */
 
+.vf{
+  overflow: hidden;
+  position: absolute;
+  width: 84px;
+  height: 30px;
+  inset: 0;
+  margin: auto;
+
+
+}
+.akharin:hover .vf .z-50{
+  bottom: 0px;
+}
+.vf .bg-transparent{
+  bottom: -25px;
+  transition: 0.5s;
+}
