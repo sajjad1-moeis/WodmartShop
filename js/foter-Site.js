@@ -58,8 +58,8 @@ const FoterSite = (dot) => {
           </div>
           <div class="akharin-text text-white text-center pt-4" >
             <small class="" style="font-size: 12px">
-              تمامی حقوق این قالب <i class="fa fa-copyright"></i> برای طراح <small class="text-danger" style="font-size: 12px">محفوظ است</small> ارائه شده در
-              وبسایت راستچین
+              تمامی حقوق این  سایت <i class="fa fa-copyright"></i> برای طراح <small class="text-danger" style="font-size: 12px">محفوظ است</small> ارائه شده 
+              توسط تیم دیرویت 
             </small>
           </div>
           </div>
