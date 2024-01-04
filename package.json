@@ -1,6 +1,11 @@
 {
+  "scripts": {
+    "tB" : "tailwindcss -i ./css/style.css -o ./tailwind/tailwind.css",
+    "tW" : "tailwindcss -i ./css/style.css -o ./tailwind/tailwind.css --watch"
+  },
   "devDependencies": {
     "tailwindcss": "^3.3.6"
   },
-  "tailwind":"npx tailwindcss -i ./css/style.css -o ./tailwind/tailwind.css --watch"
+  "tailwind":"npx tailwindcss -i ./css/style.css -o ./tailwind/tailwind.css --watch",
+  "runBulid":"npm run dev"
 }

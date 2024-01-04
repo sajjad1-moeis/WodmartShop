@@ -1,6 +1,6 @@
 let $ = document;
-function tekrar() {
-  return ` <div class="p-2 leading-loose  justify-evenly">
+function tekrar(bg) {
+  return ` <div class="p-2 leading-loose ${bg} text-black justify-evenly">
     <p>روشنایی</p>
     
     <p>لامپ</p>
@@ -30,22 +30,25 @@ function Header(dot) {
   ];
   arr.forEach((item) => {
     if (item.current) {
-      document.querySelector(".list-none").innerHTML += `
-      <a href="${dot}${item.img[1]}">
-    <li class="  flex cursor-pointer text-base">
-    ${item.name}
+      document.querySelectorAll(".list-none").forEach((element) => {
+        element.innerHTML += `
+        <a href="${dot}${item.img[1]}">
+        <li class="  flex cursor-pointer text-base">
+        ${item.name}
     <div class="mt-1 ms-1">
-      <img src="${item.img[0]}" class="w-2.5">
+    <img src="${item.img[0]}" class="w-2.5">
     </div>
-          <div
-            class="grid g absolute mt-5 p-2  gap-3">
-           ${tekrar()}
-        </div>
+    <div
+    class="grid g absolute mt-5 p-2  gap-3">
+    ${tekrar()}
+    </div>
       </li>
       </a>
-          `;
+      `;
+      });
     } else {
-      document.querySelector(".list-none").innerHTML += `
+      document.querySelectorAll(".list-none").forEach((item2) => {
+        item2.innerHTML += `
       <a href="${item.img[1]}">
       <li class="  flex text-base cursor-pointer">
       ${item.name}
@@ -54,6 +57,7 @@ function Header(dot) {
       </div>
       </li>
       </a>`;
+      });
     }
   });
 }
@@ -160,7 +164,7 @@ function body(IsSubmit, href, dot) {
                   </div>
                   </div>
                   
-                  <div class="flex justify-between bg-darkBlue p-3 lg:hidden">
+                  <div class="flex justify-between bg-darkBlue p-3 lg:hidden fixed w-full z-50 top-0">
                   <div class="my-auto flex text-white cursor-pointer btn-ShowMenu">
                   <div>
                   <img src="${dot}./img/menu-svgrepo-com (1).svg" class="w-6" alt="" />
@@ -179,11 +183,13 @@ function body(IsSubmit, href, dot) {
                   </div>
                   </div>
                   
-                  <div class="h-max bg-white py-3 shadow lg:flex hidden border-[1px] border-b-silver">
+                  <div class="h-max bg-white py-3 relative  z-50 shadow lg:flex hidden border-[1px] border-b-silver">
                   <div class=" container">
                   <ul class="list-none gap-5 grid-cols-4 text-sm relative flex"></ul>
                   </div>
                   </div>
+                  
+                  
                   </header>
                   
                   <!-- SabadKharid -->
@@ -224,7 +230,7 @@ function body(IsSubmit, href, dot) {
     <!--DivMenuMobile-->
 
     <div
-    class="fixed h-[100vh] left-[-350px] w-[300px] lg:w-[350px] z-50 top-0 bg-darkBlue  DivMenu"
+    class="fixed  h-[100vh] left-[-350px] w-[300px] lg:w-[350px] z-50 top-0 bg-darkBlue  DivMenu"
     style="transition: 0.4s ease-in-out"
   >
     <div class="flex justify-end p-3">

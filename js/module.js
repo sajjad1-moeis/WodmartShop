@@ -1,5 +1,10 @@
 import { Header, IconHeader } from "./Hedear-Site.js";
 import { body } from "./Hedear-Site.js";
+import { FoterSite } from "./foter-Site.js";
+FoterSite(".");
+import { Footer, FooterLast } from "../components/Foter/foter.js";
+customElements.define("img-foter", FooterLast);
+customElements.define("free-footer", Footer);
 import {
   ShoeMenuMobile,
   SearchProduct,

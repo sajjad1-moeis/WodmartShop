@@ -368,6 +368,10 @@ import {
 } from "./js/Hedear-Site.js";
 import { TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove } from "./js/export.js";
 import { AbutSwiper, HideMdAbut } from "./components/Btn-Swiper/Btn-Swiper.js";
+import { FoterSite } from "./js/foter-Site.js";
+import { Footer, FooterLast } from "./components/Foter/foter.js";
+customElements.define("img-foter", FooterLast);
+customElements.define("free-footer", Footer);
 customElements.define("abut-swiper", AbutSwiper);
 customElements.define("hide-abut-swiper", HideMdAbut);
 (() => {
@@ -523,30 +527,10 @@ i(".mySwiper15");
 
 //site's weblag
 let weblagsarray = [
-  {
-    title: "طراحی داخلی",
-    img: "./img/interior decorasion.jpg",
-    date: "22",
-    lable: "مبلمان",
-  },
-  {
-    title: "وسایل مورد نیاز کوهنوردی",
-    img: "./img/climbing things.jpg",
-    date: "16",
-    lable: "وسایل",
-  },
-  {
-    title: "طراحی دکوراسیون داخلی",
-    img: "./img/design decorasion.jpg",
-    date: "11",
-    lable: "طراحی سه بعدی",
-  },
-  {
-    title: "وسایل باغبانی",
-    img: "./img/things garden.jpg",
-    date: "4",
-    lable: "وسایل",
-  },
+  { title: "طراحی داخلی", img: "./img/interior decorasion.jpg", date: "22", lable: "مبلمان" },
+  { title: "وسایل مورد نیاز کوهنوردی", img: "./img/climbing things.jpg", date: "16", lable: "وسایل" },
+  { title: "طراحی دکوراسیون داخلی", img: "./img/design decorasion.jpg", date: "11", lable: "طراحی سه بعدی" },
+  { title: "وسایل باغبانی", img: "./img/things garden.jpg", date: "4", lable: "وسایل" },
 ];
 const mySwiper16 = (parentDiv5, sliceitem5) => {
   let swiper10 = new Swiper(".mySwiper16", {
@@ -561,20 +545,7 @@ const mySwiper16 = (parentDiv5, sliceitem5) => {
     },
     slidesPerView: 2,
     spaceBetween: 16,
-    breakpoints: {
-      195: {
-        slidesPerView: 1,
-        spaceBetween: 16,
-      },
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 16,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 16,
-      },
-    },
+    breakpoints: { 195: { slidesPerView: 1, spaceBetween: 16 }, 640: { slidesPerView: 2, spaceBetween: 16 }, 768: { slidesPerView: 3, spaceBetween: 16 } },
   });
 
   let swiperfragment5 = document.createDocumentFragment();
@@ -648,3 +619,6 @@ const mySwiper16 = (parentDiv5, sliceitem5) => {
 mySwiper16(document.querySelector(".mySwiper16 .swiper-wrapper"), weblagsarray);
 
 //site's weblag
+
+FoterSite("");
+//Foter
