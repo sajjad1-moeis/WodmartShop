@@ -19,14 +19,14 @@ import {
 let cokieSubmit = document.cookie;
 import { ResultPrice, TaiinBasket, TedadBasket, TedadLove } from "./export.js";
 if (cokieSubmit) {
-  body("حساب کاربری من", "./html/userPage.html", ".");
+  body("حساب کاربری من", "../html/userPage.html", ".");
 } else {
-  body("ورود / ثبت نام", "./html/vrood.html", ".");
+  body("ورود / ثبت نام", "../html/vrood.html", ".");
 }
 Header(".");
 IconHeader(".");
 ShowDivKhabarName();
-SearchProduct("./SearchMahsol.html?id=");
+SearchProduct("../SearchMahsol.html?id=");
 ShowBasket();
 listNextSearch();
 AbutMe(".");

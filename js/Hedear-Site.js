@@ -361,7 +361,7 @@ function listNextSearch() {
   let arr = [" پوشاک", "تخت خواب", "کفش", "گل و گیاه", "لوازم خانگی", "مبلمان"];
   arr.forEach((item) => {
     $.querySelector("header .list-next-search div").innerHTML += `
-    <a href="http://127.0.0.1:5500/html/Product.html?id=${item}">
+    <a href="../html/Product.html?id=${item}">
        <p class="p-1 border-b-[1px] border-b-zinc-200 w-full">${item}</p>
     </a>
 
