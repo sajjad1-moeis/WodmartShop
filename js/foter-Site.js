@@ -5,8 +5,9 @@ const FoterSite = (dot) => {
     "beforeend",
     `
     <footer>
-        <section class="footer bg-darkBlue relative pb-5 mt-14" data-aos="fade-up">
-          <div class="border border-b-gray-700 border-darkBlue" data-aos="fade-up">
+        <section class="footer bg-darkBlue relative pb-5 mt-14" >
+        <div >
+          <div class="border border-b-gray-700 border-darkBlue" data-aos="fade-down">
             <div class="Adventages pb-4 py-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 footersbig gap-5 container max-w-[1213px] w-full relative">
               <Free-Footer img="${dot}./img/free-send.png" post="ارسال رایگان" city="ارسال رایگان در تهران"> </Free-Footer>
               <Free-Footer img="${dot}./img/support.png" post="پشتیبانی 24 ساعته" city="پشتیبانی به صورت مادام العمر"> </Free-Footer>
@@ -14,7 +15,7 @@ const FoterSite = (dot) => {
               <Free-Footer img="${dot}./img/fast-receive.png" post="تحویل سریع" city="ارسال به سراسر کشور"> </Free-Footer>
             </div>
           </div>
-          <div class="border border-b-gray-700 border-darkBlue" data-aos="fade-up">
+          <div class="border border-b-gray-700 border-darkBlue" data-aos="fade-down">
             <div class="footers-texts py-8 pb-14 grid grid-cols-2 md:grid-cols-6 gap-5 container max-w-[1213px] w-full relative">
               <div class="apllication col-span-2">
                 <span class="text-white block my-3.5" style="font-size: 15px">اپلیکیشن وبسایت</span>
@@ -29,7 +30,7 @@ const FoterSite = (dot) => {
               </div>
             </div>
           </div>
-          <div class="border border-darkBlue border-b-gray-700 py-5" data-aos="fade-up">
+          <div class="border border-darkBlue border-b-gray-700 py-5" data-aos="fade-down">
             <div class="text-white tools-icons grid grid-cols-2 md:grid-cols-3 gap-5 container max-w-[1211px] w-full relative my-2 pb-[60px]">
               <div>
                 <div class="text-base">پیوندهای اجتماعی ما</div>
@@ -60,6 +61,7 @@ const FoterSite = (dot) => {
               تمامی حقوق این قالب <i class="fa fa-copyright"></i> برای طراح <small class="text-danger" style="font-size: 12px">محفوظ است</small> ارائه شده در
               وبسایت راستچین
             </small>
+          </div>
           </div>
         </section>
       </footer>
