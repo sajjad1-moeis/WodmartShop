@@ -6,8 +6,10 @@ let cokieSubmit = document.cookie;
 
 if (cokieSubmit) {
   body("حساب کاربری من", "./html/userPage.html", "");
+  FoterSite("", "./html/userPage.html");
 } else {
   body("ورود / ثبت نام", "./html/vrood.html", "");
+  FoterSite("", "./html/vrood.html");
 }
 
 /// Api Mahsol
@@ -212,8 +214,8 @@ function CreateProductSlide4(arr, parent, slide) {
        <div class=" itemKharid relative">
        ${divVizhehAndPercon(item.label[0], item.label[1], "bg-warning")}
           ${hoverBottom(item.id)}
-       <div class=" w-[200px] h-[200px] object-cover overflow-hidden m-auto">
-         <img class="m-auto h-full w-full object-cover"  alt="" src="${item.img}"/>
+       <div class=" max-w-[200px] max-h-[200px] object-cover overflow-hidden m-auto">
+         <img class="  object-cover h-36 md:h-[200px] mx-auto"  alt="" src="${item.img}"/>
        </div>
        <div class="mt-7 text-base">
          <p class="md:mb-2 title   h-10 md:h-max overflow-hidden">${item.title}</p>
@@ -225,8 +227,8 @@ function CreateProductSlide4(arr, parent, slide) {
       div.innerHTML = `
       <div class=" itemKharid relative opacity-50">
       ${divVizhehAndPercon(item.label[0], item.label[1], "bg-primary")}
-      <div class=" w-[200px] h-[200px] object-cover">
-        <img class="m-auto w-full h-full"  alt="" src="${item.img}"/>
+      <div class=" max-w-[200px] max-h-[200px] object-cover">
+        <img class="  object-cover h-36  md:h-[200px] mx-auto"  alt="" src="${item.img}"/>
       </div>
       <div class="mt-7 text-base">
         <p class="md:mb-2   h-10 md:h-max overflow-hidden">${item.title}</p>
@@ -374,23 +376,7 @@ customElements.define("img-foter", FooterLast);
 customElements.define("free-footer", Footer);
 customElements.define("abut-swiper", AbutSwiper);
 customElements.define("hide-abut-swiper", HideMdAbut);
-(() => {
-  CreateMahsolBasket(ArrayUserBasket, "");
-  RemoveItem(ArrayUserBasket, "");
-  ResultPrice(ArrayUserBasket);
-  TaiinBasket(ArrayUserBasket);
-  Header("");
-  ShowDivKhabarName();
-  SearchProduct("./html/SearchMahsol.html?id=");
-  listNextSearch();
-  ShowBasket();
-  AbutMe("");
-  IconHeader("");
-  ShoeMenuMobile();
-  notSuccess();
-  TedadBasket(ArrayUserBasket);
-  TedadLove();
-})();
+
 import { Garden } from "./components/GardenElement/garden.js";
 customElements.define("garden-elm", Garden);
 
@@ -421,7 +407,7 @@ const MySwiper7 = () => {
   let swiper7 = new Swiper(".mySwiper7", {
     navigation: { prevEl: ".swiper7 .swiper-button-next", nextEl: ".swiper7 .swiper-button-prev" },
   });
-  CreateProductSlide4(arrMahsol.slice(62, 68), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
+  CreateProductSlide4(arrMahsol.slice(42, 48), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
   CreateProductSlide4(arrMahsol.slice(75, 81), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
 };
 MySwiper7();
@@ -554,7 +540,7 @@ const mySwiper16 = (parentDiv5, sliceitem5) => {
     wraperfargment5.className = "swiper-slide akharin ";
     //wraperfargment5.setAttribute("style", "width:max-content");
     wraperfargment5.innerHTML = `
-      <div class="interior-design h-[481px]  border-[2px] border-gray-100  shadow-sm relative overflow-hidden">
+      <div class="interior-design   border-[2px] border-gray-100  shadow-sm relative overflow-hidden">
     <div class="divimg5  overflow-hidden  relative max-w-full">
     <div class="h-max w-full relative vf">
             <div class="m-auto text-center absolute p-3 bg-transparent flex gap-3 z-50">
@@ -620,5 +606,21 @@ mySwiper16(document.querySelector(".mySwiper16 .swiper-wrapper"), weblagsarray);
 
 //site's weblag
 
-FoterSite("");
 //Foter
+(() => {
+  CreateMahsolBasket(ArrayUserBasket, "");
+  RemoveItem(ArrayUserBasket, "");
+  ResultPrice(ArrayUserBasket);
+  TaiinBasket(ArrayUserBasket);
+  Header("");
+  ShowDivKhabarName();
+  SearchProduct("./html/SearchMahsol.html?id=");
+  listNextSearch();
+  ShowBasket();
+  AbutMe("");
+  IconHeader("");
+  ShoeMenuMobile();
+  notSuccess();
+  TedadBasket(ArrayUserBasket);
+  TedadLove();
+})();

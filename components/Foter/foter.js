@@ -18,8 +18,9 @@ template.innerHTML = `
          </div> 
 
 <div class="first-icons">
-<span class="font-bold text-white block my-3.5" style="font-size: 16px;"><slot name="text-icons-1"></slot></span>
-<slot name="img-icons-1"></slot>
+<span class="font-bold text-white block my-3.5" style="font-size: 16px;">
+</span>
+
 </div>
 `;
 

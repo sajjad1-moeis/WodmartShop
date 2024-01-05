@@ -27,6 +27,7 @@ class Garden extends HTMLElement {
     this.shadowRoot.querySelector(".t2").innerHTML = this.getAttribute("t2");
     this.shadowRoot.querySelector(".v").classList.add(this.getAttribute("img"));
     this.shadowRoot.querySelector(".size").classList.add(this.getAttribute("size"));
+    this.shadowRoot.querySelector(".border-white").href = this.getAttribute("href");
   }
 }
 

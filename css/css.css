@@ -170,9 +170,15 @@ li{
 
 }
 
+@media (max-width:576px) {
+    .mySwiper4   .itemKharid,.mySwiper7   .itemKharid,.mySwiper12   .itemKharid{
+        height: 250px;
+    }
+    
+}
 @media (max-width:768px) {
     .mySwiper4   .itemKharid,.mySwiper7   .itemKharid,.mySwiper12   .itemKharid{
-        height: 360px;
+        height: 280px;
     }
     
 }
@@ -420,10 +426,7 @@ body .mySwiper9 {
     padding-bottom: 50px;
 }
 @media (min-width:768px) {
-    .imgHover1{
-        border-radius: 25px;
-        padding-bottom: 40px;
-    }
+    
     .imgHover:hover .list-menu2{
         bottom: 0;
     }

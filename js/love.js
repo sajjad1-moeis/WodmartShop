@@ -1,5 +1,5 @@
 let $ = document;
-import { CreateMahsol, findMahsolLove, CreateMahsolBasket, RemoveItem, HoverBottom } from "./Hedear-Site.js";
+import { CreateMahsol, findMahsolLove, CreateMahsolBasket, RemoveItem, HoverBottom, divVizhehAndPercon } from "./Hedear-Site.js";
 import { TedadLove, TaiinBasket, ResultPrice, TedadBasket } from "./export.js";
 let LocalStorageItem = JSON.parse(localStorage.getItem("love"));
 let LocalStorageItemMahsol = JSON.parse(localStorage.getItem("mahsol"));
@@ -16,14 +16,29 @@ document.querySelectorAll(".list-menu2").forEach((div) => {
       TaiinBasket(arrUserLove);
       ResultPrice(arrUserLove);
       TedadBasket(arrUserLove);
-    } else if (e.target.parentElement.className.includes("love")) {
-      let find = LocalStorageItem.findIndex((item) => item.id == div.dataset.id);
+    }
+    if (e.target.parentElement.className.includes("love")) {
+      let find = LocalStorageItem.findIndex((item) => item.id === Number(div.dataset.id));
       LocalStorageItem.splice(find, 1);
-      console.log(e.target.parentElement);
       localStorage.setItem("love", JSON.stringify(LocalStorageItem));
-      CreateMahsol(JSON.parse(localStorage.getItem("love")), document.querySelector(".loveeee"));
+      CreateMahsol(LocalStorageItem, document.querySelector(".loveeee"));
+      location.reload();
+      LoveTedad();
     }
   });
 });
 TedadLove();
 RemoveItem(arrUserLove, ".");
+
+///Time
+
+let time = new Date().toLocaleString("fa-IR");
+document.querySelector(".time").innerHTML = time.split(",")[0];
+
+///
+function LoveTedad() {
+  LocalStorageItem.length > 0
+    ? document.querySelector(".tedadLove").classList.add("hidden") + document.querySelector(".loveeee").classList.remove("hidden")
+    : document.querySelector(".tedadLove").classList.remove("hidden") + document.querySelector(".loveeee").classList.add("hidden");
+}
+LoveTedad();

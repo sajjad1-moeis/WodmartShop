@@ -39,7 +39,7 @@ btnLogin.addEventListener("click", () => {
       let cokie = document.cookie.split(";");
       let y = cokie.map((item) => item.slice(item.indexOf("=") + 1));
       console.log(y);
-      if (inputLogin[0].value === `${y[0]} ${y[1]}` && inputLogin[1].value === y[2]) {
+      if (inputLogin[0].value === `${y[0]}${y[1]}` && inputLogin[1].value === y[2]) {
         alert("با موفقیت ورود کردید");
         location.href = "../index.html";
       } else {

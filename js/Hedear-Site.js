@@ -532,7 +532,7 @@ function CreateMahsol(arr, div) {
       <div class="relative rounded bg-secondary pt-5  h-max opacity-50 overflow-hidden imgHover1">
       ${divVizhehAndPercon(element.label[0], element.label[1], "bg-primary")}
       <div class="h-[200px] md:h-max">
-      <img src=".${element.img}" alt="" class="object-cover mx-auto w-full h-full" />
+      <img src=".${element.img}" alt="" class="object-cover mx-auto" />
       </div>
       <div class="text-center mt-3">
       <p class="h-7">${element.title}</p>
