@@ -1,17 +1,36 @@
 let $ = document;
 function tekrar(bg) {
   return ` <div class="p-2 leading-loose ${bg} text-black justify-evenly">
+  <a href="../html/SearchMahsol.html?id=روشنایی">
     <p>روشنایی</p>
-    
+  </a>
+  <a href="../html/SearchMahsol.html?id=لامپ">
     <p>لامپ</p>
+  </a>
+  <a href="../html/SearchMahsol.html?id=مهتابی">
     <p>مهتابی</p>
+  </a>
+  <a href="../html/SearchMahsol.html?id=موس">
     <p>موس</p>
+  </a>
+  <a href="../html/SearchMahsol.html?id=برق">
     <p>برق</p>
+  </a>
+  <a href="../html/SearchMahsol.html?id=کتاب">
     <p>کتاب</p>
+  </a>
+  <a href="../html/SearchMahsol.html?id=موبایل">
     <p>موبایل</p>
+  </a>
+  <a href="../html/SearchMahsol.html?id=لبتاب">
     <p>لبتاب</p>
+  </a>
+  <a href="../html/SearchMahsol.html?id=خودکار">
     <p>خودکار</p>
+  </a>
+  <a href="../html/SearchMahsol.html?id=ادکلن">
     <p>ادکلن</p>
+  </a>
   </div>
 `;
 }
@@ -32,7 +51,6 @@ function Header(dot) {
     if (item.current) {
       document.querySelectorAll(".list-none").forEach((element) => {
         element.innerHTML += `
-        <a href="${dot}${item.img[1]}">
         <li class="  flex cursor-pointer text-base">
         ${item.name}
     <div class="mt-1 ms-1">
@@ -43,7 +61,6 @@ function Header(dot) {
     ${tekrar()}
     </div>
       </li>
-      </a>
       `;
       });
     } else {
@@ -262,7 +279,9 @@ function body(IsSubmit, href, dot) {
       <a href="${dot}${href}">
         <div class=" p-4 border-b-[1px] border-silver">${IsSubmit}</div>
       </a>
-      <div class=" p-4 border-b-[1px] border-silver">مقایسه</div>
+      <a href="#">
+        <div class=" p-4 border-b-[1px] border-silver">مقایسه</div>
+      </a>
     </div>
   </div>
 
@@ -288,7 +307,7 @@ function body(IsSubmit, href, dot) {
       <!-- divKhabarName -->
       
       <div
-      class="text-white fixed z-50 top-1/2 left-1/2 hidden translate-x-[-50%] divKhabarName translate-y-[-50%] bg-dark p-7 rounded-3xl max-w-[800px] w-full"
+        class="text-white fixed z-50 top-1/2 left-1/2 hidden translate-x-[-50%] divKhabarName translate-y-[-50%] bg-dark p-7 rounded-3xl max-w-[800px] w-full"
       >
       <div class="relative">
       <div class="w-max absolute left-5 top-5 cursor-pointer btnCloseKhabarName">

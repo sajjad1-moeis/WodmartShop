@@ -7,7 +7,6 @@ import { FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, Price, ResultP
 ///Id Is Location
 FilterColor();
 document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
-
 let api = await fetch("https://657eea449d10ccb465d58032.mockapi.io/gol");
 let mahsol = await api.json();
 let filter = await mahsol.filter((item) => {
@@ -54,3 +53,4 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
 };
 
 FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"));
+document.querySelector(".Mahsol").innerHTML = `محصول : ${SearchLocation}`;

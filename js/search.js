@@ -78,7 +78,6 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
 };
 AddToBasket(mahsol, arrUserMahsol);
 
-("bg-purple bg-orange-500 bg-pink-500 bg-success");
 RemoveItem(arrUserMahsol, `.`);
 TaiinBasket(arrUserMahsol);
 

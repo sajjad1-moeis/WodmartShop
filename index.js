@@ -407,11 +407,12 @@ const MySwiper7 = () => {
   let swiper7 = new Swiper(".mySwiper7", {
     navigation: { prevEl: ".swiper7 .swiper-button-next", nextEl: ".swiper7 .swiper-button-prev" },
   });
-  CreateProductSlide4(arrMahsol.slice(42, 48), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
+  CreateProductSlide4(arrMahsol.slice(48, 54), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
   CreateProductSlide4(arrMahsol.slice(75, 81), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
 };
 MySwiper7();
 //brands-Swiper11
+("bg-purple bg-orange-500 bg-pink-500 bg-success");
 
 let brandsarry = [
   "./img/huawei.png",
