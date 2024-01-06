@@ -26,8 +26,8 @@ document.querySelector(".loding").classList.add("hidden");
 const mySwiper1 = () => {
   let swiper1 = new Swiper(".mySwiper1", {
     rewind: true,
-    navigation: { nextEl: ".mySwiper1 .swiper-button-next", prevEl: ".mySwiper1 .swiper-button-prev" },
-    pagination: { el: ".mySwiper1 .swiper-pagination", clickable: true },
+    navigation: {nextEl: ".mySwiper1 .swiper-button-next", prevEl: ".mySwiper1 .swiper-button-prev"},
+    pagination: {el: ".mySwiper1 .swiper-pagination", clickable: true},
     keyboard: true,
     centeredSlides: true,
     grabCursor: true,
@@ -65,20 +65,20 @@ const slideSwiper2 = (div, swiper) => {
     loop: true,
     slidesPerView: 2,
     spaceBetween: 10,
-    pagination: { el: ".swiper-pagination", clickable: true },
+    pagination: {el: ".swiper-pagination", clickable: true},
     breakpoints: {
-      768: { slidesPerView: 3, spaceBetween: 40 },
-      1024: { slidesPerView: 6, spaceBetween: 10 },
-      1280: { loop: false, slidesPerView: 6, spaceBetween: 10 },
+      768: {slidesPerView: 3, spaceBetween: 40},
+      1024: {slidesPerView: 6, spaceBetween: 10},
+      1280: {loop: false, slidesPerView: 6, spaceBetween: 10},
     },
   });
   let slideSwiper2 = [
-    { img: "./img/لباس.png", count: 4, title: "پوشاک" },
-    { img: "./img/تخت خواب.png", count: 3, title: "تخت خواب" },
-    { img: "./img/کفش.png", count: 5, title: "کفش" },
-    { img: "./img/گل.png", count: 2, title: "گل و گیاه" },
-    { img: "./img/لوازم خانگی.png", count: 8, title: "لوازم خانگی" },
-    { img: "./img/صندلی 2.png", count: 4, title: "مبلمان" },
+    {img: "./img/لباس.png", count: 4, title: "پوشاک"},
+    {img: "./img/تخت خواب.png", count: 3, title: "تخت خواب"},
+    {img: "./img/کفش.png", count: 5, title: "کفش"},
+    {img: "./img/گل.png", count: 2, title: "گل و گیاه"},
+    {img: "./img/لوازم خانگی.png", count: 8, title: "لوازم خانگی"},
+    {img: "./img/صندلی 2.png", count: 4, title: "مبلمان"},
   ];
   let fragmentSlid = $.createDocumentFragment();
   slideSwiper2.forEach((item) => {
@@ -148,13 +148,13 @@ const hoverLeft = (arr, div) => {
 const slideSwiper3 = () => {
   let swiper3 = new Swiper(".mySwiper3", {
     rewind: true,
-    navigation: { prevEl: ".swiper3 .swiper-button-next", nextEl: ".swiper3 .swiper-button-prev" },
+    navigation: {prevEl: ".swiper3 .swiper-button-next", nextEl: ".swiper3 .swiper-button-prev"},
   });
   hoverLeft(arrMahsol.slice(6, 11), ".mySwiper3 .swiper-wrapper");
 };
 slideSwiper3();
 let mySwiper5 = () => {
-  let swiper5 = new Swiper(".mySwiper5", { rewind: true, navigation: { prevEl: ".swiper5 .swiper-button-next", nextEl: ".swiper5 .swiper-button-prev" } });
+  let swiper5 = new Swiper(".mySwiper5", {rewind: true, navigation: {prevEl: ".swiper5 .swiper-button-next", nextEl: ".swiper5 .swiper-button-prev"}});
   hoverLeft(arrMahsol.slice(6, 11), ".mySwiper5 .swiper-wrapper");
 };
 mySwiper5();
@@ -166,7 +166,7 @@ mySwiper5();
 const MySwiper4 = () => {
   let swiper4 = new Swiper(".mySwiper4", {
     cssMode: true,
-    navigation: { prevEl: ".swiper4 .swiper-button-next", nextEl: ".swiper4 .swiper-button-prev" },
+    navigation: {prevEl: ".swiper4 .swiper-button-next", nextEl: ".swiper4 .swiper-button-prev"},
   });
 
   let slide1 = $.querySelector(".mySwiper4 .slide1");
@@ -240,15 +240,15 @@ function CreateProductSlide4(arr, parent, slide) {
   });
   parent.append(fragment);
 }
-export { CreateProductSlide4 };
+export {CreateProductSlide4};
 ///MySwiper4
 
 // MySwiper6
 
 const MySwiper6 = () => {
   let swiper6 = new Swiper(".mySwiper6", {
-    pagination: { el: ".mySwiper6 .swiper-pagination", clickable: true },
-    navigation: { nextEl: ".mySwiper6 .swiper-button-next", prevEl: ".mySwiper6 .swiper-button-prev" },
+    pagination: {el: ".mySwiper6 .swiper-pagination", clickable: true},
+    navigation: {nextEl: ".mySwiper6 .swiper-button-next", prevEl: ".mySwiper6 .swiper-button-prev"},
   });
 
   let fragment = $.createDocumentFragment();
@@ -307,8 +307,8 @@ moreAbut();
 const mySwiper8 = () => {
   ////////////////
   let swiper8 = new Swiper(".mySwiper8", {
-    navigation: { nextEl: ".mySwiper8 .swiper-button-next", prevEl: ".mySwiper8 .swiper-button-prev" },
-    pagination: { el: ".mySwiper8 .swiper-pagination", clickable: true },
+    navigation: {nextEl: ".mySwiper8 .swiper-button-next", prevEl: ".mySwiper8 .swiper-button-prev"},
+    pagination: {el: ".mySwiper8 .swiper-pagination", clickable: true},
   });
 
   let fragment = document.createDocumentFragment();
@@ -339,10 +339,10 @@ const MySwiper9 = () => {
   let swiper9 = new Swiper(".mySwiper9", {
     slidesPerView: 2,
     spaceBetween: 10,
-    navigation: { prevEl: ".swiper9 .swiper-button-next", nextEl: ".swiper9 .swiper-button-prev" },
+    navigation: {prevEl: ".swiper9 .swiper-button-next", nextEl: ".swiper9 .swiper-button-prev"},
     breakpoints: {
-      768: { slidesPerView: 3, spaceBetween: 40 },
-      1024: { slidesPerView: 6, spaceBetween: 10 },
+      768: {slidesPerView: 3, spaceBetween: 40},
+      1024: {slidesPerView: 6, spaceBetween: 10},
     },
   });
   CreateProductSlide4(arrMahsol.slice(20, 26), document.querySelector(".mySwiper9 .swiper-wrapper"), "swiper-slide");
@@ -367,17 +367,18 @@ import {
   findMahsol,
   ShowElan,
   notSuccess,
+  SabtNahaii,
 } from "./js/Hedear-Site.js";
-import { TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove } from "./js/export.js";
-import { AbutSwiper, HideMdAbut } from "./components/Btn-Swiper/Btn-Swiper.js";
-import { FoterSite } from "./js/foter-Site.js";
-import { Footer, FooterLast } from "./components/Foter/foter.js";
+import {TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove} from "./js/export.js";
+import {AbutSwiper, HideMdAbut} from "./components/Btn-Swiper/Btn-Swiper.js";
+import {FoterSite} from "./js/foter-Site.js";
+import {Footer, FooterLast} from "./components/Foter/foter.js";
 customElements.define("img-foter", FooterLast);
 customElements.define("free-footer", Footer);
 customElements.define("abut-swiper", AbutSwiper);
 customElements.define("hide-abut-swiper", HideMdAbut);
 
-import { Garden } from "./components/GardenElement/garden.js";
+import {Garden} from "./components/GardenElement/garden.js";
 customElements.define("garden-elm", Garden);
 
 // omid
@@ -385,12 +386,12 @@ customElements.define("garden-elm", Garden);
 //best-selling products myswiper7
 
 let sellproductsarr = [
-  { id: 105, title: "قفسه آیفون چوبی", price: 180_000, label: ["", ""], img: "./img/dock-black-walnut-ip6-grid-B1_1-200x200.jpg", count: "", current: true },
-  { id: 106, title: "موبایل اپل 8", price: 8_000_000, label: ["", ""], img: "./img/white-electronics-product-1-200x200.jpg", count: "", current: true },
-  { id: 107, title: "هندزفری مدل ال جی 114", price: 140_000, label: ["", ""], img: "./img/white-electronics-product-2-200x200.jpg", count: "", current: true },
-  { id: 108, title: "لپ تاب ایسوس مدل P520", price: 12_000_000, label: ["", ""], img: "./img/lobtap.png", count: "", current: true },
-  { id: 109, title: " هدفون بلوتوث دار سونی ", price: 210_000, label: ["", ""], img: "./img/ghosh.jpg", count: "", current: true },
-  { id: 110, title: "هدفون ایسوس 12", price: 174_000, label: ["", ""], img: "./img/white-electronics-product-8-200x200.jpg", count: "", current: true },
+  {id: 105, title: "قفسه آیفون چوبی", price: 180_000, label: ["", ""], img: "./img/dock-black-walnut-ip6-grid-B1_1-200x200.jpg", count: "", current: true},
+  {id: 106, title: "موبایل اپل 8", price: 8_000_000, label: ["", ""], img: "./img/white-electronics-product-1-200x200.jpg", count: "", current: true},
+  {id: 107, title: "هندزفری مدل ال جی 114", price: 140_000, label: ["", ""], img: "./img/white-electronics-product-2-200x200.jpg", count: "", current: true},
+  {id: 108, title: "لپ تاب ایسوس مدل P520", price: 12_000_000, label: ["", ""], img: "./img/lobtap.png", count: "", current: true},
+  {id: 109, title: " هدفون بلوتوث دار سونی ", price: 210_000, label: ["", ""], img: "./img/ghosh.jpg", count: "", current: true},
+  {id: 110, title: "هدفون ایسوس 12", price: 174_000, label: ["", ""], img: "./img/white-electronics-product-8-200x200.jpg", count: "", current: true},
   {
     id: 119,
     title: "لپ تاپ ایسوس مدل K700",
@@ -405,7 +406,7 @@ let sellproductsarr = [
 const MySwiper7 = () => {
   //swiper7
   let swiper7 = new Swiper(".mySwiper7", {
-    navigation: { prevEl: ".swiper7 .swiper-button-next", nextEl: ".swiper7 .swiper-button-prev" },
+    navigation: {prevEl: ".swiper7 .swiper-button-next", nextEl: ".swiper7 .swiper-button-prev"},
   });
   CreateProductSlide4(arrMahsol.slice(48, 54), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
   CreateProductSlide4(arrMahsol.slice(75, 81), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
@@ -434,8 +435,8 @@ const mySwiper11 = (parentDiv2, sliceitem2) => {
     slidesPerView: 1,
     spaceBetween: 30,
     freeMode: true,
-    autoplay: { delay: 3500, disableOnInteraction: false },
-    pagination: { el: ".swiper-pagination", clickable: true },
+    autoplay: {delay: 3500, disableOnInteraction: false},
+    pagination: {el: ".swiper-pagination", clickable: true},
   });
   let swiperfragment4 = document.createDocumentFragment();
   sliceitem2.forEach((element) => {
@@ -500,11 +501,11 @@ const i = (swiper) => {
     slidesPerView: 2,
     spaceBetween: 30,
     freeMode: true,
-    pagination: { el: ".swiper-pagination", clickable: true },
-    autoplay: { delay: 2000, disableOnInteraction: false },
+    pagination: {el: ".swiper-pagination", clickable: true},
+    autoplay: {delay: 2000, disableOnInteraction: false},
     breakpoints: {
-      768: { slidesPerView: 3, spaceBetween: 40 },
-      1024: { slidesPerView: 6, spaceBetween: 10 },
+      768: {slidesPerView: 3, spaceBetween: 40},
+      1024: {slidesPerView: 6, spaceBetween: 10},
     },
   });
 };
@@ -514,10 +515,10 @@ i(".mySwiper15");
 
 //site's weblag
 let weblagsarray = [
-  { title: "طراحی داخلی", img: "./img/interior decorasion.jpg", date: "22", lable: "مبلمان" },
-  { title: "وسایل مورد نیاز کوهنوردی", img: "./img/climbing things.jpg", date: "16", lable: "وسایل" },
-  { title: "طراحی دکوراسیون داخلی", img: "./img/design decorasion.jpg", date: "11", lable: "طراحی سه بعدی" },
-  { title: "وسایل باغبانی", img: "./img/things garden.jpg", date: "4", lable: "وسایل" },
+  {title: "طراحی داخلی", img: "./img/interior decorasion.jpg", date: "22", lable: "مبلمان"},
+  {title: "وسایل مورد نیاز کوهنوردی", img: "./img/climbing things.jpg", date: "16", lable: "وسایل"},
+  {title: "طراحی دکوراسیون داخلی", img: "./img/design decorasion.jpg", date: "11", lable: "طراحی سه بعدی"},
+  {title: "وسایل باغبانی", img: "./img/things garden.jpg", date: "4", lable: "وسایل"},
 ];
 const mySwiper16 = (parentDiv5, sliceitem5) => {
   let swiper10 = new Swiper(".mySwiper16", {
@@ -532,7 +533,7 @@ const mySwiper16 = (parentDiv5, sliceitem5) => {
     },
     slidesPerView: 2,
     spaceBetween: 16,
-    breakpoints: { 195: { slidesPerView: 1, spaceBetween: 16 }, 640: { slidesPerView: 2, spaceBetween: 16 }, 768: { slidesPerView: 3, spaceBetween: 16 } },
+    breakpoints: {195: {slidesPerView: 1, spaceBetween: 16}, 640: {slidesPerView: 2, spaceBetween: 16}, 768: {slidesPerView: 3, spaceBetween: 16}},
   });
 
   let swiperfragment5 = document.createDocumentFragment();
@@ -607,7 +608,8 @@ mySwiper16(document.querySelector(".mySwiper16 .swiper-wrapper"), weblagsarray);
 
 //site's weblag
 
-//Foter
+////Import All
+
 (() => {
   CreateMahsolBasket(ArrayUserBasket, "");
   RemoveItem(ArrayUserBasket, "");
@@ -624,4 +626,5 @@ mySwiper16(document.querySelector(".mySwiper16 .swiper-wrapper"), weblagsarray);
   notSuccess();
   TedadBasket(ArrayUserBasket);
   TedadLove();
+  SabtNahaii("");
 })();

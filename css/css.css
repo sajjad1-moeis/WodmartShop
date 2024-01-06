@@ -583,7 +583,7 @@ opacity: 0.5;
     transition: 0.6s;
     cursor: pointer;
   }
-  .mySwiper16 .akharin img:hover{
+  .mySwiper16 .akharin img:hover,.mySwiper16 .vf:hover .akharin img{
   
     filter: blur(4px);
   transform: scale(1.05);

@@ -3,7 +3,7 @@ import { CreateMahsol, AddToBasket } from "./Hedear-Site.js";
 async function FilterColor() {
   let ColorFilter = await fetch("https://657eea449d10ccb465d58032.mockapi.io/AbutMore");
   let jsonColor = await ColorFilter.json();
-  jsonColor.slice(4).forEach((item) => {
+  jsonColor.slice(4, 12).forEach((item) => {
     document.querySelector(".filterColorProduct").innerHTML += `
         <div class="flex justify-between px-2 my-3 DivColor text-lg -${item.more}">
         <div class="flex -${item.more}">
@@ -40,9 +40,7 @@ function ResultPrice(arr) {
   document.querySelector(".TotalPrice").innerHTML = `مجموع سبد خرید شما : ${result.toLocaleString()} تومان`;
 }
 function TaiinBasket(arr) {
-  arr.length > 0
-    ? document.querySelector(".DivBasketKhali").classList.add("hidden")
-    : document.querySelector(".DivBasketKhali").classList.remove("hidden");
+  arr.length > 0 ? document.querySelector(".DivBasketKhali").classList.add("hidden") : document.querySelector(".DivBasketKhali").classList.remove("hidden");
 }
 function Price() {
   return `<div class="border-2 bg-white border-zinc-200 p-3 py-5 text-xl">

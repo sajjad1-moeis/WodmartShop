@@ -1,52 +1,20 @@
 let $ = document;
-function tekrar(bg) {
-  return ` <div class="p-2 leading-loose ${bg} text-black justify-evenly">
-  <a href="../html/SearchMahsol.html?id=روشنایی">
-    <p>روشنایی</p>
-  </a>
-  <a href="../html/SearchMahsol.html?id=لامپ">
-    <p>لامپ</p>
-  </a>
-  <a href="../html/SearchMahsol.html?id=مهتابی">
-    <p>مهتابی</p>
-  </a>
-  <a href="../html/SearchMahsol.html?id=موس">
-    <p>موس</p>
-  </a>
-  <a href="../html/SearchMahsol.html?id=برق">
-    <p>برق</p>
-  </a>
-  <a href="../html/SearchMahsol.html?id=کتاب">
-    <p>کتاب</p>
-  </a>
-  <a href="../html/SearchMahsol.html?id=موبایل">
-    <p>موبایل</p>
-  </a>
-  <a href="../html/SearchMahsol.html?id=لبتاب">
-    <p>لبتاب</p>
-  </a>
-  <a href="../html/SearchMahsol.html?id=خودکار">
-    <p>خودکار</p>
-  </a>
-  <a href="../html/SearchMahsol.html?id=ادکلن">
-    <p>ادکلن</p>
-  </a>
-  </div>
-`;
-}
+
+//// Element Header
 
 function Header(dot) {
   let arr = [
-    { name: "خانه", img: ["", `${dot}./index.html`], current: false },
-    { name: "مبلمان", img: [`${dot}./img/arrow.png`, "#"], current: true },
-    { name: "لوازم آشپزخانه", img: [`${dot}./img/arrow.png`, "#"], current: true },
-    { name: "لوازم جانبی", img: [`${dot}./img/arrow.png`, "#"], current: true },
-    { name: "مد روز", img: [`${dot}./img/arrow.png`, "#"], current: true },
-    { name: " ساعت", img: ["", ""], current: false },
-    { name: "لوازم روشنایی", img: [`${dot}./img/arrow.png`, "#"], current: true },
-    { name: "صنایع دستی", img: ["", "#"], current: false },
-    { name: "نوشت افزار", img: [`${dot}./img/arrow.png`, "#"], current: true },
+    {name: "خانه", img: ["", `${dot}./index.html`], current: false},
+    {name: "مبلمان", img: [`${dot}./img/arrow.png`, "#"], current: true, label: ["راحتی سلطانی", "مبل هفت شاه", "مبل هزا خان", "مبل شاهی"]},
+    {name: "لوازم آشپزخانه", img: [`${dot}./img/arrow.png`, "#"], current: true, label: ["جارو برقی lenovo", "یخچال ساید", "مایکرویو Oven", "چراغ لامپ کم مصرف"]},
+    {name: "لوازم جانبی", img: [`${dot}./img/arrow.png`, "#"], current: true, label: ["چراغ فانتزی 107", "لامپ رو میزی", "دکوراسیون چوبی ساده", "پاپیون"]},
+    {name: "مد روز", img: [`${dot}./img/arrow.png`, "#"], current: true, label: ["لباس زنانه", "شلوار کتان", "شلوار لی مردانه", "پیرهن سفید زنانه"]},
+    {name: " ساعت", img: ["", ""], current: false},
+    {name: "لوازم روشنایی", img: [`${dot}./img/arrow.png`, "#"], current: true, label: ["چراغ لامپ کم مصرف", "شب خواب ایما", "LED چراغ خواب", "چراغ خواب طرح سرامیکی"]},
+    {name: "صنایع دستی", img: ["", "#"], current: false},
+    {name: "نوشت افزار", img: [`${dot}./img/arrow.png`, "#"], current: true, label: ["جامدادی مدل 25", "", "", ""]},
   ];
+
   arr.forEach((item) => {
     if (item.current) {
       document.querySelectorAll(".list-none").forEach((element) => {
@@ -57,9 +25,22 @@ function Header(dot) {
     <img src="${item.img[0]}" class="w-2.5">
     </div>
     <div
-    class="grid g absolute mt-5 p-2  gap-3">
-    ${tekrar()}
-    </div>
+    class="grid g absolute mt-5 p-2  gap-3 link-esay rounded-lg overflow-hidden">
+      <div class="p-2  text-black justify-evenly " style="line-height:40px">
+         <a href="../html/SearchMahsol.html?id=${item.label[0]}">
+           <p>${item.label[0]}</p>
+        </a>
+        <a href="../html/SearchMahsol.html?id=${item.label[1]}">
+             <p>${item.label[1]}</p>
+        </a>
+        <a href="../html/SearchMahsol.html?id=${item.label[2]}">
+            <p>${item.label[2]}</p>
+        </a>
+        <a href="../html/SearchMahsol.html?id=${item.label[3]}">
+            <p>${item.label[3]}</p>
+         </a>
+     </div>
+   </div>
       </li>
       `;
       });
@@ -69,7 +50,7 @@ function Header(dot) {
       <a href="${item.img[1]}">
       <li class="  flex text-base cursor-pointer">
       ${item.name}
-      <div class="mt-0.5 ms-0.5">
+      <div class="mt-0.5 ms-0.5 link-esay" >
         <img src="${item.img[0]}" class="w-4">
       </div>
       </li>
@@ -78,6 +59,9 @@ function Header(dot) {
     }
   });
 }
+
+//! Basket Div And Love Div
+
 const IconHeader = (dot) => {
   let index = 0;
   let img = [
@@ -247,41 +231,48 @@ function body(IsSubmit, href, dot) {
     <!--DivMenuMobile-->
 
     <div
-    class="fixed  h-[100vh] left-[-350px] w-[300px] lg:w-[350px] z-50 top-0 bg-darkBlue  DivMenu"
+    class="fixed  h-[100vh] left-[-350px] w-[300px] lg:w-[350px] z-50 top-0 bg-secondary  DivMenu"
     style="transition: 0.4s ease-in-out"
   >
     <div class="flex justify-end p-3">
       <div class="w-max closeBtnMenu cursor-pointer flex">
-        <div class="mt-1 text-white">
+        <div class="mt-1 ">
           <span class="me-2">بستن</span>
         </div>
-        <img src="${dot}./img/close3.png" class="w-8" alt="" />
+        <img src="${dot}./img/close4.png" class="w-8" alt="" />
       </div>
     </div>
-    <div class="border-b-2 border-silver w-[90%] mx-auto"></div>
-    <div class="px-4 py-2 flex">
-      <input type="text" class="inputSearchProduct form-control text-black bg-white placeholder:text-dark" placeholder="جستجو برای محصولات..." />
+    <div class="border-b-2 border-warning w-[90%] mx-auto"></div>
+    <div class="px-4 py-2 flex gap-1 mt-3" >
+      <div class="w-full bg-white border-[1px] border-zinc-300 flex rounded-lg overflow-hidden">
+      <input type="text" style="border-radius:0px" class="inputSearchProduct  w-full p-3 outline-none text-black bg-white placeholder:text-dark" placeholder="جستجو برای محصولات..." />
+      <button class="p-3 bg-warning btnSearchProduct  text-white"><img class="w-8" src="${dot}./img/search3.png"></button>
+
+      </div>
     </div>
-    <div class="px-4 mt-1 text-white">
+    <div class="px-4 mt-1 ">
+    <div class="border-b-2 p-2 border-warning w-full ">برگه ها</div>
+    </div>
+    <div class="px-4 mt-1 ">
       <a href="${dot}./index.html">
-        <div class=" p-4 border-b-[1px] border-silver">خانه</div>
-      </a>
-      
-      <a href="${dot}./html/love.html">
-        <div class=" p-4 border-b-[1px] border-silver">علاقه مندی</div>
-      </a>
-      <a href="${dot}./html/Ertebat.html">
-        <div class=" p-4 border-b-[1px] border-silver">ارتباط با ما</div>
-      </a>
-      <a href="${dot}./html/Soal.html">
-        <div class=" p-4 border-b-[1px] border-silver">سوالات متداول</div>
-      </a>
-      <a href="${dot}${href}">
-        <div class=" p-4 border-b-[1px] border-silver">${IsSubmit}</div>
+        <div class=" p-4 border-b-[1px] border-zinc-300">خانه</div>
       </a>
       <a href="#">
-        <div class=" p-4 border-b-[1px] border-silver">مقایسه</div>
+        <div class=" p-4 border-b-[1px] border-zinc-300">مقایسه</div>
       </a>
+      <a href="${dot}./html/Ertebat.html">
+        <div class=" p-4 border-b-[1px] border-zinc-300">ارتباط با ما</div>
+      </a>
+      <a href="${dot}./html/love.html">
+      <div class=" p-4 border-b-[1px] border-zinc-300">علاقه مندی</div>
+    </a>
+      <a href="${dot}./html/Soal.html">
+        <div class=" p-4 border-b-[1px] border-zinc-300">سوالات متداول</div>
+      </a>
+      <a href="${dot}${href}">
+        <div class=" p-4 border-b-[1px] border-zinc-300">${IsSubmit}</div>
+      </a>
+      
     </div>
   </div>
 
@@ -325,6 +316,9 @@ function body(IsSubmit, href, dot) {
       `
   );
 }
+/////////////////////////////////// Khabar Name
+
+///Btn Show Div Khabarname
 
 function ShowDivKhabarName() {
   let btnKhabarName = document.querySelector(".btnKhabarName");
@@ -340,28 +334,80 @@ function ShowDivKhabarName() {
     divKhabarName.classList.add("hidden");
   };
 }
+
+///Div ListNextSearch
+
+function listNextSearch() {
+  let arr = [" پوشاک", "تخت خواب", "کفش", "گل و گیاه", "لوازم خانگی", "مبلمان"];
+  arr.forEach((item) => {
+    $.querySelector("header .list-next-search div").innerHTML += `
+    <a href="../html/Product.html?id=${item}">
+       <p class="p-1 border-b-[1px] border-b-zinc-200 w-full">${item}</p>
+    </a>
+
+    `;
+  });
+}
+
+/// Header Abut Me (telegram / instagrom)
+
+function AbutMe(dot) {
+  let arr = [[`${dot}./img/github.png`, "https://github.com/sajjad1-moei/project"], [`${dot}./img/instagram.png`, "#"], [`${dot}./img/telegram.png", "https://t.me/Assistedd`]];
+  arr.forEach((img) => {
+    document.querySelector(".Ertebat").innerHTML += `
+    <a href="${img[1]}">
+    <div class="m-auto">
+      <img src="${img[0]}" class="w-5" alt="" />
+    </div>
+  </a>`;
+  });
+}
+
+//Btn ShowMenu Mobile
+
+function ShoeMenuMobile() {
+  let DivMenu = document.querySelector(".DivMenu");
+  document.querySelectorAll(".closeBtnMenu").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      DivMenu.classList.replace("left-0", "left-[-350px]");
+    });
+  });
+  document.querySelectorAll(" .btn-ShowMenu").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      DivMenu.classList.replace("left-[-350px]", "left-0");
+    });
+  });
+}
+
+///////////////////////////////////////////////// Basket
+
+/// SearchProduct Is Header
+
 function SearchProduct(href) {
   const Search = (input) => {
     if (input.value) {
       location.href = `${href}${input.value}`;
     }
   };
-  document.querySelectorAll(".inputSearchProduct").forEach((input) => {
-    input.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        Search(input);
-      }
-    });
+  document.querySelector(".inputSearchProduct").addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      Search(input);
+    }
   });
-  let btnSearchProduct = document.querySelector(".btnSearchProduct");
-  btnSearchProduct.addEventListener("click", () => {
-    document.querySelectorAll(".inputSearchProduct").forEach((input) => {
-      if (input.value) {
-        location.href = `${href}${input.value}`;
-      }
-    });
-  });
+
+  let btnSearchProduct = document.querySelectorAll(".btnSearchProduct");
+  btnSearchProduct.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".inputSearchProduct").forEach((input) => {
+        if (input.value) {
+          location.href = `${href}${input.value}`;
+        }
+      });
+    })
+  );
 }
+
+////Btns ShowBasket
 
 function ShowBasket() {
   let btnShowBasket = document.querySelectorAll(".btnShowBasket").forEach((btn) => {
@@ -376,45 +422,8 @@ function ShowBasket() {
     DivBasket.classList.replace("left-0", "left-[-350px]");
   };
 }
-function listNextSearch() {
-  let arr = [" پوشاک", "تخت خواب", "کفش", "گل و گیاه", "لوازم خانگی", "مبلمان"];
-  arr.forEach((item) => {
-    $.querySelector("header .list-next-search div").innerHTML += `
-    <a href="../html/Product.html?id=${item}">
-       <p class="p-1 border-b-[1px] border-b-zinc-200 w-full">${item}</p>
-    </a>
 
-    `;
-  });
-}
-function AbutMe(dot) {
-  let arr = [
-    [`${dot}./img/github.png`, "https://github.com/sajjad1-moei/project"],
-    [`${dot}./img/instagram.png`, "#"],
-    [`${dot}./img/telegram.png", "https://t.me/Assistedd`],
-  ];
-  arr.forEach((img) => {
-    document.querySelector(".Ertebat").innerHTML += `
-    <a href="${img[1]}">
-    <div class="m-auto">
-      <img src="${img[0]}" class="w-5" alt="" />
-    </div>
-  </a>`;
-  });
-}
-function ShoeMenuMobile() {
-  let DivMenu = document.querySelector(".DivMenu");
-  document.querySelectorAll(".closeBtnMenu").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      DivMenu.classList.replace("left-0", "left-[-350px]");
-    });
-  });
-  document.querySelectorAll(" .btn-ShowMenu").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      DivMenu.classList.replace("left-[-350px]", "left-0");
-    });
-  });
-}
+///Create Div Mahsol Is Basket
 
 function CreateMahsolBasket(arr, dott) {
   document.querySelector(".ProductUser").innerHTML = "";
@@ -441,7 +450,9 @@ function CreateMahsolBasket(arr, dott) {
     SetLocal([]);
   }
 }
-import { TedadBasket, TaiinBasket, ResultPrice, AddLove, TedadLove } from "./export.js";
+
+///Remove Div Is Basket
+
 function RemoveItem(arr, dot) {
   let y = document.querySelector(".ProductUser");
   y.addEventListener("click", (e) => {
@@ -462,9 +473,14 @@ function RemoveItem(arr, dot) {
   });
 }
 
+///Set LocalStorage
+
 function SetLocal(arr) {
   localStorage.setItem("mahsol", JSON.stringify(arr));
 }
+
+//Fuction Find MahsolKharid Is Api
+
 function findMahsol(id, arr, arr2, dot) {
   let FindMahsol = arr.find((item) => item.id === id);
   let someMahsol = arr2.some((item) => item.id === id);
@@ -480,6 +496,9 @@ function findMahsol(id, arr, arr2, dot) {
   TaiinBasket(arr2);
   ResultPrice(arr2);
 }
+
+//Fuction Find MahsolLove Is Api
+
 function findMahsolLove(id, arr, arr2, dot) {
   let FindMahsol = arr.find((item) => item.id === id);
   let someMahsol = arr2.some((item) => item.id === id);
@@ -491,12 +510,52 @@ function findMahsolLove(id, arr, arr2, dot) {
   }
   SetLocal(arr2);
 }
+
+///Apeemd Div To Div Basket
+
+function AddToBasket(arr, arr2) {
+  let DivKharid = $.querySelectorAll(".list-menu2");
+  DivKharid.forEach((div) => {
+    div.addEventListener("click", (e) => {
+      let parent = e.target.parentElement;
+      if (document.cookie.includes("name")) {
+        if (parent.className.includes("kharid")) {
+          findMahsol(div.dataset.id, arr, arr2, ".");
+          $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
+        } else if (parent.className.includes("love")) {
+          AddLove(arr, JSON.parse(localStorage.getItem("love")), div.dataset.id);
+          TedadLove();
+        }
+      } else {
+        let DivIsSubmit = document.querySelector(".IsSubmit");
+        ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"));
+      }
+    });
+  });
+}
+
+///Btn SabtNahaii Is Basket
+
+function SabtNahaii(dot) {
+  document.querySelector(".BtnNahaii").onclick = () => {
+    if (JSON.parse(localStorage.getItem("mahsol")).length > 0) {
+      location.href = `${dot}./html/sabtSefarsh.html`;
+    }
+  };
+}
+
+////////////////////////////////////////////////// Div Submit
+
+//Show Elan Is NotSubmit
+
 function ShowElan(div) {
   div.classList.replace("right-[-288px]", "right-10");
   let interval = setTimeout(function () {
     div.classList.replace("right-10", "right-[-288px]");
   }, 2000);
 }
+
+//Div Elan Is NotSubmit
 
 function notSuccess() {
   document.body.insertAdjacentHTML(
@@ -506,12 +565,20 @@ function notSuccess() {
   </div>`
   );
 }
+
+/////////////////////////////////////////// Create Mahsol Page Asli
+
+//Div Persent Price And Vizheh
+
 function divVizhehAndPercon(label0, label1, color) {
   return `<div class="absolute top-1 right-2 bg-danger  mx-auto text-xs px-3 w-max text-white"><span>${label0}</span></div>
   <div class="absolute top-[30px] right-2 ${color}  mx-auto text-xs px-1.5 w-[50px] text-white">
   <span> ${label1} </span>
   </div>`;
 }
+
+/// HideNav Bottom
+
 function HoverBottom(id) {
   return `
   <div class="w-full bg-white absolute h-max bottom-0 lg:bottom-[-45px] p-2 shadow list-menu2  gap-y-5" data-id=${id}>
@@ -528,6 +595,9 @@ function HoverBottom(id) {
   </div>
   </div>`;
 }
+
+//Div Product Is Page Asli
+
 function CreateMahsol(arr, div) {
   div.innerHTML = "";
   let divFrag = document.createDocumentFragment();
@@ -563,26 +633,9 @@ function CreateMahsol(arr, div) {
   });
   div.append(divFrag);
 }
-function AddToBasket(arr, arr2) {
-  let DivKharid = $.querySelectorAll(".list-menu2");
-  DivKharid.forEach((div) => {
-    div.addEventListener("click", (e) => {
-      let parent = e.target.parentElement;
-      if (document.cookie.includes("name")) {
-        if (parent.className.includes("kharid")) {
-          findMahsol(div.dataset.id, arr, arr2, ".");
-          $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
-        } else if (parent.className.includes("love")) {
-          AddLove(arr, JSON.parse(localStorage.getItem("love")), div.dataset.id);
-          TedadLove();
-        }
-      } else {
-        let DivIsSubmit = document.querySelector(".IsSubmit");
-        ShowElan(DivIsSubmit, $.querySelector(".heightDivIsSubmit"));
-      }
-    });
-  });
-}
+
+///Function Filter Price Is Product
+
 function FilterPrice(arr, arr2, div) {
   let spanNotFilter = document.querySelector(".notFilter");
   let inputFilter = document.querySelectorAll(".filterInput");
@@ -616,6 +669,13 @@ function FilterPrice(arr, arr2, div) {
     }
   };
 }
+
+/////////////////////////////////////////////////// Import All
+
+import {TedadBasket, TaiinBasket, ResultPrice, AddLove, TedadLove} from "./export.js";
+
+/////////////////////////////////////////////////// Export All
+
 export {
   FilterPrice,
   AddToBasket,
@@ -638,4 +698,5 @@ export {
   AbutMe,
   ShoeMenuMobile,
   findMahsolLove,
+  SabtNahaii,
 };
