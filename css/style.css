@@ -5,7 +5,7 @@
 @layer components{
     .form-control{
         @apply placeholder:text-neutral-300 block w-full rounded-md outline-none border-0 py-1.5   px-3
-        shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600
+        shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-warning
     }
     .form-check{
         @apply h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600

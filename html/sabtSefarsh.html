@@ -14,7 +14,7 @@
     }
   </style>
   <body dir="rtl">
-    <div class="h-[100vh] bg-darkBlue loding hidden">
+    <div class="h-[100vh] bg-darkBlue loding">
       <div class="mainloding">
         <div class="box b1"></div>
         <div class="box b2"></div>
@@ -23,7 +23,64 @@
         <span class="text-white">...𝐋𝐨𝐝𝐢𝐧𝐠</span>
       </div>
     </div>
-    <div class="body p-0"><br /><br /><br /></div>
+    <div class="body p-0 hidden">
+      <div class="bg-black md:p-10 pt-[80px] p-10 text-center text-white text-3xl md:text-5xl">ثبت نهایی سفارشات</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 container my-10 gap-x-10">
+        <div class="p-5">
+          <div class="flex gap-3 p-2">
+            <span>کد تخفیف دارید؟ </span>
+            <a href="#" class="text-warning">برای نوشتن کد اینجا کلیک کنید</a>
+          </div>
+          <div class="mt-10">
+            <div class="text-2xl">
+              <p>جزئیات صورتحساب</p>
+            </div>
+            <div class="TakmilInput">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 my-5">
+                <div class="">
+                  <p class="text-base my-2">نام<span class="text-danger ms-1">*</span></p>
+                  <input type="text" class="form-control rounded-full px-2 p-3" />
+                </div>
+                <div class="">
+                  <p class="text-base my-2">نام خانوادگی<span class="ms-1 text-danger">*</span></p>
+                  <input type="text" class="form-control rounded-full px-2 p-3" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="my-10">
+            <p class="text-2xl">توضیحات تکمیلی</p>
+            <p class="text-zinc-400 mt-5">توضیحات سفارش (اختیاری)</p>
+            <textarea
+              name=""
+              placeholder="یادداشت‌ها درباره سفارش شما، برای مثال نکات مهم درباره نحوه تحویل سفارش"
+              id=""
+              cols="30"
+              rows="7"
+              class="form-control rounded-3xl p-5 my-3"
+            ></textarea>
+          </div>
+        </div>
+        <div class="my-10">
+          <div class="flex justify-evenly"></div>
+          <div class="bg-secondary p-2 md:p-10">
+            <div class="text-center text-3xl mt-10 mb-5">سفارش شما</div>
+            <div class="bg-white p-5">
+              <div class="flex justify-between border-b-2 border-zinc-200 p-2 text-lg pb-5">
+                <div>محصول</div>
+                <div>جمع جزء</div>
+              </div>
+              <div class="mahsolNahaii"></div>
+              <div class="flex justify-between text-xl p-5">
+                <div>مجموع</div>
+                <div class="text-warning total text-2xl">95,000 تومان</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="../js/SabtSefarsh.js"></script>
   <script src="../js/module.js" type="module"></script>
 </html>

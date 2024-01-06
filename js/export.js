@@ -1,5 +1,5 @@
 let $ = document;
-import { CreateMahsol, AddToBasket } from "./Hedear-Site.js";
+import {CreateMahsol, AddToBasket} from "./Hedear-Site.js";
 async function FilterColor() {
   let ColorFilter = await fetch("https://657eea449d10ccb465d58032.mockapi.io/AbutMore");
   let jsonColor = await ColorFilter.json();
@@ -84,4 +84,4 @@ function AddLove(arrMahsol, arrUserLove, id) {
   localStorage.setItem("love", JSON.stringify(arrUserLove));
 }
 
-export { FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove, AddLove };
+export {FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove, AddLove};

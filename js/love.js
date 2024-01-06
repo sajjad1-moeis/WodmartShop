@@ -1,6 +1,6 @@
 let $ = document;
-import { CreateMahsol, findMahsolLove, CreateMahsolBasket, RemoveItem, HoverBottom, divVizhehAndPercon } from "./Hedear-Site.js";
-import { TedadLove, TaiinBasket, ResultPrice, TedadBasket } from "./export.js";
+import {CreateMahsol, findMahsolLove, CreateMahsolBasket, RemoveItem, HoverBottom, divVizhehAndPercon} from "./Hedear-Site.js";
+import {TedadLove, TaiinBasket, ResultPrice, TedadBasket} from "./export.js";
 let LocalStorageItem = JSON.parse(localStorage.getItem("love"));
 let LocalStorageItemMahsol = JSON.parse(localStorage.getItem("mahsol"));
 let arrUserLove = [];
@@ -38,7 +38,11 @@ document.querySelector(".time").innerHTML = time.split(",")[0];
 ///
 function LoveTedad() {
   LocalStorageItem.length > 0
-    ? document.querySelector(".tedadLove").classList.add("hidden") + document.querySelector(".loveeee").classList.remove("hidden")
-    : document.querySelector(".tedadLove").classList.remove("hidden") + document.querySelector(".loveeee").classList.add("hidden");
+    ? document.querySelector(".tedadLove").classList.add("hidden") +
+      document.querySelector(".loveeee").classList.remove("hidden") +
+      document.querySelector(".img-tedadLove").classList.add("hidden")
+    : document.querySelector(".tedadLove").classList.remove("hidden") +
+      document.querySelector(".loveeee").classList.add("hidden") +
+      document.querySelector(".img-tedadLove").classList.remove("hidden");
 }
 LoveTedad();
