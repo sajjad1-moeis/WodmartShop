@@ -391,7 +391,7 @@ function SearchProduct(href) {
   };
   document.querySelector(".inputSearchProduct").addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-      Search(input);
+      Search(document.querySelector(".inputSearchProduct"));
     }
   });
 
