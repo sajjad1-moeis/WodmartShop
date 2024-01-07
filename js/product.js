@@ -2,8 +2,8 @@ let $ = document;
 let locationSite = location.search;
 let IdLocation = new URLSearchParams(locationSite);
 let SearchLocation = IdLocation.get("id");
-import { CreateMahsol, AddToBasket, RemoveItem, FilterPrice } from "./Hedear-Site.js";
-import { FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, Price, ResultPrice } from "./export.js";
+import {CreateMahsol, AddToBasket, RemoveItem, FilterPrice} from "./Hedear-Site.js";
+import {FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, Price, ResultPrice, filterValueInput} from "./export.js";
 ///Id Is Location
 FilterColor();
 document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
@@ -54,3 +54,4 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
 
 FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"));
 document.querySelector(".Mahsol").innerHTML = `محصول : ${SearchLocation}`;
+filterValueInput();

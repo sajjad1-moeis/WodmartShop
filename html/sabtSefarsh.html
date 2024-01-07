@@ -24,63 +24,86 @@
       </div>
     </div>
     <div class="body p-0 hidden">
-      <div class="bg-black md:p-10 pt-[80px] p-10 text-center text-white text-3xl md:text-5xl">ثبت نهایی سفارشات</div>
-      <div class="grid grid-cols-1 md:grid-cols-2 container my-10 gap-x-10">
-        <div class="p-5">
-          <div class="flex gap-3 p-2">
-            <span>کد تخفیف دارید؟ </span>
-            <a href="#" class="text-warning">برای نوشتن کد اینجا کلیک کنید</a>
-          </div>
-          <div class="mt-10">
-            <div class="text-2xl">
-              <p>جزئیات صورتحساب</p>
+      <main>
+        <div class="bg-black md:p-10 pt-[80px] p-10 text-center text-white text-3xl md:text-5xl">ثبت نهایی سفارشات</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 container my-10 gap-x-10">
+          <div class="p-5">
+            <div class="flex gap-3 p-2">
+              <span>کد تخفیف دارید؟ </span>
+              <a href="#" class="text-warning">برای نوشتن کد اینجا کلیک کنید</a>
             </div>
-            <div class="TakmilInput">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 my-5">
-                <div class="">
-                  <p class="text-base my-2">نام<span class="text-danger ms-1">*</span></p>
-                  <input type="text" class="form-control rounded-full px-2 p-3" />
-                </div>
-                <div class="">
-                  <p class="text-base my-2">نام خانوادگی<span class="ms-1 text-danger">*</span></p>
-                  <input type="text" class="form-control rounded-full px-2 p-3" />
+            <div class="mt-10">
+              <div class="text-2xl">
+                <p>جزئیات صورتحساب</p>
+              </div>
+              <div class="TakmilInput">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 my-5">
+                  <div class="">
+                    <p class="text-base my-2">نام<span class="text-danger ms-1">*</span></p>
+                    <input type="text" class="px-5 form-control rounded-full p-3" />
+                  </div>
+                  <div class="">
+                    <p class="text-base my-2">نام خانوادگی<span class="ms-1 text-danger">*</span></p>
+                    <input type="text" class="px-5 form-control rounded-full p-3" />
+                  </div>
                 </div>
               </div>
+            </div>
+            <div class="my-10">
+              <p class="text-2xl">توضیحات تکمیلی</p>
+              <p class="text-zinc-400 mt-5">توضیحات سفارش (اختیاری)</p>
+              <textarea
+                name=""
+                placeholder="یادداشت‌ها درباره سفارش شما، برای مثال نکات مهم درباره نحوه تحویل سفارش"
+                id=""
+                cols="30"
+                rows="7"
+                class="form-control rounded-3xl p-5 my-3"
+              ></textarea>
             </div>
           </div>
           <div class="my-10">
-            <p class="text-2xl">توضیحات تکمیلی</p>
-            <p class="text-zinc-400 mt-5">توضیحات سفارش (اختیاری)</p>
-            <textarea
-              name=""
-              placeholder="یادداشت‌ها درباره سفارش شما، برای مثال نکات مهم درباره نحوه تحویل سفارش"
-              id=""
-              cols="30"
-              rows="7"
-              class="form-control rounded-3xl p-5 my-3"
-            ></textarea>
-          </div>
-        </div>
-        <div class="my-10">
-          <div class="flex justify-evenly"></div>
-          <div class="bg-secondary p-2 md:p-10">
-            <div class="text-center text-3xl mt-10 mb-5">سفارش شما</div>
-            <div class="bg-white p-5">
-              <div class="flex justify-between border-b-2 border-zinc-200 p-2 text-lg pb-5">
-                <div>محصول</div>
-                <div>جمع جزء</div>
+            <div class="flex justify-evenly bb"></div>
+            <div class="bg-zinc-100 p-2 md:p-10">
+              <div class="text-center text-3xl mt-10 mb-5">سفارش شما</div>
+              <div class="bg-white p-5">
+                <div class="flex justify-between border-b-2 border-zinc-200 p-2 text-lg pb-5">
+                  <div>محصول</div>
+                  <div>جمع جزء</div>
+                </div>
+                <div class="mahsolNahaii"></div>
+                <div class="flex justify-between text-xl p-5">
+                  <div>مجموع</div>
+                  <div class="text-warning total text-2xl">95,000 تومان</div>
+                </div>
               </div>
-              <div class="mahsolNahaii"></div>
-              <div class="flex justify-between text-xl p-5">
-                <div>مجموع</div>
-                <div class="text-warning total text-2xl">95,000 تومان</div>
+              <div class="border-b-2 border-zinc-800 my-7"></div>
+              <div class="my-5 md:p-5 text-center">
+                <div class="text-2xl">مشخصات کارت</div>
+                <div class="grid grid-cols-4 gap-3 my-2" dir="ltr">
+                  <input type="text" class="text-center rounded-full bg-white form-control border-0 input text-lg" maxlength="7" placeholder="0" />
+                  <input type="text" class="text-center rounded-full bg-white form-control border-0 input text-lg" maxlength="7" placeholder="0" />
+                  <input type="text" class="text-center rounded-full bg-white form-control border-0 input text-lg" maxlength="7" placeholder="0" />
+                  <input type="text" class="text-center rounded-full bg-white form-control border-0 input text-lg" maxlength="7" placeholder="0" />
+                </div>
+                <div class="my-5">
+                  <p class="my-2">تاریخ انقضا</p>
+                  <div class="grid grid-cols-2 gap-5">
+                    <input type="text" class="text-center rounded-full bg-white form-control border-0 input text-lg" maxlength="7" placeholder="0" />
+                    <input type="text" class="text-center rounded-full bg-white form-control border-0 input text-lg" maxlength="7" placeholder="0" />
+                  </div>
+                </div>
+                <div class="rounded-full p-3 bg-warning text-white text-lg mt-10">ثبت نهایی</div>
               </div>
+            </div>
+            <div class="text-center bg-black text-white border-[1px] border-zinc-200 rounded-3xl py-10 p-5 md:text-xl my-8">
+              <div class="max-w-md m-auto">برای حذف آیتم مورد نظر میتوانید از طریق سبد خرید در بالای صفحه ابتدا منو را باز و آنرا حذف کنید</div>
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   </body>
-  <script src="../js/SabtSefarsh.js"></script>
   <script src="../js/module.js" type="module"></script>
+  <script src="../js/SabtSefarsh.js" type="module"></script>
 </html>

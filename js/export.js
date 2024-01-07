@@ -53,11 +53,8 @@ function Price() {
   <div class="w-1/2">تا :</div>
 </div>
 <div class="flex gap-3">
-  <input type="text" class="form-control filterInput w-1/2 text-sm placeholder:text-sm" placeholder="0 تومان" /><input
-    type="text"
-    class="form-control w-1/2 text-sm placeholder:text-sm filterInput"
-    placeholder="0 تومان"
-  />
+  <input type="text" class="form-control filterInput w-1/2 text-sm placeholder:text-sm" placeholder="0 تومان" />
+  <input type="text" class="form-control w-1/2 text-sm placeholder:text-sm filterInput" placeholder="0 تومان"/>
 </div>
 <div class="mt-4">
 <span class="notFilter  text-danger text-sm"></span>
@@ -71,6 +68,19 @@ function Price() {
   </div>`;
 }
 
+function filterValueInput() {
+  document.querySelectorAll(".filterInput").forEach((input) => {
+    input.oninput = () => {
+      let inputText = input.value;
+
+      // حذف هر فاصله یا کاراکتر غیر عددی از متن
+      let numericText = inputText.replace(/\D/g, "");
+      // جدا کردن متن به دسته‌های سه رقمی
+      let separatedText = numericText.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      input.value = separatedText;
+    };
+  });
+}
 function AddLove(arrMahsol, arrUserLove, id) {
   let find = arrMahsol.find((item) => item.id == id);
   let some = arrUserLove.some((item) => item.id == id);
@@ -83,5 +93,36 @@ function AddLove(arrMahsol, arrUserLove, id) {
 
   localStorage.setItem("love", JSON.stringify(arrUserLove));
 }
-
-export {FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove, AddLove};
+async function Total(arr) {
+  if (arr) {
+    if (document.querySelector(".total")) {
+      let sum = await arr.reduce((prev, next) => {
+        return (prev += next.count * next.price);
+      }, 0);
+      let res = 0;
+      let interval = setInterval(() => {
+        res += sum / 100;
+        if (res === sum) {
+          clearInterval(interval);
+        }
+        document.querySelector(".total").innerHTML = `${res.toLocaleString()}  تومان`;
+      }, 15);
+    }
+  }
+}
+function DivMajmoe(local) {
+  if (local) {
+    if (document.querySelector(".mahsolNahaii")) {
+      document.querySelector(".mahsolNahaii").innerHTML = "";
+      local.forEach((item) => {
+        document.querySelector(".mahsolNahaii").innerHTML += `
+        <div class="flex justify-between border-b-[1px] border-zinc-200 p-5">
+        <div>${item.title} <span class="text-warning">*</span> ${item.count}</div>
+        <div >${item.price.toLocaleString()} تومان</div>
+        </div>
+        `;
+      });
+    }
+  }
+}
+export {FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove, AddLove, filterValueInput, DivMajmoe, Total};

@@ -199,11 +199,11 @@ function body(IsSubmit, href, dot) {
                   class="fixed  h-[100vh] w-[300px] lg:w-[350px]  bg-white  top-0 left-[-350px] DivBasket"
                   style="transition: 0.4s ease-in-out;z-index:55555"
     >
-          <div class=" p-5 text-center text-base bg-white z-50  w-full absolute top-[85%]">
+          <div class=" p-5 text-center text-base bg-white z-50  w-full absolute top-[80%]">
             <div>
               <div class="TotalPrice">مجموع سبد خرید شما : 0 تومان</div>
             </div>
-            <div class="BtnNahaii w-full p-2 my-2 rounded-lg bg-warning text-white cursor-pointer">نهایی کردن خرید</div>
+            <div class="BtnNahaii w-full p-2 my-2 rounded-full bg-warning text-white cursor-pointer">نهایی کردن خرید</div>
           </div>
     <div class="flex justify-between p-3 relative">
     
@@ -451,8 +451,9 @@ function CreateMahsolBasket(arr, dott) {
   }
 }
 
-///Remove Div Is Basket
+///Remove Div Is Basket And Div Nahhaii
 
+import {Total, DivMajmoe} from "./export.js";
 function RemoveItem(arr, dot) {
   let y = document.querySelector(".ProductUser");
   y.addEventListener("click", (e) => {
@@ -469,6 +470,8 @@ function RemoveItem(arr, dot) {
       TedadBasket(arr);
       TaiinBasket(arr);
       ResultPrice(arr);
+      Total(arr);
+      DivMajmoe(arr);
     }
   });
 }
@@ -511,7 +514,7 @@ function findMahsolLove(id, arr, arr2, dot) {
   SetLocal(arr2);
 }
 
-///Apeemd Div To Div Basket
+///Append Div To Div Basket
 
 function AddToBasket(arr, arr2) {
   let DivKharid = $.querySelectorAll(".list-menu2");
@@ -537,9 +540,15 @@ function AddToBasket(arr, arr2) {
 ///Btn SabtNahaii Is Basket
 
 function SabtNahaii(dot) {
+  let cookei = document.cookie;
   document.querySelector(".BtnNahaii").onclick = () => {
-    if (JSON.parse(localStorage.getItem("mahsol")).length > 0) {
-      location.href = `${dot}./html/sabtSefarsh.html`;
+    if (cookei) {
+      if (JSON.parse(localStorage.getItem("mahsol")).length > 0) {
+        location.href = `${dot}./html/sabtSefarsh.html`;
+      }
+    } else {
+      ShowElan(document.querySelector(".IsSubmit"));
+      document.querySelector(".DivBasket").classList.replace("left-0", "left-[-350px]");
     }
   };
 }
@@ -549,10 +558,11 @@ function SabtNahaii(dot) {
 //Show Elan Is NotSubmit
 
 function ShowElan(div) {
+  let time = 2000;
   div.classList.replace("right-[-288px]", "right-10");
   let interval = setTimeout(function () {
     div.classList.replace("right-10", "right-[-288px]");
-  }, 2000);
+  }, time);
 }
 
 //Div Elan Is NotSubmit
@@ -560,7 +570,7 @@ function ShowElan(div) {
 function notSuccess() {
   document.body.insertAdjacentHTML(
     "beforeend",
-    ` <div class="fixed w-60  h-max p-3 py-5 rounded-lg bg-danger  text-white z-50 right-[-288px] shadow-lg top-10 text-center IsSubmit">
+    ` <div class="fixed w-60  h-max p-3 py-5 rounded-lg bg-danger  text-white z-50 right-[-288px] shadow-lg  text-center IsSubmit">
     <span>لطفا ابتدا ثبت نام کنید</span>
   </div>`
   );
@@ -583,14 +593,14 @@ function HoverBottom(id) {
   return `
   <div class="w-full bg-white absolute h-max bottom-0 lg:bottom-[-45px] p-2 shadow list-menu2  gap-y-5" data-id=${id}>
   <div style="z-index: 1000" class="flex mx-auto w-max">
-  <div class="cursor-pointer w-[25px] love">
+  <div class="cursor-pointer w-full max-w-[25px] love">
   <img src="../img/heart-svgrepo-com (7).svg" alt="" class="w-full m-auto" />
   </div>
-  <div class="cursor-pointer w-[60px] mx-3 border-x-[1px] border-zinc-200 kharid" >
-  <img src="../img/shopping-cart-svgrepo-com (1).svg" alt="" class="px-1 w-[35px] m-auto" />
+  <div class="cursor-pointer w-full max-w-[60px] mx-3 border-x-[1px] md:px-3 border-zinc-200 kharid" >
+  <img src="../img/shopping-cart-svgrepo-com (1).svg" alt="" class="px-1 w-full max-w-[35px] m-auto" />
   </div>
-  <div class="cursor-pointer" >
-  <img src="../img/search-svgrepo-com (2).svg" class="w-[25px] m-auto" alt="" />
+  <div class="cursor-pointer max-w-[25px] w-full" >
+  <img src="../img/search-svgrepo-com (2).svg" class=" m-auto" alt="" />
   </div>
   </div>
   </div>`;
@@ -642,29 +652,30 @@ function FilterPrice(arr, arr2, div) {
   inputFilter.forEach((item) => {});
   document.querySelector(".btnFilter").onclick = () => {
     if (inputFilter[0].value && inputFilter[1].value) {
-      let is1 = Number(inputFilter[0].value) + 1;
-      let is2 = Number(inputFilter[1].value) + 1;
-      if (!isNaN(is1) && !isNaN(is2)) {
-        if (is1 > is2) {
-          spanNotFilter.innerHTML = "لطفا مقدار کمتر را بیشتر از قیمت بالاتر وارد نکنید";
+      let value1 = Number(inputFilter[0].value.split(",").join(""));
+      let value2 = Number(inputFilter[1].value.split(",").join(""));
+
+      if (value1 > value2) {
+        spanNotFilter.innerHTML = "لطفا مقدار کمتر را بیشتر از قیمت بالاتر وارد نکنید";
+      } else {
+        spanNotFilter.innerHTML = "";
+        let max = arr.sort((a, b) => b.price - a.price)[0];
+
+        let filter1 = arr.filter((item) => {
+          return item.price >= value1 && item.price <= value2;
+        });
+        console.log(filter1);
+        if (filter1 == "") {
+          document.querySelector(".notSearch").classList.remove("hidden");
         } else {
-          spanNotFilter.innerHTML = "";
-          let max = arr.sort((a, b) => b.price - a.price)[0];
-          let value1 = Number(inputFilter[0].value);
-          let value2 = Number(inputFilter[1].value);
-          let filter1 = arr.filter((item) => {
-            return item.price >= value1 && item.price <= value2;
-          });
-          console.log(filter1);
-          CreateMahsol(
-            filter1.sort((a, b) => a.price - b.price),
-            div
-          );
+          document.querySelector(".notSearch").classList.add("hidden");
           AddToBasket(filter1, arr2);
           document.querySelector(".PriceSpan").innerHTML = `${Number(value1).toLocaleString()} هزار تومان --- ${Number(value2).toLocaleString()} هزار تومان`;
         }
-      } else {
-        spanNotFilter.innerHTML = "لطفا عدد وارد کنید";
+        CreateMahsol(
+          filter1.sort((a, b) => a.price - b.price),
+          div
+        );
       }
     }
   };

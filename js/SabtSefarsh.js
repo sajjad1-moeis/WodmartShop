@@ -6,7 +6,7 @@ async function AddInput() {
       "beforeend",
       `<div class="my-4">
            <p class="my-2">${item.diration} <span class="text-danger">${item.more}</span></p>
-           <input type="text" class="rounded-full w-full form-control p-3" />
+           <input type="text" class="rounded-full w-full form-control p-3 px-5" placeholder="${item.count}" />
          </div>`
     );
   });
@@ -19,37 +19,29 @@ AddInput();
 let fragment = document.createDocumentFragment();
 for (let i = 0; i < 30; i++) {
   let div = document.createElement("div");
-  div.className = " h-3 bg-secondary";
+  div.className = " h-3 bg-zinc-100";
   div.setAttribute("style", "width:5px");
   fragment.append(div);
 }
-document.querySelector(".justify-evenly").append(fragment);
+document.querySelector(".bb").append(fragment);
 
 ///Create Div Majmoh
-function DivMajmoe(local) {
-  if (local) {
-    let fragment = document.createDocumentFragment();
-    local.forEach((item) => {
-      let div = document.createElement("div");
-      div.className = "flex justify-between border-b-[1px] border-zinc-200 p-5";
-      div.innerHTML = `
-      <div>${item.title} <span class="text-warning">*</span> ${item.count}</div>
-      <div>${item.price.toLocaleString()} تومان</div>
-      `;
-      fragment.append(div);
-    });
-    document.querySelector(".mahsolNahaii").append(fragment);
-  }
-}
 let local = JSON.parse(localStorage.getItem("mahsol"));
-
-function Total(arr) {
-  if (arr) {
-    let sum = arr.reduce((prev, next) => {
-      return (prev += next.count * next.price);
-    }, 0);
-    document.querySelector(".total").innerHTML = `${sum.toLocaleString()}  تومان`;
-  }
-}
+import {Total, DivMajmoe} from "./export.js";
 Total(local);
 DivMajmoe(local);
+
+function filterValueInput() {
+  document.querySelectorAll(".input").forEach((input) => {
+    input.oninput = () => {
+      let inputText = input.value;
+
+      // حذف هر فاصله یا کاراکتر غیر عددی از متن
+      let numericText = inputText.replace(/\D/g, "");
+      // جدا کردن متن به دسته‌های سه رقمی
+      let separatedText = numericText.replace(/\B(?=(\d{1})+(?!\d))/g, "-");
+      input.value = separatedText;
+    };
+  });
+}
+filterValueInput();

@@ -1,10 +1,10 @@
 let $ = document;
-import { AddToBasket, SetLocal, CreateMahsol, RemoveItem, FilterPrice } from "./Hedear-Site.js";
-import { FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket, Price, AddLove } from "./export.js";
+import {AddToBasket, SetLocal, CreateMahsol, RemoveItem, FilterPrice} from "./Hedear-Site.js";
+import {FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket, Price, filterValueInput} from "./export.js";
 FilterColor();
 let g = Price();
 document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
-
+filterValueInput();
 let locationSite = location.search;
 let IdLocation = new URLSearchParams(locationSite);
 let SearchLocation = IdLocation.get("id");
