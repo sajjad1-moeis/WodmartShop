@@ -123,7 +123,7 @@ function l() {
 
             </div>
           </div>
-          <div class="my-4 cursor-pointer bg-[#00c291] p-3 text-white rounded-lg text-center">پرداخت 48,000,000</div>
+          <div class="t2 my-4 cursor-pointer text-lg bg-[#00c291] p-3 text-white rounded-lg text-center">پرداخت </div>
           <div class="my-4 cursor-pointer p-3 text-red-500 rounded-lg text-center border-[1px] border-red-100 cancelPardakht">انصراف</div>
         </div>
       </div>
@@ -159,8 +159,8 @@ function l() {
               <img src="../img/shop-svgrepo-com.png" class="w-8 h-6" alt="" />
             </div>
               <div class="w-full">
-                <p class="text-sm text-zinc-400 t1">شماره پذیرنده / ترمینال</p>
-                <p class="my-1 text-sm t2">2525642 / 74588</p>
+                <p class="text-sm text-zinc-400">شماره پذیرنده / ترمینال</p>
+                <p class="my-1 text-sm ">2525642 / 74588</p>
               </div>
             </div>
             <div class="flex gap-3 my-2">
@@ -168,8 +168,8 @@ function l() {
               <img src="../img/shop-svgrepo-com.png" class="w-8 h-6" alt="" />
             </div>
               <div class="w-full">
-                <p class="text-sm text-zinc-400 t1">سایت پذیرنده</p>
-                <p class="my-1 text-sm t2">Dirowit.com</p>
+                <p class="text-sm text-zinc-400">سایت پذیرنده</p>
+                <p class="my-1 text-sm ">Dirowit.com</p>
               </div>
             </div>
           </div>
@@ -211,6 +211,8 @@ function l() {
   let pric = JSON.parse(localStorage.getItem("mahsol")).reduce((prev, next) => {
     return (prev += next.count * next.price);
   }, 0);
-  document.querySelector(".t2").innerHTML = `${pric.toLocaleString()} تومان `;
+  let t2span = document.querySelectorAll(".t2");
+  t2span[0].innerHTML = `${pric.toLocaleString()} تومان `;
+  t2span[0].innerHTML = `پرداخت:   ${pric.toLocaleString()}   تومان  `;
   RandomImgAmniat();
 }

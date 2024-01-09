@@ -525,6 +525,7 @@ function AddToBasket(arr, arr2) {
         if (parent.className.includes("kharid")) {
           findMahsol(div.dataset.id, arr, arr2, ".");
           $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
+          console.log("object");
         } else if (parent.className.includes("love")) {
           AddLove(arr, JSON.parse(localStorage.getItem("love")), div.dataset.id);
           TedadLove();
@@ -669,13 +670,13 @@ function FilterPrice(arr, arr2, div) {
           document.querySelector(".notSearch").classList.remove("hidden");
         } else {
           document.querySelector(".notSearch").classList.add("hidden");
-          AddToBasket(filter1, arr2);
           document.querySelector(".PriceSpan").innerHTML = `${Number(value1).toLocaleString()} هزار تومان --- ${Number(value2).toLocaleString()} هزار تومان`;
+          CreateMahsol(
+            filter1.sort((a, b) => a.price - b.price),
+            div
+          );
         }
-        CreateMahsol(
-          filter1.sort((a, b) => a.price - b.price),
-          div
-        );
+        AddToBasket(filter1, arr2);
       }
     }
   };
