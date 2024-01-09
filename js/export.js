@@ -107,6 +107,11 @@ async function Total(arr) {
         }
         document.querySelector(".total").innerHTML = `${res.toLocaleString()}  تومان`;
       }, 15);
+      if (sum === 0) {
+        setTimeout(() => {
+          location.href = "../index.html";
+        }, 200);
+      }
     }
   }
 }
