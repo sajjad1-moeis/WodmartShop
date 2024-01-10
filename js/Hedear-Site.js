@@ -419,7 +419,7 @@ function ShowBasket() {
   let closeBtnBasket = document.querySelector(".closeBtnBasket");
   let DivBasket = document.querySelector(".DivBasket");
   closeBtnBasket.onclick = () => {
-    RemoveClassIsHide();
+    DivBasket.classList.replace("left-0", "left-[-350px]");
   };
 }
 
@@ -524,8 +524,7 @@ function AddToBasket(arr, arr2) {
       if (document.cookie.includes("name")) {
         if (parent.className.includes("kharid")) {
           findMahsol(div.dataset.id, arr, arr2, ".");
-          $.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
-          console.log("object");
+          document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
         } else if (parent.className.includes("love")) {
           AddLove(arr, JSON.parse(localStorage.getItem("love")), div.dataset.id);
           TedadLove();
@@ -555,20 +554,13 @@ function SabtNahaii(dot) {
 }
 
 function RemoveClassIsHide() {
-  document.querySelector(".DivBasket").classList.replace("left-0", "left-[-350px]");
+  if (document.body.className.includes("show-Basket")) {
+    document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
+  } else {
+    document.querySelector(".DivBasket").classList.replace("left-0", "left-[-350px]");
+  }
 }
 
-function HideBasketMainClick() {
-  document.querySelector("main").onclick = () => {
-    RemoveClassIsHide();
-  };
-  document.querySelector("header .border-b-silver").onclick = () => {
-    RemoveClassIsHide();
-  };
-  document.querySelector("header .border-silver").onclick = () => {
-    RemoveClassIsHide();
-  };
-}
 ////////////////////////////////////////////////// Div Submit
 
 //Show Elan Is NotSubmit
@@ -726,5 +718,4 @@ export {
   ShoeMenuMobile,
   findMahsolLove,
   SabtNahaii,
-  HideBasketMainClick,
 };

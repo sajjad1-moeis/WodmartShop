@@ -14,6 +14,7 @@ async function FilterColor() {
         </div>`;
   });
 }
+
 function ShowNot() {
   $.querySelector(".notSearch").classList.remove("hidden");
 }

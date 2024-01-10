@@ -368,7 +368,6 @@ import {
   ShowElan,
   notSuccess,
   SabtNahaii,
-  HideBasketMainClick,
 } from "./js/Hedear-Site.js";
 import {TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove} from "./js/export.js";
 import {AbutSwiper, HideMdAbut} from "./components/Btn-Swiper/Btn-Swiper.js";
@@ -627,5 +626,4 @@ mySwiper16(document.querySelector(".mySwiper16 .swiper-wrapper"), weblagsarray);
   TedadBasket(ArrayUserBasket);
   TedadLove();
   SabtNahaii("");
-  HideBasketMainClick();
 })();
