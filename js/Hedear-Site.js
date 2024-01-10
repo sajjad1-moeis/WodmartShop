@@ -414,9 +414,6 @@ function ShowBasket() {
   let btnShowBasket = document.querySelectorAll(".btnShowBasket").forEach((btn) => {
     btn.onclick = () => {
       DivBasket.classList.replace("left-[-350px]", "left-0");
-      document.querySelector("main").classList.add("showBasket");
-      document.querySelector("footer").classList.add("showBasket");
-      document.querySelector("header").classList.add("showBasket");
     };
   });
   let closeBtnBasket = document.querySelector(".closeBtnBasket");
@@ -559,9 +556,6 @@ function SabtNahaii(dot) {
 
 function RemoveClassIsHide() {
   document.querySelector(".DivBasket").classList.replace("left-0", "left-[-350px]");
-  document.querySelector("header").classList.remove("showBasket");
-  document.querySelector("main").classList.remove("showBasket");
-  document.querySelector("footer").classList.remove("showBasket");
 }
 
 function HideBasketMainClick() {
