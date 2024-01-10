@@ -368,6 +368,7 @@ import {
   ShowElan,
   notSuccess,
   SabtNahaii,
+  HideBasketMainClick,
 } from "./js/Hedear-Site.js";
 import {TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove} from "./js/export.js";
 import {AbutSwiper, HideMdAbut} from "./components/Btn-Swiper/Btn-Swiper.js";
@@ -540,7 +541,6 @@ const mySwiper16 = (parentDiv5, sliceitem5) => {
   sliceitem5.forEach((element) => {
     let wraperfargment5 = document.createElement("div");
     wraperfargment5.className = "swiper-slide akharin ";
-    //wraperfargment5.setAttribute("style", "width:max-content");
     wraperfargment5.innerHTML = `
       <div class="interior-design   border-[2px] border-gray-100  shadow-sm relative overflow-hidden">
     <div class="divimg5  overflow-hidden  relative max-w-full">
@@ -627,4 +627,5 @@ mySwiper16(document.querySelector(".mySwiper16 .swiper-wrapper"), weblagsarray);
   TedadBasket(ArrayUserBasket);
   TedadLove();
   SabtNahaii("");
+  HideBasketMainClick();
 })();

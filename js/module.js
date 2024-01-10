@@ -1,4 +1,4 @@
-import {Header, IconHeader} from "./Hedear-Site.js";
+import {Header, IconHeader, HideBasketMainClick} from "./Hedear-Site.js";
 import {body} from "./Hedear-Site.js";
 import {FoterSite} from "./foter-Site.js";
 import {Footer, FooterLast} from "../components/Foter/foter.js";
@@ -32,3 +32,4 @@ ResultPrice(local);
 TedadBasket(local);
 TedadLove();
 SabtNahaii(".");
+HideBasketMainClick();

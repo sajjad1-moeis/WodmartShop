@@ -574,10 +574,15 @@ opacity: 0.5;
     height: max-content;
   }
 /* omid */
+.showBasket{
+    filter: blur(2px);
 
+}
 .swiper15{
+
     border-top: 1px solid;
     padding-top: 33px;
+    padding-bottom: 33px;
     width: 90%;
     margin: auto;
 }

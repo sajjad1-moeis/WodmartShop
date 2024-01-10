@@ -13,8 +13,8 @@ async function AddInput() {
     );
   });
   let y = document.querySelectorAll(".AboutPersent");
-  y[9].maxLength = 11;
-  [...y].slice(7, 10).forEach((input) => {
+  y[8].maxLength = 11;
+  [...y].slice(6, 9).forEach((input) => {
     input.oninput = () => {
       let inputText = input.value;
       let numericText = inputText.replace(/\D/g, "");
@@ -48,6 +48,8 @@ import {Total, DivMajmoe} from "./export.js";
 Total(local);
 DivMajmoe(local);
 
+let DivNotPardakht = document.querySelector(".DivNotPardakht");
+let spanNotPardakht = document.querySelector(".spanNotPardakht");
 document.querySelector(".Pardakht").onclick = () => {
   let AboutPersentInput = document.querySelectorAll(".AboutPersent");
   let sum = 0;
@@ -55,7 +57,17 @@ document.querySelector(".Pardakht").onclick = () => {
   AboutPersentInput.forEach((input) => {
     input.value ? sum++ : num++;
   });
-  if (sum === 11) {
-    AboutPersentInput[8].value.length < 10 ? console.log("object") : AboutPersentInput[9].value.length < 11 ? console.log("2") : (location.href = "../html/parDakht.html");
+  if (sum === 10) {
+    AboutPersentInput[7].value.length < 10
+      ? ShowNotPardakht("کد پستی درست وارد کنید")
+      : AboutPersentInput[8].value.length < 11
+      ? ShowNotPardakht("شماره موبایل را کامل وارد کنید")
+      : (location.href = "../html/parDakht.html") + AboutPersentInput.forEach((input) => (input.value = "")) + document.querySelector(".aa").value == "";
+  } else {
+    ShowNotPardakht("لطفا تمام فیلد هارا پر کنید");
   }
 };
+function ShowNotPardakht(str) {
+  DivNotPardakht.classList.remove("hidden");
+  spanNotPardakht.innerHTML = str;
+}

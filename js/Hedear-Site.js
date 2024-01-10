@@ -196,7 +196,7 @@ function body(IsSubmit, href, dot) {
                   <!-- SabadKharid -->
                   
                   <div
-                  class="fixed  h-[100vh] w-[300px] lg:w-[350px]  bg-white  top-0 left-[-350px] DivBasket"
+                  class="fixed   h-[100vh] w-[300px] lg:w-[350px]  bg-white  top-0 left-[-350px] DivBasket"
                   style="transition: 0.4s ease-in-out;z-index:55555"
     >
           <div class=" p-5 text-center text-base bg-white z-50  w-full absolute top-[80%]">
@@ -316,6 +316,7 @@ function body(IsSubmit, href, dot) {
       `
   );
 }
+
 /////////////////////////////////// Khabar Name
 
 ///Btn Show Div Khabarname
@@ -413,13 +414,15 @@ function ShowBasket() {
   let btnShowBasket = document.querySelectorAll(".btnShowBasket").forEach((btn) => {
     btn.onclick = () => {
       DivBasket.classList.replace("left-[-350px]", "left-0");
+      document.querySelector("main").classList.add("showBasket");
+      document.querySelector("footer").classList.add("showBasket");
+      document.querySelector("header").classList.add("showBasket");
     };
   });
   let closeBtnBasket = document.querySelector(".closeBtnBasket");
   let DivBasket = document.querySelector(".DivBasket");
   closeBtnBasket.onclick = () => {
-    console.log("object");
-    DivBasket.classList.replace("left-0", "left-[-350px]");
+    RemoveClassIsHide();
   };
 }
 
@@ -436,7 +439,7 @@ function CreateMahsolBasket(arr, dott) {
       <img src="${dott}${item.img}" class="w-20 h-[72px] object-cover" alt="" />
       </div>
       <div class="my-auto ms-4">
-      <p>${item.title}</p>
+      <p style="width:150px">${item.title}</p>
       <p class="mt-2 text-warning">
       <span class="me-4 text-black">${item.count} عدد</span> 
       ${item.price.toLocaleString()}
@@ -554,6 +557,24 @@ function SabtNahaii(dot) {
   };
 }
 
+function RemoveClassIsHide() {
+  document.querySelector(".DivBasket").classList.replace("left-0", "left-[-350px]");
+  document.querySelector("header").classList.remove("showBasket");
+  document.querySelector("main").classList.remove("showBasket");
+  document.querySelector("footer").classList.remove("showBasket");
+}
+
+function HideBasketMainClick() {
+  document.querySelector("main").onclick = () => {
+    RemoveClassIsHide();
+  };
+  document.querySelector("header .border-b-silver").onclick = () => {
+    RemoveClassIsHide();
+  };
+  document.querySelector("header .border-silver").onclick = () => {
+    RemoveClassIsHide();
+  };
+}
 ////////////////////////////////////////////////// Div Submit
 
 //Show Elan Is NotSubmit
@@ -711,4 +732,5 @@ export {
   ShoeMenuMobile,
   findMahsolLove,
   SabtNahaii,
+  HideBasketMainClick,
 };
