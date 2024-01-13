@@ -136,9 +136,9 @@ function DivMajmoe(local) {
 }
 //Pagination
 async function SitePage(filter, mahsol, arrUserMahsol) {
-  let TedadPage = Math.ceil(filter.length / 6);
+  let TedadPage = Math.ceil(filter.length / 9);
   let num = 1;
-  let CurrentPage = 6;
+  let CurrentPage = 9;
   document.querySelector(".pagination").innerHTML = "";
   for (let i = 1; i < TedadPage + 1; i++) {
     document.querySelector(".pagination").innerHTML += `
@@ -163,7 +163,7 @@ async function SitePage(filter, mahsol, arrUserMahsol) {
     CreateMahsol(arr, document.querySelector(".SearchUser"));
     AddToBasket(mahsol, arrUserMahsol);
   }
-  Pagination(filter.slice(0, 6));
+  Pagination(filter.slice(0, 9));
 
   //Create Div Filter Color
   let prevBtnPagination = document.querySelector(".prev-page");
@@ -172,14 +172,14 @@ async function SitePage(filter, mahsol, arrUserMahsol) {
   nextBtnPagination.onclick = NextPage;
   function PrevPage() {
     num < 2 ? (num = TedadPage) : num--;
-    let end = num * 6;
+    let end = num * 9;
     let start = end - CurrentPage;
     Pagination(filter.slice(start, end));
     AddActivePageClass(num);
   }
   function NextPage() {
     num > TedadPage - 1 ? (num = 1) : num++;
-    let end = num * 6;
+    let end = num * 9;
     let start = end - CurrentPage;
     Pagination(filter.slice(start, end));
     AddActivePageClass(num);
