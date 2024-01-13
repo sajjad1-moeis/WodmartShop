@@ -34,7 +34,7 @@
               <div class="my-3 filterColorProduct"></div>
             </div>
           </div>
-          <div class="md:col-span-2 relative">
+          <div class="md:col-span-2 relative" style="padding-bottom: 60px">
             <div class="w-full mb-5 text-lg border-[1px] border-zinc-300 rounded-lg p-3 md:flex md:justify-between">
               <div>
                 <span>
@@ -51,6 +51,15 @@
             <div class="grid grid-cols-2 md:grid-cols-3 gap-5 SearchUser"></div>
             <div class="mx-auto text-2xl w-max notSearch hidden mt-20">
               <span> محصول مورد نظر یافت نشد ...!</span>
+            </div>
+            <div class="overflow-hidden flex w-max mx-auto absolute bottom-0" style="left: 50%; transform: translate(-50%, 0)">
+              <div class="cursor-pointer prev-page bg-warning p-2 m-auto h-full rounded-full">
+                <img src="../img/icons8-arrow-50.png" class="w-6" alt="" />
+              </div>
+              <div class="bg-white text-xl justify-center flex gap-2 w-full pagination"></div>
+              <div class="cursor-pointer bg-warning next-page p-2 m-auto h-full rounded-full">
+                <img src="../img/icons8-arrow-50.png" class="w-6 rotate-180" alt="" />
+              </div>
             </div>
           </div>
         </div>

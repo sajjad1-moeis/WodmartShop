@@ -453,7 +453,7 @@ function CreateMahsolBasket(arr, dott) {
 
 ///Remove Div Is Basket And Div Nahhaii
 
-import {Total, DivMajmoe} from "./export.js";
+import {Total, DivMajmoe, SitePage} from "./export.js";
 function RemoveItem(arr, dot) {
   let y = document.querySelector(".ProductUser");
   y.addEventListener("click", (e) => {
@@ -654,7 +654,7 @@ function CreateMahsol(arr, div) {
 
 ///Function Filter Price Is Product
 
-function FilterPrice(arr, arr2, div) {
+function FilterPrice(arr, arr2, div, arr3) {
   let spanNotFilter = document.querySelector(".notFilter");
   let inputFilter = document.querySelectorAll(".filterInput");
   inputFilter.forEach((item) => {});
@@ -682,8 +682,9 @@ function FilterPrice(arr, arr2, div) {
             filter1.sort((a, b) => a.price - b.price),
             div
           );
+          SitePage(filter1, arr3, arr2);
         }
-        AddToBasket(filter1, arr2);
+        // AddToBasket(arr3, arr2);
       }
     }
   };

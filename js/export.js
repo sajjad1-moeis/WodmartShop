@@ -1,5 +1,6 @@
 let $ = document;
-import {CreateMahsol, AddToBasket} from "./Hedear-Site.js";
+import {CreateMahsol, AddToBasket, RemoveItem} from "./Hedear-Site.js";
+
 async function FilterColor() {
   let ColorFilter = await fetch("https://657eea449d10ccb465d58032.mockapi.io/AbutMore");
   let jsonColor = await ColorFilter.json();
@@ -41,7 +42,9 @@ function ResultPrice(arr) {
   document.querySelector(".TotalPrice").innerHTML = `مجموع سبد خرید شما : ${result.toLocaleString()} تومان`;
 }
 function TaiinBasket(arr) {
-  arr.length > 0 ? document.querySelector(".DivBasketKhali").classList.add("hidden") : document.querySelector(".DivBasketKhali").classList.remove("hidden");
+  if (arr) {
+    arr.length > 0 ? document.querySelector(".DivBasketKhali").classList.add("hidden") : document.querySelector(".DivBasketKhali").classList.remove("hidden");
+  }
 }
 function Price() {
   return `<div class="border-2 bg-white border-zinc-200 p-3 py-5 text-xl">
@@ -131,4 +134,61 @@ function DivMajmoe(local) {
     }
   }
 }
-export {FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove, AddLove, filterValueInput, DivMajmoe, Total};
+//Pagination
+async function SitePage(filter, mahsol, arrUserMahsol) {
+  let TedadPage = Math.ceil(filter.length / 6);
+  let num = 1;
+  let CurrentPage = 6;
+  document.querySelector(".pagination").innerHTML = "";
+  for (let i = 1; i < TedadPage + 1; i++) {
+    document.querySelector(".pagination").innerHTML += `
+  <div class="Page-Item">${i}</div>
+  `;
+  }
+  let DivPage = document.querySelectorAll(".Page-Item");
+  if (!DivPage == []) {
+    DivPage.forEach((div) => {
+      DivPage[0].classList.add("active1");
+      div.onclick = () => {
+        num = +div.innerHTML;
+        Pagination(filter.slice(num * CurrentPage - CurrentPage, num * CurrentPage));
+        AddActivePageClass(num);
+      };
+    });
+  } else {
+    Pagination([]);
+  }
+
+  function Pagination(arr) {
+    CreateMahsol(arr, document.querySelector(".SearchUser"));
+    AddToBasket(mahsol, arrUserMahsol);
+  }
+  Pagination(filter.slice(0, 6));
+
+  //Create Div Filter Color
+  let prevBtnPagination = document.querySelector(".prev-page");
+  let nextBtnPagination = document.querySelector(".next-page");
+  prevBtnPagination.onclick = PrevPage;
+  nextBtnPagination.onclick = NextPage;
+  function PrevPage() {
+    num < 2 ? (num = TedadPage) : num--;
+    let end = num * 6;
+    let start = end - CurrentPage;
+    Pagination(filter.slice(start, end));
+    AddActivePageClass(num);
+  }
+  function NextPage() {
+    num > TedadPage - 1 ? (num = 1) : num++;
+    let end = num * 6;
+    let start = end - CurrentPage;
+    Pagination(filter.slice(start, end));
+    AddActivePageClass(num);
+  }
+  function AddActivePageClass(num) {
+    DivPage.forEach((div) => {
+      div.classList.remove("active1");
+    });
+    DivPage[num - 1].classList.add("active1");
+  }
+}
+export {SitePage, FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove, AddLove, filterValueInput, DivMajmoe, Total};

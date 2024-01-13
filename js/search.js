@@ -1,6 +1,6 @@
 let $ = document;
 import {AddToBasket, SetLocal, CreateMahsol, RemoveItem, FilterPrice} from "./Hedear-Site.js";
-import {FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket, Price, filterValueInput} from "./export.js";
+import {FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket, Price, filterValueInput, SitePage} from "./export.js";
 FilterColor();
 let g = Price();
 document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
@@ -46,14 +46,13 @@ document.querySelector(".timeNow").innerHTML = ` تاریخ : ${time.split(",")[
 
 ///Add Product Basket
 let arrUserMahsol = [];
-let local = JSON.parse(localStorage.getItem("mahsol"));
-arrUserMahsol = local;
+arrUserMahsol = JSON.parse(localStorage.getItem("mahsol"));
 
 SetLocal(arrUserMahsol);
 $.querySelectorAll(".resultSerch").forEach((span) => (span.innerHTML = ` نتیجه جستجو : ${SearchLocation}`));
 
 async function FilterColorMahsol(Color) {
-  let filterMahsol = await mahsol.filter((item) => item.label.includes(`${Color}`));
+  let filterMahsol = await filter.filter((item) => item.label.includes(`${Color}`));
   return filterMahsol;
 }
 function sortArr(arr) {
@@ -74,13 +73,13 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     AddToBasket(mahsol, arrUserMahsol);
     TedadBasket(arrUserMahsol);
     TaiinBasket(arrUserMahsol);
+    SitePage(Array, mahsol, arrUserMahsol);
   }
 };
-AddToBasket(mahsol, arrUserMahsol);
 
+console.log(arrUserMahsol);
+FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"), mahsol);
+SitePage(filter, mahsol, arrUserMahsol);
 RemoveItem(arrUserMahsol, `.`);
-TaiinBasket(arrUserMahsol);
-
-FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"));
 let o = mahsol.filter((item) => item.price > 50000 && item.price < 1000000);
-console.log(o);
+//Pagination

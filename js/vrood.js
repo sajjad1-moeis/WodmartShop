@@ -18,7 +18,6 @@ let loginText = $.querySelectorAll(".loginText");
 let btnSubmit = $.querySelector(".btnSubmit");
 let btnLogin = $.querySelector(".btnLogin");
 let inputLogin = $.querySelectorAll(".inputLogin");
-console.log(inputLogin);
 let inputSubmit = $.querySelectorAll(".inputSubmit");
 loginText.forEach((btn) => {
   btn.onclick = () => {
@@ -79,10 +78,9 @@ $.querySelectorAll(".ShowPass").forEach((ShowPassBtn) => {
   ShowPassBtn.addEventListener("click", (e) => {
     let parent = e.target.parentElement;
     let input = parent.querySelector("input");
-    if (e.target.src === "http://127.0.0.1:5500/img/eye.png") {
+    if (e.target.src === "http://127.0.0.1:5501/img/eye.png") {
       ShowPassBtn.src = "../img/eye-slash.png";
       input.type = "text";
-      console.log();
     } else {
       input.type = "password";
       ShowPassBtn.src = "../img/eye.png";

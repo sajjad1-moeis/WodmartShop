@@ -3,7 +3,7 @@ let locationSite = location.search;
 let IdLocation = new URLSearchParams(locationSite);
 let SearchLocation = IdLocation.get("id");
 import {CreateMahsol, AddToBasket, RemoveItem, FilterPrice} from "./Hedear-Site.js";
-import {FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, Price, ResultPrice, filterValueInput} from "./export.js";
+import {FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, Price, ResultPrice, filterValueInput, SitePage} from "./export.js";
 ///Id Is Location
 FilterColor();
 document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
@@ -17,21 +17,16 @@ document.querySelector(".body").classList.remove("hidden");
 
 ///Color Filter
 let arrUserMahsol = [];
-(() => {
-  let local = JSON.parse(localStorage.getItem("mahsol"));
-  arrUserMahsol = local;
-  CreateMahsol(filter, document.querySelector(".SearchUser"));
-  AddToBasket(mahsol, arrUserMahsol);
-  RemoveItem(arrUserMahsol, `.`);
-  TaiinBasket(arrUserMahsol);
-  TedadBasket(arrUserMahsol);
-  ResultPrice(arrUserMahsol);
-})();
+arrUserMahsol = JSON.parse(localStorage.getItem("mahsol"));
+///////////////////////////////////
 
-//Create Div Filter Color
+////////////////////
+////////////////////
+////////////////////
+////////////////////
 
 async function FilterColorMahsol(Color) {
-  let filterMahsol = await mahsol.filter((item) => item.label.includes(`${Color}`));
+  let filterMahsol = await filter.filter((item) => item.label.includes(`${Color}`));
   return filterMahsol;
 }
 document.querySelector(".filterColorProduct").onclick = async (e) => {
@@ -40,7 +35,6 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     let result = await e.target.className.substring(sliceIndex + 3);
     let Array = await FilterColorMahsol(result);
     if (Array == "") {
-      console.log(Array);
       ShowNot();
     } else {
       HideNot();
@@ -49,9 +43,13 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
     AddToBasket(mahsol, arrUserMahsol);
     TedadBasket(arrUserMahsol);
     TaiinBasket(arrUserMahsol);
+    SitePage(Array, mahsol, arrUserMahsol);
   }
 };
 
-FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"));
+FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"), mahsol);
+SitePage(filter, mahsol, arrUserMahsol);
+RemoveItem(arrUserMahsol, `.`);
+
 document.querySelector(".Mahsol").innerHTML = `محصول : ${SearchLocation}`;
 filterValueInput();
