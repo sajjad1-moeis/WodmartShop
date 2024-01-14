@@ -11,7 +11,7 @@ async function FilterColor() {
         <div class="w-7 h-7  rounded-full me-2  ${item.more}"></div>
         <div class="mt-1 -${item.more}">${item.diration}</div>
         </div>
-        <div class="border-[1px] border-zinc-300 px-3 md:text-xs py-0.5 rounded-full  my-auto -${item.more}">${item.count}</div>
+        <div class="border-[1px] border-zinc-300 px-3  py-0.5 rounded-full  my-auto -${item.more}">${item.count}</div>
         </div>`;
   });
 }
@@ -136,9 +136,9 @@ function DivMajmoe(local) {
 }
 //Pagination
 async function SitePage(filter, mahsol, arrUserMahsol) {
-  let TedadPage = Math.ceil(filter.length / 12);
   let num = 1;
-  let CurrentPage = 6;
+  let CurrentPage = 12;
+  let TedadPage = Math.ceil(filter.length / CurrentPage);
   document.querySelector(".pagination").innerHTML = "";
   for (let i = 1; i < TedadPage + 1; i++) {
     document.querySelector(".pagination").innerHTML += `
@@ -191,4 +191,24 @@ async function SitePage(filter, mahsol, arrUserMahsol) {
     DivPage[num - 1].classList.add("active1");
   }
 }
-export {SitePage, FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, Price, TedadLove, AddLove, filterValueInput, DivMajmoe, Total};
+
+function sortArr(arr) {
+  return arr.sort((a, b) => a.price - b.price);
+}
+function sortProduct(filter, mahsol, arrUserMahsol) {
+  document.querySelectorAll(".Divlist p").forEach((pBtn) => {
+    pBtn.onclick = () => {
+      console.log();
+      let TextP = pBtn.innerHTML;
+      if (TextP === "مرتب بر اساس گران ترین") {
+        CreateMahsol(sortArr(filter).reverse(), document.querySelector(".SearchUser"));
+      } else {
+        console.log("ارزان");
+        CreateMahsol(sortArr(filter), document.querySelector(".SearchUser"));
+      }
+      SitePage(filter, mahsol, arrUserMahsol);
+    };
+  });
+}
+
+export {SitePage, FilterColor, ShowNot, HideNot, TedadBasket, ResultPrice, TaiinBasket, sortProduct, Price, TedadLove, AddLove, filterValueInput, DivMajmoe, Total};

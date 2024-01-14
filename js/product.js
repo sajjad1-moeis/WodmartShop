@@ -3,7 +3,7 @@ let locationSite = location.search;
 let IdLocation = new URLSearchParams(locationSite);
 let SearchLocation = IdLocation.get("id");
 import {CreateMahsol, AddToBasket, RemoveItem, FilterPrice} from "./Hedear-Site.js";
-import {FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, Price, ResultPrice, filterValueInput, SitePage} from "./export.js";
+import {FilterColor, ShowNot, HideNot, TaiinBasket, TedadBasket, Price, sortProduct, filterValueInput, SitePage} from "./export.js";
 ///Id Is Location
 FilterColor();
 document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
@@ -47,9 +47,20 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
   }
 };
 
+document.querySelector(".moratabSazi").onclick = () => {
+  document.querySelector(".arrowMoratab").classList.toggle("showList");
+  document.querySelector(".Divlist").classList.toggle("hidden");
+};
+
+sortProduct(filter, mahsol, arrUserMahsol);
+
 FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"), mahsol);
 SitePage(filter, mahsol, arrUserMahsol);
 RemoveItem(arrUserMahsol, `.`);
 
 document.querySelector(".Mahsol").innerHTML = `محصول : ${SearchLocation}`;
+$.querySelectorAll(".resultSerch").forEach((span) => (span.innerHTML = ` محصول : ${SearchLocation}`));
+
+let time = new Date().toLocaleString("fa-IR");
+document.querySelector(".timeNow").innerHTML = ` تاریخ : ${time.split(",")[0]} `;
 filterValueInput();

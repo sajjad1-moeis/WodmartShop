@@ -1,8 +1,7 @@
 let $ = document;
 import {AddToBasket, SetLocal, CreateMahsol, RemoveItem, FilterPrice} from "./Hedear-Site.js";
-import {FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket, Price, filterValueInput, SitePage} from "./export.js";
+import {FilterColor, ShowNot, HideNot, TedadBasket, TaiinBasket, Price, filterValueInput, SitePage, sortProduct} from "./export.js";
 FilterColor();
-let g = Price();
 document.querySelector(".s").insertAdjacentHTML("afterbegin", Price());
 filterValueInput();
 let locationSite = location.search;
@@ -41,7 +40,6 @@ inputSearchProduct.addEventListener("keypress", (e) => {
 //// Set Time top Malsol
 
 let time = new Date().toLocaleString("fa-IR");
-console.log(time);
 document.querySelector(".timeNow").innerHTML = ` تاریخ : ${time.split(",")[0]} `;
 
 ///Add Product Basket
@@ -77,9 +75,14 @@ document.querySelector(".filterColorProduct").onclick = async (e) => {
   }
 };
 
-console.log(arrUserMahsol);
+//Pagination
+
+document.querySelector(".moratabSazi").onclick = () => {
+  document.querySelector(".arrowMoratab").classList.toggle("showList");
+  document.querySelector(".Divlist").classList.toggle("hidden");
+};
+
+sortProduct(filter, mahsol, arrUserMahsol);
 FilterPrice(filter, arrUserMahsol, document.querySelector(".SearchUser"), mahsol);
 SitePage(filter, mahsol, arrUserMahsol);
 RemoveItem(arrUserMahsol, `.`);
-let o = mahsol.filter((item) => item.price > 50000 && item.price < 1000000);
-//Pagination
