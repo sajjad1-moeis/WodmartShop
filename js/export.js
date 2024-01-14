@@ -138,7 +138,7 @@ function DivMajmoe(local) {
 async function SitePage(filter, mahsol, arrUserMahsol) {
   let TedadPage = Math.ceil(filter.length / 12);
   let num = 1;
-  let CurrentPage = 12;
+  let CurrentPage = 6;
   document.querySelector(".pagination").innerHTML = "";
   for (let i = 1; i < TedadPage + 1; i++) {
     document.querySelector(".pagination").innerHTML += `
@@ -163,7 +163,7 @@ async function SitePage(filter, mahsol, arrUserMahsol) {
     CreateMahsol(arr, document.querySelector(".SearchUser"));
     AddToBasket(mahsol, arrUserMahsol);
   }
-  Pagination(filter.slice(0, 12));
+  Pagination(filter.slice(0, CurrentPage));
 
   //Create Div Filter Color
   let prevBtnPagination = document.querySelector(".prev-page");
@@ -172,14 +172,14 @@ async function SitePage(filter, mahsol, arrUserMahsol) {
   nextBtnPagination.onclick = NextPage;
   function PrevPage() {
     num < 2 ? (num = TedadPage) : num--;
-    let end = num * 12;
+    let end = num * CurrentPage;
     let start = end - CurrentPage;
     Pagination(filter.slice(start, end));
     AddActivePageClass(num);
   }
   function NextPage() {
     num > TedadPage - 1 ? (num = 1) : num++;
-    let end = num * 12;
+    let end = num * CurrentPage;
     let start = end - CurrentPage;
     Pagination(filter.slice(start, end));
     AddActivePageClass(num);

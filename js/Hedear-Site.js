@@ -672,7 +672,6 @@ function FilterPrice(arr, arr2, div, arr3) {
         let filter1 = arr.filter((item) => {
           return item.price >= value1 && item.price <= value2;
         });
-        console.log(filter1);
         if (filter1 == "") {
           document.querySelector(".notSearch").classList.remove("hidden");
         } else {
