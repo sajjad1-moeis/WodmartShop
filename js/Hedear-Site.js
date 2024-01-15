@@ -674,8 +674,11 @@ function FilterPrice(arr, arr2, div, arr3) {
         });
         if (filter1 == "") {
           document.querySelector(".notSearch").classList.remove("hidden");
+          document.querySelector(".SearchUser").classList.add("hidden");
         } else {
           document.querySelector(".notSearch").classList.add("hidden");
+          document.querySelector(".SearchUser").classList.remove("hidden");
+
           document.querySelector(".PriceSpan").innerHTML = `${Number(value1).toLocaleString()} هزار تومان --- ${Number(value2).toLocaleString()} هزار تومان`;
           CreateMahsol(
             filter1.sort((a, b) => a.price - b.price),

@@ -632,3 +632,55 @@ opacity: 0.5;
 .showList{
     transform: rotate(180deg);
 }
+.hover{
+    padding: 3.5px; left:  22.5%; top:24.4%;
+    animation: k 2s ease infinite;
+
+
+}
+.hover3{
+    left: 342px;
+    bottom: 105px;
+    animation: k 2s ease infinite; 
+}
+@keyframes k{
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    50% {
+        opacity: .8;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+.hover2{
+    width: 17px;
+    height: 17px;
+    top: 24.7%;
+    left:  22.75%
+}
+.hover4{
+    width: 17px;
+    height: 17px;
+    bottom: 17.7%;
+    left: 43%;
+}
+.hover4 .absolute{
+    padding-bottom:50px ;
+}
+.hover4 div:first-child{
+    left: -90px;
+    bottom: 0px;
+}
+.hover2 .absolute{
+    padding-left: 70px;
+    left: 0px;
+    top:-120px
+
+}
+.ho:hover{
+    overflow: visible;
+}

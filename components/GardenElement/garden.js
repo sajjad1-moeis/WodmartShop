@@ -18,7 +18,7 @@ templete.innerHTML = `
 class Garden extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({mode: "open"});
     this.shadowRoot.append(templete.content.cloneNode(true));
   }
   connectedCallback() {
@@ -31,4 +31,4 @@ class Garden extends HTMLElement {
   }
 }
 
-export { Garden };
+export {Garden};

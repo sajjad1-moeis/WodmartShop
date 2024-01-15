@@ -241,6 +241,7 @@ function CreateProductSlide4(arr, parent, slide) {
   parent.append(fragment);
 }
 export {CreateProductSlide4};
+
 ///MySwiper4
 
 // MySwiper6
@@ -270,9 +271,9 @@ const MySwiper6 = () => {
     `;
     fragment.append(div);
   });
-
   $.querySelector(".mySwiper6 .swiper-wrapper").append(fragment);
 };
+
 MySwiper6();
 
 //more-abut
@@ -385,30 +386,14 @@ customElements.define("garden-elm", Garden);
 
 //best-selling products myswiper7
 
-let sellproductsarr = [
-  {id: 105, title: "قفسه آیفون چوبی", price: 180_000, label: ["", ""], img: "./img/dock-black-walnut-ip6-grid-B1_1-200x200.jpg", count: "", current: true},
-  {id: 106, title: "موبایل اپل 8", price: 8_000_000, label: ["", ""], img: "./img/white-electronics-product-1-200x200.jpg", count: "", current: true},
-  {id: 107, title: "هندزفری مدل ال جی 114", price: 140_000, label: ["", ""], img: "./img/white-electronics-product-2-200x200.jpg", count: "", current: true},
-  {id: 108, title: "لپ تاب ایسوس مدل P520", price: 12_000_000, label: ["", ""], img: "./img/lobtap.png", count: "", current: true},
-  {id: 109, title: " هدفون بلوتوث دار سونی ", price: 210_000, label: ["", ""], img: "./img/ghosh.jpg", count: "", current: true},
-  {id: 110, title: "هدفون ایسوس 12", price: 174_000, label: ["", ""], img: "./img/white-electronics-product-8-200x200.jpg", count: "", current: true},
-  {
-    id: 119,
-    title: "لپ تاپ ایسوس مدل K700",
-    price: 8_600_000,
-    label: ["", ""],
-    img: "./img/white-electronics-product-7-200x200.jpg",
-    count: "",
-    current: true,
-  },
-];
-
 const MySwiper7 = () => {
   //swiper7
   let swiper7 = new Swiper(".mySwiper7", {
+    cssMode: true,
+
     navigation: {prevEl: ".swiper7 .swiper-button-next", nextEl: ".swiper7 .swiper-button-prev"},
   });
-  CreateProductSlide4(arrMahsol.slice(48, 54), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
+  CreateProductSlide4(arrMahsol.slice(78, 84), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
   CreateProductSlide4(arrMahsol.slice(75, 81), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
 };
 MySwiper7();
@@ -457,6 +442,7 @@ mySwiper11(document.querySelector(".mySwiper15 .brands-3 "), brandsarry.slice(0)
 //new-products-mySwiper12
 const Swiper12 = () => {
   let swiper12 = new Swiper(".mySwiper12", {
+    cssMode: true,
     navigation: {
       prevEl: ".swiper12 .swiper-button-next",
       nextEl: ".swiper12 .swiper-button-prev",
@@ -481,7 +467,7 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
     if (document.cookie.includes("name")) {
       let id = btnLove.dataset.num;
       if (e.target.parentElement.className.includes("kharid")) {
-        findMahsol(id, arrMahsol.concat(sellproductsarr), ArrayUserBasket, "");
+        findMahsol(id, arrMahsol, ArrayUserBasket, "");
         TedadBasket(ArrayUserBasket);
         document.querySelector(".DivBasket").classList.replace("left-[-350px]", "left-0");
       } else if (e.target.parentElement.className.includes("love")) {
@@ -627,3 +613,24 @@ mySwiper16(document.querySelector(".mySwiper16 .swiper-wrapper"), weblagsarray);
   TedadLove();
   SabtNahaii("");
 })();
+let Item = "";
+arrMahsol.slice(11, 13).forEach((item) => {
+  Item += `<div class="absolute" >
+  <div class="bg-white">
+    <div class="w-max p-2"><img src="${item.img}" alt="" /></div>
+    <div class="text-center p-5">
+      <p class="my-2 text-zinc-600">لامپ فانتزی 87</p>
+      <p class="my-2 text-warning">68,000 تومان</p>
+      <p class="my-2">پس از بیش از 10 سال فعالیت در حوزه وردپرس و توسعه وردپرس به</p>
+      <div class="kharid p-2 text-center bg-warning rounded-full text-white" data-num="${item.id}">افزودن به سبد خرید</div>
+    </div>
+  </div>
+  </div>
+  <div class="bg-white rounded-full m-auto" style="width: 6px; height: 6px; margin-top: 5px; margin-right: 6px"></div>...
+  `;
+});
+let SplitDiv = Item.split("...");
+console.log(SplitDiv[0]);
+let DivHover = document.querySelectorAll(".ho");
+DivHover[0].innerHTML = SplitDiv[0];
+DivHover[1].innerHTML = SplitDiv[1];

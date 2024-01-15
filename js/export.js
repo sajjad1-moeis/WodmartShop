@@ -198,12 +198,13 @@ function sortArr(arr) {
 function sortProduct(filter, mahsol, arrUserMahsol) {
   document.querySelectorAll(".Divlist p").forEach((pBtn) => {
     pBtn.onclick = () => {
-      console.log();
+      let SpanTaiin = document.querySelector(".taiinSort");
       let TextP = pBtn.innerHTML;
       if (TextP === "مرتب بر اساس گران ترین") {
+        SpanTaiin.innerHTML = "مرتب بر اساس گران ترین";
         CreateMahsol(sortArr(filter).reverse(), document.querySelector(".SearchUser"));
       } else {
-        console.log("ارزان");
+        SpanTaiin.innerHTML = "مرتب بر اساس ارزان ترین";
         CreateMahsol(sortArr(filter), document.querySelector(".SearchUser"));
       }
       SitePage(filter, mahsol, arrUserMahsol);
