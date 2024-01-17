@@ -28,7 +28,6 @@ const mySwiper1 = () => {
     rewind: true,
     navigation: {nextEl: ".mySwiper1 .swiper-button-next", prevEl: ".mySwiper1 .swiper-button-prev"},
     pagination: {el: ".mySwiper1 .swiper-pagination", clickable: true},
-    keyboard: true,
     centeredSlides: true,
     grabCursor: true,
   });
@@ -217,7 +216,7 @@ function CreateProductSlide4(arr, parent, slide) {
        <div class=" max-w-[200px] max-h-[200px] object-cover overflow-hidden m-auto">
          <img class="  object-cover h-36 md:h-[200px] mx-auto"  alt="" src="${item.img}"/>
        </div>
-       <div class="mt-7 text-base">
+       <div class="mt-7 text-lg">
          <p class="md:mb-2 title   h-10 md:h-max overflow-hidden">${item.title}</p>
          <p class=" text-warning price">${item.price.toLocaleString()} تومان</p>
        </div>
@@ -613,24 +612,30 @@ mySwiper16(document.querySelector(".mySwiper16 .swiper-wrapper"), weblagsarray);
   TedadLove();
   SabtNahaii("");
 })();
-let Item = "";
-arrMahsol.slice(11, 13).forEach((item) => {
-  Item += `<div class="absolute" >
-  <div class="bg-white">
-    <div class="w-max p-2"><img src="${item.img}" alt="" /></div>
-    <div class="text-center p-5">
-      <p class="my-2 text-zinc-600">لامپ فانتزی 87</p>
-      <p class="my-2 text-warning">68,000 تومان</p>
-      <p class="my-2">پس از بیش از 10 سال فعالیت در حوزه وردپرس و توسعه وردپرس به</p>
-      <div class="kharid p-2 text-center bg-warning rounded-full text-white" data-num="${item.id}">افزودن به سبد خرید</div>
-    </div>
+let sul = "";
+arrMahsol.slice(11, 16).forEach((item) => {
+  sul += `<div class="absolute text-center">
+  <div class="bg-white p-5">
+    <div class="w-max"><img src="${item.img}" alt="" /></div>
+    <div class="my-5">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</div>
+    <div class="my-3 text-warning"> ${item.price.toLocaleString()} <span class="text-black">تومان</span></div>
+    <div class="cursor-pointer my-2 bg-warning rounded-full p-2 text-white btn-kharid" data-num="${item.id}">افزودن به سبد خرید</div>
   </div>
-  </div>
-  <div class="bg-white rounded-full m-auto" style="width: 6px; height: 6px; margin-top: 5px; margin-right: 6px"></div>...
-  `;
+</div>
+<div class=" rounded-full  bg-white" style="width: 6px; height: 6px; margin: auto; margin-top: 5px"></div>
+...`;
 });
-let SplitDiv = Item.split("...");
-console.log(SplitDiv[0]);
-let DivHover = document.querySelectorAll(".ho");
-DivHover[0].innerHTML = SplitDiv[0];
-DivHover[1].innerHTML = SplitDiv[1];
+
+let HoverDiv = document.querySelectorAll(".ho");
+for (let i = 0; i < sul.split("...").length - 1; i++) {
+  HoverDiv[i].innerHTML = sul.split("...")[i];
+}
+document.querySelectorAll(".ho .btn-kharid").forEach((btn) => {
+  btn.onclick = (e) => {
+    let DivBasket = document.querySelector(".DivBasket");
+
+    let id = e.target.dataset.num;
+    findMahsol(id, arrMahsol, ArrayUserBasket, "");
+    DivBasket.classList.replace("left-[-350px]", "left-0");
+  };
+});

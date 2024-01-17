@@ -17,17 +17,13 @@ template.innerHTML = `
          </div>
          </div> 
 
-<div class="first-icons">
-<span class="font-bold text-white block my-3.5" style="font-size: 16px;">
-</span>
-
 </div>
 `;
 
 class Footer extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({mode: "open"});
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
   connectedCallback() {
@@ -51,7 +47,7 @@ tempalte2.innerHTML = `
 class FooterLast extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({mode: "open"});
     this.shadowRoot.appendChild(tempalte2.content.cloneNode(true));
   }
   connectedCallback() {
@@ -59,4 +55,4 @@ class FooterLast extends HTMLElement {
     this.shadowRoot.querySelector(".text-center").style.backgroundColor = this.getAttribute("bg");
   }
 }
-export { Footer, FooterLast };
+export {Footer, FooterLast};
