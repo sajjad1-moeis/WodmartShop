@@ -3,14 +3,16 @@ let $ = document;
 //import
 
 let cokieSubmit = document.cookie;
-
-if (cokieSubmit) {
+let Vrood = new Promise((resole, regect) => {
+  cokieSubmit ? resole() : regect();
+});
+Vrood.then(() => {
   body("حساب کاربری من", "./html/userPage.html", "");
   FoterSite("", "./html/userPage.html");
-} else {
+}).catch(() => {
   body("ورود / ثبت نام", "./html/vrood.html", "");
   FoterSite("", "./html/vrood.html");
-}
+});
 
 /// Api Mahsol
 

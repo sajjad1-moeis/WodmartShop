@@ -69,17 +69,16 @@ const FoterSite = (dot, href) => {
   );
   const textsfootersarray = [
     //step1
-    { current: false, a: "برگه", b: "المان ها", c: "تیم ما", d: "اسلایدر ها", e: "نظرات مشتریان", f: "اینستاگرام", g: "نمونه کارها" },
-    { current: true, a: "لینک های مفید", b: "فروشگاه", c: "سبد خرید", d: "تماس با ما", e: "برگه ها", f: "وبلاگ", g: "سوالات متداول" },
-    { current: false, a: "فروشگاه های ما", b: "تهران", c: "اصفهان", d: "  شیراز", e: " مشهد", f: " کرج ", g: " شهرکرد" },
-    { current: false, a: " لینک های ضروری", b: " حفظ حریم خصوصی", c: " بازگشت وجه ", d: " شرایط و ضوابط", e: " تماس با ما", f: " اخبار اخیر", g: " نقشه سایت" },
+    {current: false, a: "برگه", b: "المان ها", c: "تیم ما", d: "اسلایدر ها", e: "نظرات مشتریان", f: "اینستاگرام", g: "نمونه کارها"},
+    {current: true, a: "لینک های مفید", b: "فروشگاه", c: "سبد خرید", d: "تماس با ما", e: "برگه ها", f: "وبلاگ", g: "سوالات متداول"},
+    {current: false, a: "فروشگاه های ما", b: "تهران", c: "اصفهان", d: "  شیراز", e: " مشهد", f: " کرج ", g: " شهرکرد"},
+    {current: false, a: " لینک های ضروری", b: " حفظ حریم خصوصی", c: " بازگشت وجه ", d: " شرایط و ضوابط", e: " تماس با ما", f: " اخبار اخیر", g: " نقشه سایت"},
   ];
   let apliidiv = $.querySelector(".apllication");
   const footertexts = (parentDiv6, sliceitem7) => {
     let swiperfragment6 = document.createDocumentFragment();
     textsfootersarray.forEach((element) => {
       let wraperfargment6 = document.createElement("div");
-      //wraperfargment5.setAttribute("style", "width:max-content");
       if (element.current) {
         wraperfargment6.innerHTML = `
         <div class="col-span-1 text-sm text-zinc-400 ">
@@ -121,4 +120,4 @@ const FoterSite = (dot, href) => {
   footertexts(document.querySelector(".footers-texts"), textsfootersarray);
 };
 
-export { FoterSite };
+export {FoterSite};

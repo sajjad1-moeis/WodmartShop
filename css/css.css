@@ -697,3 +697,6 @@ opacity: 0.5;
     z-index: 555;
     bottom: -60px;
 }
+.content{
+    transition: 0.5s;
+}

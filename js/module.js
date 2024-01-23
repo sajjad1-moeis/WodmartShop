@@ -7,6 +7,7 @@ customElements.define("free-footer", Footer);
 import {ShoeMenuMobile, SearchProduct, CreateMahsolBasket, ShowDivKhabarName, ShowBasket, listNextSearch, AbutMe, RemoveItem, notSuccess, SabtNahaii} from "./Hedear-Site.js";
 let cokieSubmit = document.cookie;
 import {ResultPrice, TaiinBasket, TedadBasket, TedadLove} from "./export.js";
+
 if (cokieSubmit) {
   body("حساب کاربری من", "./html/userPage.html", ".");
   FoterSite(".", "./html/userPage.html");
@@ -23,7 +24,6 @@ listNextSearch();
 AbutMe(".");
 ShoeMenuMobile();
 let local = JSON.parse(localStorage.getItem("mahsol"));
-let f = ".";
 CreateMahsolBasket(local, `.`);
 notSuccess();
 RemoveItem(local, `.`);
