@@ -208,6 +208,12 @@ const ShowErrorComment = (tem1, tem2) => {
     tem2.classList.add("showErrow");
   }
 };
+function setCookie(cookieName, cookieValue, exDay) {
+  let now = new Date();
+  now.setTime(now.getTime() + exDay * 24 * 60 * 60 * 1000);
+  console.log(now);
+  document.cookie = `${cookieName}=${cookieValue};path=/;expires=${now}`;
+}
 
 const Commentsvalidate = () => {
   let senddidgah = $.querySelector(".send-didgah");

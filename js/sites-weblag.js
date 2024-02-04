@@ -1,16 +1,18 @@
 const $ = document;
 import {ImgBottomLorem, ImgTopLorem, lavazem, TemplateNextLavazem, Commentsvalidate, Category, template, postAkhir} from "./wblag1.js";
+import {Maincomments, Secondheadweblag} from "./main-modules-sites-weblag.js";
 customElements.define("img-lorem-top", ImgTopLorem);
 customElements.define("img-lorem-bottom", ImgBottomLorem);
 customElements.define("div-lavazem", lavazem);
 customElements.define("div-img-double", TemplateNextLavazem);
 customElements.define("div-img", template);
 customElements.define("post-akhar", postAkhir);
-import {Maincomments, Secondheadweblag} from "./main-modules-sites-weblag.js";
 Maincomments();
 Secondheadweblag();
 Category();
+
 //all items of Sitesweblag
+
 let Allitemsarry = [
   {href: "../html/Product.html?id=گل و گیاه", img: "../img/گل.png", title: "گل و گیاه", countproduct: "61"},
   {href: "../html/Product.html?id= پوشاک", img: "../img/لباس.png", title: "پوشاک ", countproduct: "4"},
@@ -33,18 +35,9 @@ const mySwiper14 = (parentDiv6, sliceitem7) => {
     slidesPerView: 2,
     spaceBetween: 16,
     breakpoints: {
-      195: {
-        slidesPerView: 2,
-        spaceBetween: 19,
-      },
-      640: {
-        spaceBetween: 30,
-        slidesPerView: 2,
-      },
-      768: {
-        spaceBetween: 30,
-        slidesPerView: 3,
-      },
+      195: {slidesPerView: 2, spaceBetween: 19},
+      640: {spaceBetween: 30, slidesPerView: 2},
+      768: {spaceBetween: 30, slidesPerView: 3},
     },
   });
 
@@ -81,21 +74,4 @@ ${element.countproduct}محصول
 
 mySwiper14();
 
-//texts-images
-
-//texts-images
-
-// مثال
-/* validateEmail("user@gmail.com"); // آدرس ایمیل معتبر است.
-validateEmail("invalid@email.com");
-*/
-//didgah-js
-
 Commentsvalidate();
-
-function setCookie(cookieName, cookieValue, exDay) {
-  let now = new Date();
-  now.setTime(now.getTime() + exDay * 24 * 60 * 60 * 1000);
-  console.log(now);
-  document.cookie = `${cookieName}=${cookieValue};path=/;expires=${now}`;
-}

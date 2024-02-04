@@ -7,15 +7,4 @@ Category();
 customElements.define("post-akhar", postAkhir);
 //texts-images
 
-//didgah-js
-
 Commentsvalidate();
-
-function setCookie(cookieName, cookieValue, exDay) {
-  let now = new Date();
-  now.setTime(now.getTime() + exDay * 24 * 60 * 60 * 1000);
-  console.log(now);
-  document.cookie = `${cookieName}=${cookieValue};path=/;expires=${now}`;
-}
-
-//didgah-js
