@@ -20,11 +20,6 @@ let arrUserMahsol = [];
 arrUserMahsol = JSON.parse(localStorage.getItem("mahsol"));
 ///////////////////////////////////
 
-////////////////////
-////////////////////
-////////////////////
-////////////////////
-
 async function FilterColorMahsol(Color) {
   let filterMahsol = await filter.filter((item) => item.label.includes(`${Color}`));
   return filterMahsol;

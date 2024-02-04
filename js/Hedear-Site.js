@@ -138,7 +138,6 @@ function body(IsSubmit, href, dot) {
                   <div class="bg-white h-max p-3 pb-0"></div>
                   </div>
                   </div>
-                  <i class="fa fa-angle-down" style="font-size: 18px"></i>
                   </div>
                   </div>
                   <div class="ms-3 bg-warning h-full p-3 px-4 rounded-l-full cursor-pointer btnSearchProduct">

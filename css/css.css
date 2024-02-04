@@ -700,3 +700,6 @@ opacity: 0.5;
 .content{
     transition: 0.5s;
 }
+.showErrow{
+    border-color: red;
+}

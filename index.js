@@ -155,7 +155,10 @@ const slideSwiper3 = () => {
 };
 slideSwiper3();
 let mySwiper5 = () => {
-  let swiper5 = new Swiper(".mySwiper5", {rewind: true, navigation: {prevEl: ".swiper5 .swiper-button-next", nextEl: ".swiper5 .swiper-button-prev"}});
+  let swiper5 = new Swiper(".mySwiper5", {
+    rewind: true,
+    navigation: {prevEl: ".swiper5 .swiper-button-next", nextEl: ".swiper5 .swiper-button-prev"},
+  });
   hoverLeft(arrMahsol.slice(6, 11), ".mySwiper5 .swiper-wrapper");
 };
 mySwiper5();
@@ -354,23 +357,7 @@ MySwiper9();
 // Create Basket Shop
 
 let ArrayUserBasket = [].concat(JSON.parse(localStorage.getItem("mahsol")));
-import {
-  body,
-  ShoeMenuMobile,
-  Header,
-  SearchProduct,
-  ShowDivKhabarName,
-  IconHeader,
-  listNextSearch,
-  ShowBasket,
-  AbutMe,
-  CreateMahsolBasket,
-  RemoveItem,
-  findMahsol,
-  ShowElan,
-  notSuccess,
-  SabtNahaii,
-} from "./js/Hedear-Site.js";
+import {body, ShoeMenuMobile, Header, SearchProduct, ShowDivKhabarName, IconHeader, listNextSearch, ShowBasket, AbutMe, CreateMahsolBasket, RemoveItem, findMahsol, ShowElan, notSuccess, SabtNahaii} from "./js/Hedear-Site.js";
 import {TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove} from "./js/export.js";
 import {AbutSwiper, HideMdAbut} from "./components/Btn-Swiper/Btn-Swiper.js";
 import {FoterSite} from "./js/foter-Site.js";
@@ -502,10 +489,10 @@ i(".mySwiper15");
 
 //site's weblag
 let weblagsarray = [
-  {title: "طراحی داخلی", img: "./img/interior decorasion.jpg", date: "22", lable: "مبلمان"},
-  {title: "وسایل مورد نیاز کوهنوردی", img: "./img/climbing things.jpg", date: "16", lable: "وسایل"},
-  {title: "طراحی دکوراسیون داخلی", img: "./img/design decorasion.jpg", date: "11", lable: "طراحی سه بعدی"},
-  {title: "وسایل باغبانی", img: "./img/things garden.jpg", date: "4", lable: "وسایل"},
+  {href: "sites-weblag.html", title: "طراحی داخلی", img: "./img/interior decorasion.jpg", date: "22", lable: "مبلمان"},
+  {href: "sites-weblag2.html", title: "وسایل مورد نیاز کوهنوردی", img: "./img/climbing things.jpg", date: "16", lable: "وسایل"},
+  {href: "sites-weblag3.html", title: "طراحی دکوراسیون داخلی", img: "./img/design decorasion.jpg", date: "11", lable: "طراحی سه بعدی"},
+  {href: "#", title: "وسایل باغبانی", img: "./img/things garden.jpg", date: "4", lable: "وسایل"},
 ];
 const mySwiper16 = (parentDiv5, sliceitem5) => {
   let swiper10 = new Swiper(".mySwiper16", {
@@ -520,7 +507,11 @@ const mySwiper16 = (parentDiv5, sliceitem5) => {
     },
     slidesPerView: 2,
     spaceBetween: 16,
-    breakpoints: {195: {slidesPerView: 1, spaceBetween: 16}, 640: {slidesPerView: 2, spaceBetween: 16}, 768: {slidesPerView: 3, spaceBetween: 16}},
+    breakpoints: {
+      195: {slidesPerView: 1, spaceBetween: 16},
+      640: {slidesPerView: 2, spaceBetween: 16},
+      768: {slidesPerView: 3, spaceBetween: 16},
+    },
   });
 
   let swiperfragment5 = document.createDocumentFragment();
@@ -529,6 +520,7 @@ const mySwiper16 = (parentDiv5, sliceitem5) => {
     wraperfargment5.className = "swiper-slide akharin ";
     wraperfargment5.innerHTML = `
       <div class="interior-design   border-[2px] border-gray-100  shadow-sm relative overflow-hidden">
+      <a href="./html/${element.href}">
     <div class="divimg5  overflow-hidden  relative max-w-full">
     <div class="h-max w-full relative vf">
             <div class="m-auto text-center absolute p-3 bg-transparent flex gap-3 z-50">
@@ -583,8 +575,9 @@ const mySwiper16 = (parentDiv5, sliceitem5) => {
   </div>
       </div>
       <div class="swiper-wrapper">
+      
       </div>
- 
+      </a>
     `;
     swiperfragment5.append(wraperfargment5);
   });
