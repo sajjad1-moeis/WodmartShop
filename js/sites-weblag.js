@@ -73,5 +73,4 @@ ${element.countproduct}محصول
 };
 
 mySwiper14();
-
 Commentsvalidate();

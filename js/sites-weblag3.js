@@ -118,4 +118,37 @@ const mySwiper17 = (parentDiv8, sliceitem8) => {
 };
 mySwiper17(document.querySelector(".mySwiper17 .swiper-wrapper"), weblagsarray2);
 
+let template = $.createElement("template");
+template.innerHTML = `
+<link rel="stylesheet" href="../tailwind/tailwind.css">
+    <link rel="stylesheet" href="../css/css.css">
+      <div class="my-5 overflow-hidden">
+                      <img slot="images-images" src="../img/فانتزی.jpg" alt="" />
+                      <div class="my-5">
+                        <span slot="lorems" class="">
+                          <div class="text-lg md:text-xl flex-none font-bold text-center text-dark">
+                            <h3 class="font-bold w-full">
+                              <span class="onvan"> </span>
+                            </h3>
+                          </div>
+                          <div class="mt-5">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
+                            بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+`;
+class Template extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({mode: "open"});
+    this.shadowRoot.append(template.content.cloneNode(true));
+  }
+  connectedCallback() {
+    this.shadowRoot.querySelector("img").src = this.getAttribute("img");
+    this.shadowRoot.querySelector(".onvan").textContent = this.getAttribute("title");
+  }
+}
+customElements.define("div-element", Template);
 //site's weblag
