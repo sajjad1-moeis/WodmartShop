@@ -120,9 +120,9 @@ mySwiper17(document.querySelector(".mySwiper17 .swiper-wrapper"), weblagsarray2)
 
 let template = $.createElement("template");
 template.innerHTML = `
-<link rel="stylesheet" href="../tailwind/tailwind.css">
-    <link rel="stylesheet" href="../css/css.css">
-      <div class="my-5 overflow-hidden">
+               <link rel="stylesheet" href="../tailwind/tailwind.css">
+                   <link rel="stylesheet" href="../css/css.css">
+                     <div class="my-5 overflow-hidden">
                       <img slot="images-images" src="../img/فانتزی.jpg" alt="" />
                       <div class="my-5">
                         <span slot="lorems" class="">

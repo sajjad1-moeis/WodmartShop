@@ -15,6 +15,7 @@ document.querySelector(".logOut").onclick = () => {
   document.cookie = `name=${arrCookie[0]};path=/;expires=${date}`;
   document.cookie = `family=${arrCookie[1]};path=/;expires=${date}`;
   document.cookie = `pass=${arrCookie[2]};path=/;expires=${date}`;
+  document.cookie = `remem-token=${arrCookie[2]};path=/;expires=${date}`;
   setTimeout(() => {
     location.href = "../index.html";
   }, 500);

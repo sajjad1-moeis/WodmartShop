@@ -489,9 +489,9 @@ i(".mySwiper15");
 
 //site's weblag
 let weblagsarray = [
-  {href: "sites-weblag.html", title: "طراحی داخلی", img: "./img/interior decorasion.jpg", date: "22", lable: "مبلمان"},
-  {href: "sites-weblag2.html", title: "وسایل مورد نیاز کوهنوردی", img: "./img/climbing things.jpg", date: "16", lable: "وسایل"},
-  {href: "sites-weblag3.html", title: "طراحی دکوراسیون داخلی", img: "./img/design decorasion.jpg", date: "11", lable: "طراحی سه بعدی"},
+  {href: "./html/sites-weblag.html", title: "طراحی داخلی", img: "./img/interior decorasion.jpg", date: "22", lable: "مبلمان"},
+  {href: "./html/sites-weblag2.html", title: "وسایل مورد نیاز کوهنوردی", img: "./img/climbing things.jpg", date: "16", lable: "وسایل"},
+  {href: "./html/sites-weblag3.html", title: "طراحی دکوراسیون داخلی", img: "./img/design decorasion.jpg", date: "11", lable: "طراحی سه بعدی"},
   {href: "#", title: "وسایل باغبانی", img: "./img/things garden.jpg", date: "4", lable: "وسایل"},
 ];
 const mySwiper16 = (parentDiv5, sliceitem5) => {
@@ -520,7 +520,7 @@ const mySwiper16 = (parentDiv5, sliceitem5) => {
     wraperfargment5.className = "swiper-slide akharin ";
     wraperfargment5.innerHTML = `
       <div class="interior-design   border-[2px] border-gray-100  shadow-sm relative overflow-hidden">
-      <a href="./html/${element.href}">
+      <a href="${element.href}">
     <div class="divimg5  overflow-hidden  relative max-w-full">
     <div class="h-max w-full relative vf">
             <div class="m-auto text-center absolute p-3 bg-transparent flex gap-3 z-50">
