@@ -519,6 +519,7 @@ function AddToBasket(arr, arr2) {
   let DivKharid = $.querySelectorAll(".list-menu2");
   DivKharid.forEach((div) => {
     div.addEventListener("click", (e) => {
+      console.log(e.target);
       let parent = e.target.parentElement;
       if (document.cookie.includes("name")) {
         if (parent.className.includes("kharid")) {
@@ -606,7 +607,7 @@ function HoverBottom(id) {
   <div class="cursor-pointer w-full max-w-[60px] mx-3 border-x-[1px] md:px-3 border-zinc-200 kharid" >
   <img src="../img/shopping-cart-svgrepo-com (1).svg" alt="" class="px-1 w-full max-w-[35px] m-auto" />
   </div>
-  <div class="cursor-pointer max-w-[25px] w-full" >
+  <div class=" cursor-pointer max-w-[25px] w-full search-bt" >
   <img src="../img/search-svgrepo-com (2).svg" class=" m-auto" alt="" />
   </div>
   </div>

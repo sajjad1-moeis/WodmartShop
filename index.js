@@ -20,7 +20,7 @@ let api = await fetch("https://657eea449d10ccb465d58032.mockapi.io/gol");
 let arrMahsol = await api.json();
 document.querySelector(".body").classList.remove("hidden");
 document.querySelector(".loding").classList.add("hidden");
-
+let arrUserMahsol = [];
 //header
 
 //mySwiper1
@@ -192,7 +192,7 @@ function hoverBottom(i) {
         <div class="cursor-pointer lg:w-[60px] ms-1 lg:mx-3 lg:border-x-[1px] border-zinc-200 kharid">
            <img src="./img/shopping-cart-svgrepo-com (1).svg" alt="" class=" px-1 w-8 lg:w-[35px] m-auto" />
          </div>
-         <div class="cursor-pointer hidden lg:block" >
+         <div class="cursor-pointer hidden lg:block search-bt" >
            <img src="./img/search-svgrepo-com (2).svg" class="w-[25px] m-auto " alt="" />
          </div>
       </div>
@@ -357,7 +357,7 @@ MySwiper9();
 // Create Basket Shop
 
 let ArrayUserBasket = [].concat(JSON.parse(localStorage.getItem("mahsol")));
-import {body, ShoeMenuMobile, Header, SearchProduct, ShowDivKhabarName, IconHeader, listNextSearch, ShowBasket, AbutMe, CreateMahsolBasket, RemoveItem, findMahsol, ShowElan, notSuccess, SabtNahaii} from "./js/Hedear-Site.js";
+import {body, ShoeMenuMobile, Header, SearchProduct, ShowDivKhabarName, IconHeader, listNextSearch, ShowBasket, AbutMe, CreateMahsolBasket, RemoveItem, findMahsol, ShowElan, notSuccess, SabtNahaii, AddToBasket} from "./js/Hedear-Site.js";
 import {TedadBasket, ResultPrice, TaiinBasket, TedadLove, AddLove} from "./js/export.js";
 import {AbutSwiper, HideMdAbut} from "./components/Btn-Swiper/Btn-Swiper.js";
 import {FoterSite} from "./js/foter-Site.js";
@@ -384,6 +384,7 @@ const MySwiper7 = () => {
   CreateProductSlide4(arrMahsol.slice(78, 84), document.querySelector(".mySwiper7 .slide1"), "swiper-slide");
   CreateProductSlide4(arrMahsol.slice(75, 81), document.querySelector(".mySwiper7 .slide2"), "swiper-slide");
 };
+
 MySwiper7();
 //brands-Swiper11
 ("bg-purple bg-orange-500 bg-pink-500 bg-success");
@@ -402,6 +403,7 @@ let brandsarry = [
   "./img/Lg.png",
   "./img/adata.png",
 ];
+
 const mySwiper11 = (parentDiv2, sliceitem2) => {
   let swiper11 = new Swiper(".mySwiper11", {
     loop: true,
@@ -462,6 +464,8 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
         AddLove(arrMahsol, arrUserLove, id);
 
         TedadLove();
+      } else if (e.target.parentElement.className.includes("search-bt")) {
+        console.log("object");
       }
     } else {
       let DivIsSubmit = document.querySelector(".IsSubmit");
@@ -469,7 +473,9 @@ document.querySelectorAll(".list-menu2").forEach((btnLove) => {
     }
   });
 });
+
 ///////////////////////////////////////////////////////////////// Code JS
+
 const i = (swiper) => {
   let mySwiper16 = new Swiper(`${swiper}`, {
     slidesPerView: 2,
